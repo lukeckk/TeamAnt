@@ -1,0 +1,39 @@
+body {
+  background-color: #F9F6EE;
+}
+h1 {
+  text-align: center;
+  
+}
+
+nav {
+  border: 1px solid black;
+}
+
+ul {
+  display: flex;
+  margin: 0;
+}
+
+li {
+  padding-right: 50px;
+}
+
+.member {
+  width: 200px;
+  height: 200px;
+  padding: 20px;
+}
+
+#navbarShared {
+  background-color: #2C882B;
+}
+
+#contactShared {
+  background-color: #6CB443;
+}
+
+
+#promo {
+  font-style: italic;
+}
