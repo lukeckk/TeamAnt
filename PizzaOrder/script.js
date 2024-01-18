@@ -11,8 +11,7 @@ const state = document.getElementById('addressState');
    form.addEventListener('submit', event => {
   event.preventDefault();
      
-     validateToppings();
-    validateInputs();
+     
     
 
      if(validateInputs() && validateToppings())
