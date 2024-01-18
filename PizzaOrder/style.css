@@ -31,7 +31,7 @@ section {
 .submitbutton {
   border: 1px solid black;
 border-radius: 25px;
-background: #6262c0;
+background: #008CBA;
 font-size: 20px;
 color: red;
 align-items:center;
@@ -63,4 +63,20 @@ form {
 }
 
 
+.input-control input:focus {
+    outline: 0;
+}
 
+.input-control.success input {
+    border-color: #09c372;
+}
+
+.input-control.error input {
+    border-color: orange;
+}
+
+.input-control .error {
+    color: orange;
+    font-size: 15px;
+    height: 18px;
+}
