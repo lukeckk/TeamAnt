@@ -87,7 +87,6 @@ letter-spacing:1.6px;
 font-weight: 600;
 font-size: 200%;
 padding:20px;
-background-color:
 }
 
 #dashrightcolumn h3, #dashleftcolumn h3 {
@@ -242,7 +241,6 @@ border-left: 2px solid black;
 
 #footerbar .row {
 justify-content: center;
-align-items: top;
 
 }
 
