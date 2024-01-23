@@ -1,70 +1,37 @@
                       <!DOCTYPE html>
-                      <html id="htmlTag" lang="en" data-bs-theme="">
+                      <html lang="en-us">
 
                       <head>
 
                         <meta charset="utf-8">
                         <meta name="viewport" content="width=device-width">
                         <title>Contact</title>
-                       <link type="text/css" rel="stylesheet" href="../styles/style.css" />
-
+                        <link href="../styles/style.css" rel="stylesheet" type="text/css"/>
                         <!--BOOTSTRAP CDN-->
                           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
                           <!--END BOOTSTRAP CDN-->
-                          <script>
-                              prefColor = localStorage.getItem("color");
-                              function startLighting(){
-                                  console.log("function ran");
-                                  if(prefColor == null) {
-                                      localStorage.setItem("color","light");
-                                  } else {
-                                      lightingRequest(localStorage.getItem("color"));
-                                  }
-                              }
-
-                              function lightingButton(){
-                                  lastColor = localStorage.getItem("color");
-                                  if(lastColor == "light"){
-                                      localStorage.setItem("color","dark");
-                                      lightingRequest("dark");
-
-                                  } else {
-                                      localStorage.setItem("color","light");
-                                      lightingRequest("light");
-                                  }
-                              }
-
-                              function lightingRequest(color){
-                                  page = document.getElementById("htmlTag");
-                                  page.setAttribute("data-bs-theme", color);
-                                  str = "btn btn-"+color;
-                                  document.getElementById("lights").setAttribute("class",str);
-                              }
-                          </script>
-                          <!--END LIGHTMODE SCRIPT-->
 
                       </head>
 
-                      <body onload="startLighting()">
+                      <body>
                           <!--BEGIN NAVBAR-->
                           <div id="navbarShared">
                               <div class="mx-auto m2 p2">
-                                  <nav class="navbar navbar-expand-lg mx-2" >
+                                  <nav class="navbar navbar-expand-lg" >
                                       <a class="navbar-brand"><i>Gator</i>ATT</a>
                                       <div class="navbar-nav">
-                                          <a class="nav-link" href="dashboard.html">Dashboard</a>
-                                          <a class="nav-link" href="signup.html">Sign Up</a>
-                                          <a class="nav-link" href="contact.html">Contact</a>
-                                          <a class="nav-link" id="promo" href="../index.html">Powered by Team ANT</a>
-                                          <button type="button" class="btn btn-light" onclick="lightingButton()" id="lights">Lighting Mode</button>
+                                        <a class="nav-link" href="dashboard.html">Dashboard</a>
+                                        <a class="nav-link" href="signup.html">Sign Up</a>
+                                        <a class="nav-link" href="contact.html">Contact</a>
+                                        <a class="nav-link" id="promo" href="../index.html">Powered by Team ANT</a>
                                       </div>
                                   </nav>
                               </div>
                           </div>
 
                       <!--END NAVBAR-->
-                          <h1>Contact Us!</h1>
-                          <div class="row justify-content-evenly">
+                          <h1 id="contactHeading">Contact Us!</h1>
+                          <div class="row justify-content-evenly pt-5">
                               <div class="col-3 text-center align-self-center">
                                   <p class="fs-3">Please feel free to contact us using the form on the right!</p>
                               </div>
