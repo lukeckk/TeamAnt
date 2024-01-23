@@ -13,7 +13,7 @@ form.addEventListener('submit', event => {
 
 
 
-     if(validateInputs() && validateToppings())
+     if(validateInputs())
      {
            signup.submit();
      }
@@ -48,13 +48,9 @@ const validateInputs = () => {
  if(namevalue === '') {
     setError(name, "Name is required");
     validated = false;
-    counter++;
-
   }
     else {
       setSuccess(name);
-
-
     }
 
  if (emailvalue === '') {
@@ -64,11 +60,9 @@ const validateInputs = () => {
      else if (!emailvalue.toLowerCase().includes("@greenriver.edu")){
        alert("Use a @greenriver.edu email");
        setSuccess(email);
-
      }
    else {
      setSuccess(email);
-
    }
 
  if (cnumbervalue === '') {
@@ -79,12 +73,14 @@ const validateInputs = () => {
        setError(cnumber, 'Cohort number must be a number');
      validated = false;
    }
-   else if (cnumbervalue>100 && cnumbervalue<0) {
+   else if (cnumbervalue>100 || cnumbervalue<0) {
        setError(cnumber, 'Cohort number must be b/w 0 & 100');
-     validated = false;
+       validated = false;
      }
    else {
        setSuccess(cnumber);
 
      }
+
+     return validated;
      }
