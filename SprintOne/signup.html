@@ -2,35 +2,71 @@
 <html>
 
 <head>
+  <html id="htmlTag" lang="en" data-bs-theme="">
+
+  <head>
     <script src="script.js"></script>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Sign Up</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="../styles/style.css" rel="stylesheet" type="text/css"/>
-  <!--BOOTSTRAP CDN-->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-  <!--END BOOTSTRAP CDN-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>GatorATT Dashboard</title>
+    <link href="https://fonts.cdnfonts.com/css/bignoodletitling" rel="stylesheet">
+    <link href="../styles/style.css" rel="stylesheet" type="text/css"/>
+    <!-- Fonts import -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--BOOTSTRAP CDN-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
-</head>
+    <!--END BOOTSTRAP CDN-->
+    <script>
+      prefColor = localStorage.getItem("color");
+      function startLighting(){
+        console.log("function ran");
+        if(prefColor == null) {
+          localStorage.setItem("color","light");
+        } else {
+          lightingRequest(localStorage.getItem("color"));
+        }
+      }
 
-<body>
+      function lightingButton(){
+        lastColor = localStorage.getItem("color");
+        if(lastColor == "light"){
+          localStorage.setItem("color","dark");
+          lightingRequest("dark");
+
+        } else {
+          localStorage.setItem("color","light");
+          lightingRequest("light");
+        }
+      }
+
+      function lightingRequest(color){
+        page = document.getElementById("htmlTag");
+        page.setAttribute("data-bs-theme", color);
+        str = "btn btn-"+color;
+        document.getElementById("lights").setAttribute("class",str);
+      }
+    </script>
+    <!--END LIGHTMODE SCRIPT-->
+
+  </head>
+
+  <body onload="startLighting()">
   <!--BEGIN NAVBAR-->
-      <div id="navbarShared">
-          <div class="mx-auto m2 p2">
-              <nav class="navbar navbar-expand-lg" >
-                  <a class="navbar-brand"><i>Gator</i>ATT</a>
-                  <div class="navbar-nav">
-                    <a class="nav-link" href="dashboard.html">Dashboard</a>
-                    <a class="nav-link" href="signup.html">Sign Up</a>
-                    <a class="nav-link" href="contact.html">Contact</a>
-                    <a class="nav-link" id="promo" href="../index.html">Powered by Team ANT</a>
-
-          </div>
-        </nav>
-      </div>
-
+  <div id="navbarShared">
+    <div class="mx-auto m2 p2">
+      <nav class="navbar navbar-expand-lg mx-2" >
+        <a class="navbar-brand"><i>Gator</i>ATT</a>
+        <div class="navbar-nav">
+          <a class="nav-link" href="dashboard.html">Dashboard</a>
+          <a class="nav-link" href="signup.html">Sign Up</a>
+          <a class="nav-link" href="contact.html">Contact</a>
+          <a class="nav-link" id="promo" href="../index.html">Powered by Team ANT</a>
+          <button type="button" class="btn btn-light" onclick="lightingButton()" id="lights">Lighting Mode</button>
+        </div>
+      </nav>
+    </div>
   </div>
 
   <!--END NAVBAR-->
@@ -51,11 +87,13 @@
   </section>
 
 
-  <section class="mb-4">
-    <label id="emailsignup" for="email">Email</label><br>
-    <input class="form-control input-default" type="email" id="email" placeholder="lastname.firstname@greenriver.edu">
-    <div class="error"></div>
-  </section>
+
+
+    <section id="orderEmail" class="input-control mb-4">
+      <label for="email" class="userinfo">Email</label><br>
+      <input type="email" name="email" id="email" class="form-control" placeholder="example@greenriver.edu" >
+      <div class="error"></div>
+    </section>
 
   <section class="mb-4">
     <label id="cnumbersignup" for="Cnumber">Cohort Number</label><br>
