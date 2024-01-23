@@ -2,71 +2,35 @@
 <html>
 
 <head>
-  <html id="htmlTag" lang="en" data-bs-theme="">
-
-  <head>
     <script src="script.js"></script>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>GatorATT Dashboard</title>
-    <link href="https://fonts.cdnfonts.com/css/bignoodletitling" rel="stylesheet">
-    <link href="../styles/style.css" rel="stylesheet" type="text/css"/>
-    <!-- Fonts import -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!--BOOTSTRAP CDN-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="../styles/style.css" rel="stylesheet" type="text/css"/>
+  <!--BOOTSTRAP CDN-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <!--END BOOTSTRAP CDN-->
 
-    <!--END BOOTSTRAP CDN-->
-    <script>
-      prefColor = localStorage.getItem("color");
-      function startLighting(){
-        console.log("function ran");
-        if(prefColor == null) {
-          localStorage.setItem("color","light");
-        } else {
-          lightingRequest(localStorage.getItem("color"));
-        }
-      }
+</head>
 
-      function lightingButton(){
-        lastColor = localStorage.getItem("color");
-        if(lastColor == "light"){
-          localStorage.setItem("color","dark");
-          lightingRequest("dark");
-
-        } else {
-          localStorage.setItem("color","light");
-          lightingRequest("light");
-        }
-      }
-
-      function lightingRequest(color){
-        page = document.getElementById("htmlTag");
-        page.setAttribute("data-bs-theme", color);
-        str = "btn btn-"+color;
-        document.getElementById("lights").setAttribute("class",str);
-      }
-    </script>
-    <!--END LIGHTMODE SCRIPT-->
-
-  </head>
-
-  <body onload="startLighting()">
+<body>
   <!--BEGIN NAVBAR-->
-  <div id="navbarShared">
-    <div class="mx-auto m2 p2">
-      <nav class="navbar navbar-expand-lg mx-2" >
-        <a class="navbar-brand"><i>Gator</i>ATT</a>
-        <div class="navbar-nav">
-          <a class="nav-link" href="dashboard.html">Dashboard</a>
-          <a class="nav-link" href="signup.html">Sign Up</a>
-          <a class="nav-link" href="contact.html">Contact</a>
-          <a class="nav-link" id="promo" href="../index.html">Powered by Team ANT</a>
-          <button type="button" class="btn btn-light" onclick="lightingButton()" id="lights">Lighting Mode</button>
-        </div>
-      </nav>
-    </div>
+      <div id="navbarShared">
+          <div class="mx-auto m2 p2">
+              <nav class="navbar navbar-expand-lg" >
+                  <a class="navbar-brand"><i>Gator</i>ATT</a>
+                  <div class="navbar-nav">
+                    <a class="nav-link" href="dashboard.html">Dashboard</a>
+                    <a class="nav-link" href="signup.html">Sign Up</a>
+                    <a class="nav-link" href="contact.html">Contact</a>
+                    <a class="nav-link" id="promo" href="../index.html">Powered by Team ANT</a>
+
+          </div>
+        </nav>
+      </div>
+
   </div>
 
   <!--END NAVBAR-->
@@ -76,7 +40,7 @@
 <!-- <div class="container d-flex justify-content-center"> -->
   <div class="row justify-content-evenly pt-5">
   <div class="col-lg-3 col-sm-12 col-xs-12 text-center align-self-center">
-     <p class="fs-lg-3">If there is a will, there is a way!</p>
+     <p class="fs-3">If there is a will, there is a way!</p>
   </div>
   <div id = "signupShared" class="col-lg-3 col-sm-8 col-xs-8 justify-content-center border rounded-4 border-3 border-dark align-self-center">
   <form name="signup" id="form" method="post" action="https://schrock.greenriverdev.com/vardump.php" >
