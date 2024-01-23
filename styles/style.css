@@ -6,6 +6,10 @@ h1 {
   
 }
 
+nav {
+  border: 1px solid black;
+}
+
 ul {
   display: flex;
   margin: 0;
@@ -32,6 +36,11 @@ li {
 #applicationShared {
   background-color: #6CB443;
   padding: 20px;
+}
+
+#contactShared input, #contactShared label {
+font-family: 'BigNoodleTitling', sans-serif;
+font-weight: 600;
 }
 
 
@@ -246,12 +255,13 @@ font-weight:600;
 font-family:arial;
 }
 
-#form label {
+#form label #applicationForm label {
 font-family: 'BigNoodleTitling', sans-serif;
 }
 
-#signupCoverText {
-font-family: 'BigNoodleTitling', sans-serif;;
+
+#signupCoverText, #contactHeading, #applicationheading {
+font-family: 'BigNoodleTitling', sans-serif;
 font-weight:600;
 }
 
