@@ -50,7 +50,7 @@ function populateNavBar() {
         "          <a class=\"nav-link\" href=\"contact.html\">Contact</a>\n" +
         "        </li>\n" +
         "        <li class=\"nav-item\">\n" +
-        "          <a class=\"nav-link\" href=\"/index.html\"><i>Powered by Team ANT</i></a>\n" +
+        "          <a class=\"nav-link\" href=\"../../index.html\"><i>Powered by Team ANT</i></a>\n" +
         "        </li>\n" +
         "      </ul>\n" +
         "      <div class=\"d-flex\">\n" +
