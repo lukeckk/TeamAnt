@@ -12,19 +12,71 @@
   <script src="https://kit.fontawesome.com/dacf05fad1.js" crossorigin="anonymous"></script>
 </head>
 
-
-
 <body onload="onloadGroup()">
 <nav id="navbarTarget" class="navbar navbar-expand-lg bg-body-tertiary"></nav>
 <!--NAVBAR ENDS HERE, NO ELEMENTS ABOVE THIS LINE-->
-
-
 
 <div class="container-fluid text-center">
   <h1>APPLICATION</h1>
 </div>
 
+<!-- APPLICATION BODY CODE STARTS HERE -->
+<div id="applicationShared" class="col-5 border border-3 border-dark container-fluid col-5 rounded-4 col-sm-8 col-xs-8">
+  <form name="applicationForm" method="get">
+    <section class=" row mb-4">
+      <label for="employer" class="col-5">Employer Name</label>
+      <input type="text" id="employerInput" name="employer" class="col-5 form-control" required>
+    </section>
 
+    <section class=" row mb-4">
+      <label for="role" class="col-5">Name of Role</label>
+      <input type="text" id="roleInput" name="role" class="col-5 form-control" required>
+    </section>
+
+    <section class="mb-4 row">
+      <label for="job" class="col-5">Job Description URL</label>
+      <input type="text" id="jobInput" name="job" class="col-5 form-control" required>
+    </section>
+
+    <section class="mb-4 row">
+      <label for="description" class="col-5">Job Description</label>
+      <textarea id="descriptionInput" name="description" rows="4" cols="50" class="col-5 form-control"></textarea>
+    </section>
+
+    <section class="mb-4 row">
+      <label for="date" class="col-5">Date of Application</label>
+      <input type="date" id="dateInput" name="date" class="col-5 form-control">
+    </section>
+
+    <section class="mb-4 row">
+      <label for="dropdown" class="col-12">Status</label>
+      <select id="dropdown" name="status">
+        <option>Need to Apply</option>
+        <option>Applied</option>
+        <option>Interviewing</option>
+        <option>Rejected</option>
+        <option>Accepted</option>
+        <option>Inactive / Expired</option>
+      </select>
+
+    </section>
+
+    <section class="mb-4 row">
+      <label for="updates" class="col-12">Updates</label>
+      <textarea name="updates" rows="4" cols="50" class="rounded-3 form-control">Who have you spoken with interviewed? Contact info?</textarea>
+    </section>
+
+    <section class="mb-4 row">
+      <label for="followUp" class="col-5" id="followUpDate">Follow up date</label>
+      <input type="date" id="followUpInput" name="followUp" class="col-5">
+    </section>
+      
+    <section class="mb-4 text-center">
+        <input type="submit" value="Submit">
+    </section>
+    </form>  
+  </div>
+<!-- APPLICATION BODY CODE ENDS HERE -->
 
 
 <!--FOOTER STARTS HERE, NO ELEMENTS BELOW THIS LINE-->
