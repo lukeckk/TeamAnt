@@ -2,7 +2,7 @@
     background-color: #2C882B !important;
 }
 
-#applicationShared {
+#applicationShared, #announcementShared {
     background-color: #6CB443;
     padding: 20px;
   }
