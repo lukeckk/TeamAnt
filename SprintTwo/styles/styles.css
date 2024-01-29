@@ -2,8 +2,53 @@
     background-color: #2C882B !important;
 }
 
+#footerTarget {
+    background-color: #2C882B !important;
+    position: relative;
+}
+
+@media (max-width: 600px) {
+    #footerTarget {
+        /* BRENDEN IS GOING TO NEED THIS LATER. */
+    }
+}
+
 #applicationShared, #announcementShared {
     background-color: #6CB443;
     padding: 20px;
   }
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 100px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.fa-linkedin {
+    color:white;
+    background-color: #0077B5;
+}
+
+.fa-slack {
+    color: white;
+    background-color: #4A154B;
+}
+
+.fa-git {
+    color:white;
+    background-color: #bd2c00;
+}
+
+.fa-external-link-square {
+    color:white;
+    background-color: #6CB443;
+}
+
   

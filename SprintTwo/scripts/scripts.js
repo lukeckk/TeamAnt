@@ -3,6 +3,7 @@ prefColor = localStorage.getItem("color");
 function onloadGroup() {
     startLighting()
     populateNavBar()
+    populateFooter()
 }
 function startLighting(){
     console.log("startLighting");
@@ -58,6 +59,27 @@ function populateNavBar() {
         "      </div>\n" +
         "    </div>\n" +
         "  </div>"
+}
+
+function populateFooter() {
+    document.getElementById("footerTarget").className = "container-fluid text-center fixed-bottom mt-3";
+    document.getElementById("footerTarget").innerHTML = "<div class=\"row\" style=\"border: 10px black\">\n" +
+        "        <div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\n" +
+        "            <h3>Resources</h3>\n" +
+        "            <a href=\"https://www.facebook.com/GreenRiverCollege/\" class=\"fa fa-facebook\"></a>\n" +
+        "            <a href=\"https://www.linkedin.com/school/green-river-community-college/\" class=\"fa fa-linkedin\"></a>\n" +
+        "            <a href=\"https://slack.com/community\" class=\"fa fa-slack\"></a>\n" +
+        "            <a href=\"https://github.com/greenrivercollege\" class=\"fa fa-git\"></a>\n" +
+        "            <a href=\"https://www.devs.greenrivertech.net/\" class=\"fa fa-external-link-square\"></a>\n" +
+        "        </div>\n" +
+        "        <div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\n" +
+        "            <h3>School of Technology</h3>\n" +
+        "            <p>Affordable tuition, instructors who care, access to tech industry mentors, and project-based learning\n" +
+        "                make our applied bachelor’s program a popular destination for computing majors throughout the\n" +
+        "                Seattle-Tacoma region.\n" +
+        "            </p>\n" +
+        "        </div>\n" +
+        "    </div>"
 }
 
 
