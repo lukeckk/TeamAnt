@@ -1,10 +1,13 @@
 #navbarTarget {
     background-color: #2C882B !important;
+    font-weight: bold;
 }
 
 #footerTarget {
     background-color: #2C882B !important;
+    font-weight: bold;
     position: relative;
+
 }
 
 @media (max-width: 600px) {

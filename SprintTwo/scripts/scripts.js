@@ -1,9 +1,10 @@
 prefColor = localStorage.getItem("color");
 
-function onloadGroup() {
-    startLighting()
-    populateNavBar()
-    populateFooter()
+function onloadGroup(active) {
+    startLighting();
+    populateNavBar();
+    populateFooter();
+    decorateActive(active);
 }
 function startLighting(){
     console.log("startLighting");
@@ -31,6 +32,14 @@ function lightingRequest(color){
     console.log("lightingRequest");
     let page = document.getElementById("htmlTag");
     page.setAttribute("data-bs-theme", color);
+    switch (color) {
+        case "light":
+            document.getElementById("footerTarget").style.color = "#000";
+            break;
+        case "dark":
+            document.getElementById("footerTarget").style.color = "#FFFFFF";
+            break;
+    }
 }
 
 function populateNavBar() {
@@ -42,13 +51,13 @@ function populateNavBar() {
         "    <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n" +
         "      <ul class=\"navbar-nav me-auto mb-2 mb-lg-0\">\n" +
         "        <li class=\"nav-item\">\n" +
-        "          <a class=\"nav-link\" href=\"dashboard.html\">Dashboard</a>\n" +
+        "          <a class=\"nav-link\" id=\"navDashboard\" href=\"dashboard.html\">Dashboard</a>\n" +
         "        </li>\n" +
         "        <li class=\"nav-item\">\n" +
-        "          <a class=\"nav-link\" href=\"signup.html\">Sign Up</a>\n" +
+        "          <a class=\"nav-link\" id=\"navSignup\" href=\"signup.html\">Sign Up</a>\n" +
         "        </li>\n" +
         "        <li class=\"nav-item\">\n" +
-        "          <a class=\"nav-link\" href=\"contact.html\">Contact</a>\n" +
+        "          <a class=\"nav-link\" id=\"navContact\" href=\"contact.html\">Contact</a>\n" +
         "        </li>\n" +
         "        <li class=\"nav-item\">\n" +
         "          <a class=\"nav-link\" href=\"../../index.html\"><i>Powered by Team ANT</i></a>\n" +
@@ -80,6 +89,15 @@ function populateFooter() {
         "            </p>\n" +
         "        </div>\n" +
         "    </div>"
+}
+
+function decorateActive(active) {
+    if(active == null) {
+        console.log('found null active');
+        return;
+    }
+    document.getElementById(active).style.textDecoration = "underline";
+    console.log("attempted to decorate " + active);
 }
 
 
