@@ -97,8 +97,7 @@
 }
 
 #dashrightcolumn h3, #dashleftcolumn h3 {
-    background-color: white;
-    color: #333333;
+
 
 
 }
@@ -169,10 +168,20 @@
 
 }
 .dashButtonLinks {
-    height:100%;
-    padding:7px;
-    background-color: #2C882B;
-    background: linear-gradient(180deg, rgba(20,167,62,1) 0%, rgba(44,136,43,1) 100%);
+
+    border: 1px solid #545454;
+    padding: 10px 25px;
+    font-size: 1rem;
+
+
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 5px;
+    font-family: proxima-nova,sans-serif,Arial,Helvetica,Verdana!important;
+    font-weight: 300;
+
+
 
 }
 
@@ -182,7 +191,7 @@
     letter-spacing:1.4px;
     font-weight: 500;
     font-decoration: none;
-    color: white;
+    /*color: white;*/
     border: black solid 1px;
     box-shadow: 0 0.7em 1.5em -0.5em #14a73e98;
     letter-spacing: 0.05em;
