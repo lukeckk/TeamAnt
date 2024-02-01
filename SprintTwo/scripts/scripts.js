@@ -60,6 +60,9 @@ function populateNavBar() {
         "          <a class=\"nav-link\" id=\"navContact\" href=\"contact.html\">Contact</a>\n" +
         "        </li>\n" +
         "        <li class=\"nav-item\">\n" +
+        "          <a class=\"nav-link\" id=\"navAdmin\" href=\"adminDashboard.html\">Admin</a>\n" +
+        "        </li>\n" +
+        "        <li class=\"nav-item\">\n" +
         "          <a class=\"nav-link\" href=\"../../index.html\"><i>Powered by Team ANT</i></a>\n" +
         "        </li>\n" +
         "      </ul>\n" +
