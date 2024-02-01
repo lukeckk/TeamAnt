@@ -10,6 +10,8 @@
     <script src="../scripts/scripts.js"></script>
     <link href="../styles/styles.css" rel="stylesheet" type="text/css">
     <script src="https://kit.fontawesome.com/dacf05fad1.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.cdnfonts.com/css/bignoodletitling" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 
@@ -20,8 +22,31 @@
 
 
 
-<div class="container-fluid text-center">
-    <h1>CONTACT</h1>
+<div class="container-fluid contactContainer">
+    <h3 class="text-center pt-3">CONTACT US</h3>
+    <div class="row justify-content-evenly">
+        <div class="col-8">
+            <form name="contactForm" method="post" action="../PHP/contact.php">
+                <div id="contactShared" class="border rounded-4 border-3 border-dark ">
+                    <!--Contact Name-->
+                    <label for="contactName" class="form-label text-start">Full Name</label>
+                    <input type="text" class="form-control" name="email" id="contactName" aria-describedby="emailHelp" required>
+                    <!--Contact Email-->
+                    <label for="contactEmail" class="form-label">Email address</label>
+                    <input type="email" class="form-control" name="email" id="contactEmail" aria-describedby="emailHelp" required>
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    <!--Contact Message-->
+                    <section class="mb-4">
+                        <label for="contactMessage" class="col-3">Message</label>
+                        <textArea  id="contactMessage" rows="8" name="message" class="rounded-3 form-control" required></textArea>
+                    </section>
+                </div>
+                <section class="text-center">
+                    <button type="submit" class="mt-3 dashButtonLinks">Submit</button>
+                </section>
+            </form>
+        </div>
+    </div>
 </div>
 
 

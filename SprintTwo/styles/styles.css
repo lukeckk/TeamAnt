@@ -16,8 +16,8 @@
     }
 }
 
-#applicationShared, #announcementShared {
-    background-color: #6CB443;
+#applicationShared, #announcementShared, #contactShared {
+    background-color: #2C882B;
     padding: 20px;
   }
 
@@ -90,6 +90,13 @@
 }
 
 #Dashcontainer h3 {
+    font-family: 'BigNoodleTitling', sans-serif,Impact,Arial,Verdana;
+    font-weight: 500;
+    font-size: 5rem!important;
+    padding:0;
+}
+
+.contactContainer h3 {
     font-family: 'BigNoodleTitling', sans-serif,Impact,Arial,Verdana;
     font-weight: 500;
     font-size: 5rem!important;
