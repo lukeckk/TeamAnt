@@ -54,4 +54,148 @@
     background-color: #6CB443;
 }
 
-  
+
+/*Dashboard Styles*/
+
+#dashleftcolumn, #dashrightcolumn {
+    margin:0 auto;
+    overflow-x: auto;
+}
+
+#dashtable td{
+    font-family: proxima-nova,sans-serif,Arial,Helvetica,Verdana;;
+    font-weight: 300;
+    font-size: 2rem;
+    height:100%;
+}
+
+#dashtable thead th, #remindertable thead th {
+    font-family: proxima-nova,sans-serif,Arial,Helvetica,Verdana;
+    background-color: #333333;
+    font-weight: 600;
+    font-size: 130%;
+    color: white;
+    height:100%;
+    border-top:2px solid black;
+}
+
+.date {
+    font-family: proxima-nova,sans-serif,Arial,Helvetica,Verdana;
+    font-weight: 600;
+    font-size: 2.3rem;
+}
+
+#dashtable button {
+    width:100%;
+}
+
+#Dashcontainer h3 {
+    font-family: 'BigNoodleTitling', sans-serif,Impact,Arial,Verdana;
+    font-weight: 500;
+    font-size: 5rem!important;
+    padding:0;
+}
+
+#dashrightcolumn h3, #dashleftcolumn h3 {
+    background-color: white;
+    color: #333333;
+
+
+}
+
+#dashtable thead th, #remindertable thead th {
+    height:100%;
+    font-family: proxima-nova,sans-serif,Arial,Helvetica,Verdana;;
+    font-size: 2rem;
+    border-top:2px solid black;
+}
+
+#dashleftcolumn, #dashrightcolumn {
+    height:100%;
+}
+
+#dashtable, #remindertable {
+    border: 5px solid black;
+    height:100%;
+}
+
+#dashtable tbody tr, #remindertable tbody tr {
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+}
+
+#LeftLoadMore, #RightLoadMore {
+    font-family: 'BigNoodleTitling', sans-serif,Impact,Arial,Verdana;
+    letter-spacing:1.6px;
+    font-weight: 600;
+    font-size: 32px;
+    color: #6CB443;
+    text-align: center;
+    margin:0px;
+
+}
+
+#remindertable .loadmore, #dashtable .loadmore {
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
+}
+
+.linkbutton {
+    margin-top: 1rem;
+}
+
+
+#remindertable thead tr {
+    text-align: center;
+    font-size: 130%;
+
+}
+
+.ApplicationButtonUP{
+    width:100%;
+    height:100%;
+    padding:4px;
+    background-color: #6CB443;
+    background: linear-gradient(180deg, rgba(90,170,62,1), rgba(108,180,68,1) 100%);
+
+}
+
+.ApplicationButtonDE {
+    width:100%;
+    height:100%;
+    padding:4px;
+    background-color: #D14900;
+    background: linear-gradient(180deg, rgb(190, 70, 0) 10.6%, rgb(209, 73, 0) 100%);
+
+}
+.dashButtonLinks {
+    height:100%;
+    padding:7px;
+    background-color: #2C882B;
+    background: linear-gradient(180deg, rgba(20,167,62,1) 0%, rgba(44,136,43,1) 100%);
+
+}
+
+.dashButtonLinks, .ApplicationButtonUP, .ApplicationButtonDE {
+    align-items: center;
+    font-family: IMPACT;
+    letter-spacing:1.4px;
+    font-weight: 500;
+    font-decoration: none;
+    color: white;
+    border: black solid 1px;
+    box-shadow: 0 0.7em 1.5em -0.5em #14a73e98;
+    letter-spacing: 0.05em;
+    border-radius: 0;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    box-shadow: 0 0.3em 1em -0.5em #14a73e98;
+}
+
+.dashButtonLinks:hover, .ApplicationButtonUP, .ApplicationButtonDE {
+    box-shadow: 0 0.5em 1.5em -0.5em #14a73e98;
+}
+
+/*End of Dashboard Styles*/
