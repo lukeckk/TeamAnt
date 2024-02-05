@@ -1,9 +1,11 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark" id="htmlTag">
     <head>
         <title>Display</title>
     </head>
-    <body>
-        <h1>Display</h1>
+    <body onload="onloadGroup('navAdmin')">
+    <nav id="navbarTarget" class="navbar navbar-expand-lg bg-body-tertiary"></nav>
+
         <?php
         if(isset($_POST["title"]) && isset($_POST["employer"]))
         {
@@ -42,5 +44,6 @@
             echo '<h1>Please full out the form!</h1>';
         }
         ?>
+    <footer id="footerTarget" class="container-fluid text-center"></footer>
     </body>
 </html>
