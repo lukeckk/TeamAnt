@@ -96,7 +96,7 @@
     padding:0;
 }
 
-.contactContainer h3 { 
+.contactContainer h3, .applicationContainer h3 { 
     font-family: 'BigNoodleTitling', sans-serif,Impact,Arial,Verdana;
     font-weight: 500;
     font-size: 5rem!important;
