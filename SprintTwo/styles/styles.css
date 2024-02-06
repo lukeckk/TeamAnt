@@ -10,9 +10,9 @@
 
 }
 
-@media (max-width: 600px) {
+@media (min-width: 1175px) {
     #footerTarget {
-        /* BRENDEN IS GOING TO NEED THIS LATER. */
+        position:fixed;
     }
 }
 

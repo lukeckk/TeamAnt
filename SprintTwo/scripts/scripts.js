@@ -74,7 +74,7 @@ function populateNavBar() {
 }
 
 function populateFooter() {
-    document.getElementById("footerTarget").className = "container-fluid text-center fixed-bottom mt-3";
+    document.getElementById("footerTarget").className = "container-fluid text-center fixed-bottom mt-5";
     document.getElementById("footerTarget").innerHTML = "<div class=\"row\" style=\"border: 10px black\">\n" +
         "        <div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\n" +
         "            <h3>Resources</h3>\n" +
