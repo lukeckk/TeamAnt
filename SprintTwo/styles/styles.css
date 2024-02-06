@@ -10,17 +10,17 @@
 
 }
 
-@media (max-width: 600px) {
+@media (min-width: 1175px) {
     #footerTarget {
-        /* BRENDEN IS GOING TO NEED THIS LATER. */
+        flex-shrink: 0;
+
     }
 }
 
-#applicationShared, #announcementShared, #contactShared, #receptShared {
+#applicationShared, #announcementShared, #contactShared {
     background-color: #2C882B;
     padding: 20px;
-}
-
+  }
 
 .fa {
     padding: 20px;
@@ -97,14 +97,14 @@
     padding:0;
 }
 
-.contactContainer h3 {
+.contactContainer h3, .applicationContainer h3, .signupheading{
     font-family: 'BigNoodleTitling', sans-serif,Impact,Arial,Verdana;
     font-weight: 500;
     font-size: 5rem!important;
     padding:0;
 }
 
-.announcementContainer h3 , .signupheading h3{
+.announcementContainer h3 { 
     font-family: 'BigNoodleTitling', sans-serif,Impact,Arial,Verdana;
     font-weight: 500;
     font-size: 4rem!important;
