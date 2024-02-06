@@ -12,7 +12,8 @@
 
 @media (min-width: 1175px) {
     #footerTarget {
-        position:fixed;
+        flex-shrink: 0;
+
     }
 }
 
