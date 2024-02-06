@@ -17,15 +17,97 @@
 <body onload="onloadGroup('navSignup')">
 <nav id="navbarTarget" class="navbar navbar-expand-lg bg-body-tertiary"></nav>
 <!--NAVBAR ENDS HERE, NO ELEMENTS ABOVE THIS LINE-->
-
-
-
-<div class="container-fluid text-center">
-    <h1>SIGN UP</h1>
+<div class="requiredwarning col-8 container-fluid ">
+<p class="required"></p><p class="requiredwarning2"> Required Information</p>
+</div>
+<div class="signuphead col-8 container-fluid pt-1 pb-1"> <p id="signupCoverText"  >Sign up Form</p>
 </div>
 
+<!-- <div class="container d-flex justify-content-center"> -->
+<div class="row justify-content-evenly">
+    <div id = "signupShared" class="col-8">
+        <form name="signup" id="form" method="post" action="https://schrock.greenriverdev.com/vardump.php" >
+
+            <section class=" mb-4">
+                <label class="required" id="namesignup" for="name">Name</label><br>
+                <input class="form-control input-default " type="text" id="name" name="name" placeholder="Your name..">
+                <div class="error"></div>
+
+            </section>
+
+            <section id="orderEmail" class="input-control mb-4">
+                <label for="email" class="userinfo required">Email</label><br>
+                <input type="email" name="email" id="email" class="form-control" placeholder="example@greenriver.edu" >
+                <div class="error"></div>
+            </section>
+
+            <section class="mb-4">
+                <label class="required" id="cnumbersignup" for="Cnumber">Cohort Number</label><br>
+                <input class="form-control input-default" type="text" name="cohortnumber" id="Cnumber" name="cohortnumber" placeholder="0-100">
+                <div class="error"></div>
+            </section>
+
+            <label class="required">Current Status</label>
+            <section class="mb-4">
+                <section>
+                    <input class="form-check-input" name="Seekingintenrship" type="checkbox" value="" id="flexCheckDefault1">
+                    <label class="form-check-label" for="flexCheckDefault1">
+                        Seeking Internship
+                    </label>
+                </section>
 
 
+                <section>
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2">
+                    <label class="form-check-label" for="flexCheckDefault2">
+                        Seeking Job
+                    </label>
+                </section>
+
+                <section>
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault3">
+                    <label class="form-check-label" for="flexCheckDefault3">
+                        Not Actively Searching
+                    </label>
+                </section>
+            </section>
+
+            <section class="mb-4">
+                <label for="roletext" class="form-label">Type of roles</label><br>
+                <textarea class="rounded-3 form-control" id="roletext" rows="3"></textarea>
+            </section>
+
+            <section class="mb-4">
+                <input  id="submitbutton" type="submit" value="Submit">
+            </section>
+
+
+        </form>
+
+
+    </div>
+</div>
+<!-- </div> -->
+<div class="container-fluid text-center fixed-bottom mt-3">
+<div class="row " style="border: 10px black">
+
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <h3>Resources</h3>
+            <a href="https://www.facebook.com/GreenRiverCollege" class="fa fa-facebook"></a>
+            <a href="https://www.linkedin.com/school/green-river-community-college/" class="fa fa-linkedin"></a>
+            <a href="https://slack.com/community" class="fa fa-slack"></a>
+           <a href="https://github.com/greenrivercollege" class="fa fa-git"></a>
+           <a href="https://www.devs.greenrivertech.net" class="fa fa-external-link-square"></a>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+          <h3>School of Technology</h3>
+            <p>Affordable tuition, instructors who care, access to tech industry mentors, and project-based learning
+                   make our applied bachelor’s program a popular destination for computing majors throughout the
+                   Seattle-Tacoma region.\n"
+                </p>
+        </div>
+    </div>
+</div>
 
 <!--FOOTER STARTS HERE, NO ELEMENTS BELOW THIS LINE-->
 <footer id="footerTarget" class="container-fluid text-center"></footer>
