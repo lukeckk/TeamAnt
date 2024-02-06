@@ -10,9 +10,9 @@
 
 }
 
-@media (max-width: 600px) {
+@media (min-width: 1175px) {
     #footerTarget {
-        /* BRENDEN IS GOING TO NEED THIS LATER. */
+        position:fixed;
     }
 }
 
@@ -96,10 +96,17 @@
     padding:0;
 }
 
-.contactContainer h3 {
+.contactContainer h3, .applicationContainer h3 { 
     font-family: 'BigNoodleTitling', sans-serif,Impact,Arial,Verdana;
     font-weight: 500;
     font-size: 5rem!important;
+    padding:0;
+}
+
+.announcementContainer h3 { 
+    font-family: 'BigNoodleTitling', sans-serif,Impact,Arial,Verdana;
+    font-weight: 500;
+    font-size: 4rem!important;
     padding:0;
 }
 
