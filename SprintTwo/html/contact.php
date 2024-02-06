@@ -25,13 +25,13 @@
                 <?php
             if(isset($_POST["name"]) && isset($_POST["email"]) && isset($_POST["message"]))
             {
-                echo '<h1 class="font-weight-bold>Name</h1>';
+                echo '<h1 class="font-weight-bold">Name</h1>';
                 echo "<h3 class='bg-white'>".$_POST["name"]."</h3>";
 
-                echo '<h1 class="font-weight-bold>Email</h1>';
+                echo '<h1 class="font-weight-bold">Email</h1>';
                 echo "<h3 class='bg-white'>".$_POST["email"]."</h3>";
 
-                echo '<h1 class="font-weight-bold>Message</h1>';
+                echo '<h1 class=font-weight-bold">Message</h1>';
                 echo "<h3 class='bg-white'>".$_POST["message"]."</h3>";
 
                 $name = $_POST["name"];
