@@ -19,27 +19,34 @@
     <nav id="navbarTarget" class="navbar navbar-expand-lg bg-body-tertiary"></nav>
     <!--NAVBAR ENDS HERE, NO ELEMENTS ABOVE THIS LINE-->
 
-    <h1>Display</h1>
-    <?php
-    if(isset($_POST["name"]) && isset($_POST["email"]) && isset($_POST["message"]))
-    {
-        echo '<h1>Name</h1>';
-        echo "<h3>".$_POST["name"]."</h3>";
-        echo '<h1>Email</h1>';
-        echo "<h3>".$_POST["email"]."</h3>";
-        echo '<h1>Message</h1>';
-        echo "<h3>".$_POST["message"]."</h3>";
-        $name = $_POST["name"];
-        $email = $_POST["email"];
-        $message = $_POST["message"];
+    <div class="container-fluid col-sm-8 col-xs-8 receptContainer mt-3">
+        <div id="receptShared" class="rounded-4 ">
 
-        mail("adh1056@comcast.net", "PHP Contact Formt", "Name: ".$name."\n Email: ".$email."\n Message: ".$message);
-    }
-    else
-    {
-        echo '<h1>Please full out the form!</h1>';
-    }
-    ?>
+                <?php
+            if(isset($_POST["name"]) && isset($_POST["email"]) && isset($_POST["message"]))
+            {
+                echo '<h1 class="font-weight-bold>Name</h1>';
+                echo "<h3 class='bg-white'>".$_POST["name"]."</h3>";
+
+                echo '<h1 class="font-weight-bold>Email</h1>';
+                echo "<h3 class='bg-white'>".$_POST["email"]."</h3>";
+
+                echo '<h1 class="font-weight-bold>Message</h1>';
+                echo "<h3 class='bg-white'>".$_POST["message"]."</h3>";
+
+                $name = $_POST["name"];
+                $email = $_POST["email"];
+                $message = $_POST["message"];
+
+                mail("adh1056@comcast.net", "PHP Contact Formt", "Name: ".$name."\n Email: ".$email."\n Message: ".$message);
+            }
+            else
+            {
+                echo '<h1>Please full out the form!</h1>';
+            }
+            ?>
+        </div>
+    </div>
     <!--FOOTER STARTS HERE, NO ELEMENTS BELOW THIS LINE-->
     <footer id="footerTarget" class="container-fluid text-center"></footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
