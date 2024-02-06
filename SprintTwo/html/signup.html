@@ -10,6 +10,7 @@
     <script src="../scripts/scripts.js"></script>
     <link href="../styles/styles.css" rel="stylesheet" type="text/css">
     <script src="https://kit.fontawesome.com/dacf05fad1.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.cdnfonts.com/css/bignoodletitling" rel="stylesheet">
 </head>
 
 
@@ -17,15 +18,17 @@
 <body onload="onloadGroup('navSignup')">
 <nav id="navbarTarget" class="navbar navbar-expand-lg bg-body-tertiary"></nav>
 <!--NAVBAR ENDS HERE, NO ELEMENTS ABOVE THIS LINE-->
-<div class="requiredwarning col-8 container-fluid ">
+
+<h3 class="signupheading text-center pt-3">SIGN UP</h3>
+<div class="container-fluid col-8 overall border rounded-4 border-3 border-dark ">
+    <div class="row">
+        <div id = "signupShared" class="container-fluid">
+<div class="requiredwarning ">
 <p class="required"></p><p class="requiredwarning2"> Required Information</p>
 </div>
-<div class="signuphead col-8 container-fluid pt-1 pb-1"> <p id="signupCoverText"  >Sign up Form</p>
-</div>
 
-<!-- <div class="container d-flex justify-content-center"> -->
-<div class="row justify-content-evenly">
-    <div id = "signupShared" class="col-8">
+
+
         <form name="signup" id="form" method="post" action="https://schrock.greenriverdev.com/vardump.php" >
 
             <section class=" mb-4">
@@ -77,16 +80,22 @@
                 <textarea class="rounded-3 form-control" id="roletext" rows="3"></textarea>
             </section>
 
-            <section class="mb-4">
-                <input  id="submitbutton" type="submit" value="Submit">
-            </section>
+
 
 
         </form>
 
 
     </div>
+
 </div>
+
+</div>
+<section class="text-center">
+    <button type="submit" class="mt-3 dashButtonLinks">Submit</button>
+</section>
+
+
 <!-- </div> -->
 <div class="container-fluid text-center fixed-bottom mt-3">
 <div class="row " style="border: 10px black">

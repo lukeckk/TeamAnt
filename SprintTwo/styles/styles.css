@@ -96,7 +96,7 @@
     padding:0;
 }
 
-.contactContainer h3, .applicationContainer h3 { 
+.contactContainer h3, .applicationContainer h3, .signupheading{
     font-family: 'BigNoodleTitling', sans-serif,Impact,Arial,Verdana;
     font-weight: 500;
     font-size: 5rem!important;
@@ -257,16 +257,16 @@
 
 #signupShared label {
     font-family: Arial, Helvetica, sans-serif !important;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: bold;
 
 }
 
 #submitbutton {
 
-    color: #e8f0de !important;
+    color: black !important;
     border: solid 1px #538312 !important;
-    background: #64991e;
+    background: white;
     display: inline-block;
     margin: 0 2px ;
     outline: none;
@@ -285,4 +285,10 @@
 .form-check-label {
     font-weight: normal !important;
 }
+
+.overall {
+
+    background-color: #2C882B;
+}
+
 /*Form Styles End*/
