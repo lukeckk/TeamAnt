@@ -22,27 +22,31 @@ text/x-generic recept.php ( HTML document, ASCII text )
         <?php
       if(isset($_POST["title"]) && isset($_POST["employer"]) && $_POST['title'] != "" && $_POST['jobType'] != "" && $_POST['email'] != "")
         {
-
-            echo '<h1 class="font-weight-bold">Title</h1>';
-            echo '<h3 class="bg-white">'.$_POST["title"]."</h3>";
-
-            echo '<h1 class="font-weight-bold">Job Type</h1>';
-            echo '<h3 class="bg-white">'.$_POST["jobType"]."</h3>";
-
-            echo '<h1 class="font-weight-bold">Location</h1>';
-            echo '<h3 class="bg-white">'.$_POST["location"]."</h3>";
-
-            echo '<h1 class="font-weight-bold">Employer</h1>';
+            
+     
+            echo '<h1 class="font-weight-bold">Employer Name</h1>';
             echo '<h3 class="bg-white">'.$_POST["employer"]."</h3>";
 
-            echo '<h1 class="font-weight-bold">More Information</h1>';
-            echo '<h3 class="bg-white">'.$_POST["information"]."</h3>";
+            echo '<h1 class="font-weight-bold">Name of Role</h1>';
+            echo '<h3 class="bg-white">'.$_POST["role"]."</h3>";
 
-            echo '<h1 class="font-weight-bold">Url</h1>';
-            echo '<h3 class="bg-white">'.$_POST["url"]."</h3>";
+            echo '<h1 class="font-weight-bold">Job Description URL</h1>';
+            echo '<h3 class="bg-white">'.$_POST["job"]."</h3>";
 
-            echo '<h1 class="font-weight-bold">Email Address of Receiver</h1>';
-            echo '<h3 class="bg-white">'.$_POST["email"]."</h3>";
+            echo '<h1 class="font-weight-bold">Job Description</h1>';
+            echo '<h3 class="bg-white">'.$_POST["description"]."</h3>";
+
+            echo '<h1 class="font-weight-bold">Date od Application</h1>';
+            echo '<h3 class="bg-white">'.$_POST["date"]."</h3>";
+
+            echo '<h1 class="font-weight-bold">Status</h1>';
+            echo '<h3 class="bg-white">'.$_POST["status"]."</h3>";
+
+            echo '<h1 class="font-weight-bold">Updates</h1>';
+            echo '<h3 class="bg-white">'.$_POST["updates"]."</h3>";
+            
+            echo '<h1 class="font-weight-bold">Follow up Date</h1>';
+            echo '<h3 class="bg-white">'.$_POST["followUp"]."</h3>";
 
             
             $to = $_POST["email"];
