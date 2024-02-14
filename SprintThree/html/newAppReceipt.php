@@ -53,7 +53,42 @@
         {
             echo '<h1>Please complete the form!</h1>';
         }
+        
+        
+        require 'db.php';
+
+        $employer = $_POST['employer'];
+        $role = $_POST['role'];
+        $job = $_POST['job'];
+        $description = $_POST['description'];
+        $date = $_POST['date'];
+        $status = $_POST['status'];
+        $updates = $_POST['updates'];
+        $followUp = $_POST['followUp'];
+        
+        
+        
+        $sql = "insert into Application (employer, title, jobDescriptionURL, jobDescription, date, status, updates, followUpDate) values ('$employer', '$role', '$job', '$description', '$date','$status','$updates' ,'$followUp')";
+        
+        
+        // echo ", formatted sql string: " . $sql;
+        
+        // var_dump($_POST);
+        
+        
+        $result = @mysqli_query($cnxn, $sql);
+        
+        // if ($result) {
+        //     echo "Success!";
+        // } else {
+        //     echo mysqli_error($cnxn);
+        //     echo "error";
+        // }
+                
+        
         ?>
+        
+        
         
         </div>
     </div>
