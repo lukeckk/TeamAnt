@@ -40,16 +40,12 @@
           <th scope="col">STATUS</th>
           <th></th>
           <th></th>
-
         </tr>
         </thead>
         
-        
-        <tbody>
+        <tbody id="tableBody">
 
-       
         <?php 
-
           require 'db.php';
           $sql = "select * from Application";
 

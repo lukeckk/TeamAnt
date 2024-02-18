@@ -292,12 +292,13 @@
     background-color: #2C882B;
 }
 
-.applicationContainer tbody{
+#tableBody {
  
     height: 400px;
     overflow-y: scroll;
     display: block;
 
 }
+
 
 /*Form Styles End*/
