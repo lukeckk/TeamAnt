@@ -43,7 +43,7 @@
         </tr>
         </thead>
         
-        <tbody id="tableBody">
+        <tbody>
 
         <?php 
           require 'db.php';
