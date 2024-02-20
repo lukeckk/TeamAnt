@@ -45,6 +45,13 @@
         
         <tbody>
 
+        <script>
+            function setId(id)
+            {
+                localStorage.setItem(index, id);
+            }
+        </script>
+
         <?php 
           require 'db.php';
           $sql = "select * from Application";
@@ -56,16 +63,18 @@
               $date = $row['date'];
               $title = $row['title'];
               $status = $row['status'];
+              $index = $row['idNum'];
           
               echo'
-              <tr>
-                <th class="date" scope="row">'.$date.'</th>
-                <td>'.$title.'</td>
-                <td>'.$status.'</td>
-                <th scope="col"><button class="ApplicationButtonUP">Update</button></th>
-                <th scope="col"><button class="ApplicationButtonDE">Delete</button></th>
-              </tr>';
-
+                <form action="editApplication.php" method="POST">
+                  <tr>
+                    <th class="date" scope="row">'.$date.'</th>
+                    <td>'.$title.'</td>
+                    <td>'.$status.'</td>
+                    <th scope="col"><button onclick="setId('.$index,')" id="'.$index,'" name="updateBtn" class="ApplicationButtonUP">Update</button></th>
+                    <th scope="col"><button class="ApplicationButtonDE">Delete</button></th>
+                  </tr>
+                </form>';
           }
         ?>
         
