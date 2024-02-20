@@ -30,8 +30,8 @@
   <div class="row justify-content-evenly h-100 ">
     <div id="dashleftcolumn" class="col-lg-7 col-md-7 col-sm-12 col-xs-12 p-0">
       <h3 class="mb-0">Recent Application</h3>
-
       
+       <div class="container  applicationContainer">
       <table id="dashtable" class="table table-striped table-hover mb-0">
         <thead>
         <tr>
@@ -40,50 +40,47 @@
           <th scope="col">STATUS</th>
           <th></th>
           <th></th>
-
         </tr>
         </thead>
+        
         <tbody>
-        <tr>
-          <th class="date" scope="row">01-15</th>
-          <td>Amazon</td>
-          <td>Pending</td>
-          <th scope="col"><button class="ApplicationButtonUP">Update</button></th>
-          <th scope="col"><button class="ApplicationButtonDE">Delete</button></th>
-        </tr>
-        <tr>
-          <th class="date" scope="row">01-14</th>
-          <td>T-mobile</td>
-          <td>Pending</td>
-          <th scope="col"><button class="ApplicationButtonUP">Update</button></th>
-          <th scope="col"><button class="ApplicationButtonDE">Delete</button></th>
-        </tr>
-        <tr>
-          <th class="date" scope="row">01-13</th>
-          <td>Microsoft</td>
-          <td>Applied</td>
-          <th scope="col"><button class="ApplicationButtonUP">Update</button></th>
-          <th scope="col"><button class="ApplicationButtonDE">Delete</button></th>
-        </tr>
-        <tr>
-          <th class="date" scope="row">01-12</th>
-          <td>T-mobile</td>
-          <td>Applied</td>
-          <th scope="col"><button class="ApplicationButtonUP">Update</button></th>
-          <th scope="col"><button class="ApplicationButtonDE">Delete</button></th>
-        </tr>
-        <tr>
-          <th class="date" scope="row">01-11</th>
-          <td>Microsoft</td>
-          <td>Applied</td>
-          <th scope="col"><button class="ApplicationButtonUP">Update</button></th>
-          <th scope="col"><button class="ApplicationButtonDE">Delete</button></th>
-        </tr>
+
+        <?php 
+          require 'db.php';
+          $sql = "select * from Application";
+
+          $result = @mysqli_query($cnxn, $sql);
+
+          while ($row = mysqli_fetch_assoc($result))
+          {
+              $date = $row['date'];
+              $title = $row['title'];
+              $status = $row['status'];
+          
+              echo'
+              <tr>
+                <th class="date" scope="row">'.$date.'</th>
+                <td>'.$title.'</td>
+                <td>'.$status.'</td>
+                <th scope="col"><button class="ApplicationButtonUP">Update</button></th>
+                <th scope="col"><button class="ApplicationButtonDE">Delete</button></th>
+              </tr>';
+
+          }
+        ?>
+        
+      
+       
         <tr>
           <td class="loadmore text-center" colspan="5" ><p id="LeftLoadMore">Load More</p></td>
         </tr>
+        
         </tbody>
+        
       </table>
+
+        </div>
+    
 
 
       <div class=" linkbutton col-12 text-center">

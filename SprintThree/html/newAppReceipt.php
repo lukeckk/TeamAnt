@@ -19,73 +19,62 @@
         <div id="receptShared" class="rounded-4 ">
          
         <?php
-       if(isset($_POST["employer"]) && isset($_POST["role"]) )
-       {
-           
-    
-           echo '<h1 class="font-weight-bold">Employer Name</h1>';
-           echo '<h3 class="bg-white">'.$_POST["employer"]."</h3>";
 
-           echo '<h1 class="font-weight-bold">Name of Role</h1>';
-           echo '<h3 class="bg-white">'.$_POST["role"]."</h3>";
+            $employer = $_POST['employer'];
+            $role = $_POST['role'];
+            $job = $_POST['job'];
+            $description = $_POST['description'];
+            $date = $_POST['date'];
+            $status = $_POST['status'];
+            $updates = $_POST['updates'];
+            $followUp = $_POST['followUp'];
 
-           echo '<h1 class="font-weight-bold">Job Description URL</h1>';
-           echo '<h3 class="bg-white">'.$_POST["job"]."</h3>";
 
-           echo '<h1 class="font-weight-bold">Job Description</h1>';
-           echo '<h3 class="bg-white">'.$_POST["description"]."</h3>";
+            if(isset($_POST["employer"]) && isset($_POST["role"]) )
+            {
+            
+                echo '<h1 class="font-weight-bold">Employer Name</h1>';
+                echo '<h3 class="bg-white">'.$employer."</h3>";
 
-           echo '<h1 class="font-weight-bold">Date od Application</h1>';
-           echo '<h3 class="bg-white">'.$_POST["date"]."</h3>";
+                echo '<h1 class="font-weight-bold">Name of Role</h1>';
+                echo '<h3 class="bg-white">'.$role."</h3>";
 
-           echo '<h1 class="font-weight-bold">Status</h1>';
-           echo '<h3 class="bg-white">'.$_POST["status"]."</h3>";
+                echo '<h1 class="font-weight-bold">Job Description URL</h1>';
+                echo '<h3 class="bg-white">'.$job."</h3>";
 
-           echo '<h1 class="font-weight-bold">Updates</h1>';
-           echo '<h3 class="bg-white">'.$_POST["updates"]."</h3>";
-           
-           echo '<h1 class="font-weight-bold">Follow up Date</h1>';
-           echo '<h3 class="bg-white">'.$_POST["followUp"]."</h3>";
+                echo '<h1 class="font-weight-bold">Job Description</h1>';
+                echo '<h3 class="bg-white">'.$description."</h3>";
 
-           
-       }
-        else
-        {
-            echo '<h1>Please complete the form!</h1>';
-        }
-        
-        
-        require 'db.php';
+                echo '<h1 class="font-weight-bold">Date od Application</h1>';
+                echo '<h3 class="bg-white">'.$date."</h3>";
 
-        $employer = $_POST['employer'];
-        $role = $_POST['role'];
-        $job = $_POST['job'];
-        $description = $_POST['description'];
-        $date = $_POST['date'];
-        $status = $_POST['status'];
-        $updates = $_POST['updates'];
-        $followUp = $_POST['followUp'];
-        
-        
-        
-        $sql = "insert into Application (employer, title, jobDescriptionURL, jobDescription, date, status, updates, followUpDate) values ('$employer', '$role', '$job', '$description', '$date','$status','$updates' ,'$followUp')";
-        
-        
-        // echo ", formatted sql string: " . $sql;
-        
-        // var_dump($_POST);
-        
-        
-        $result = @mysqli_query($cnxn, $sql);
-        
-        // if ($result) {
-        //     echo "Success!";
-        // } else {
-        //     echo mysqli_error($cnxn);
-        //     echo "error";
-        // }
+                echo '<h1 class="font-weight-bold">Status</h1>';
+                echo '<h3 class="bg-white">'.$status."</h3>";
+
+                echo '<h1 class="font-weight-bold">Updates</h1>';
+                echo '<h3 class="bg-white">'.$updates."</h3>";
                 
-        
+                echo '<h1 class="font-weight-bold">Follow up Date</h1>';
+                echo '<h3 class="bg-white">'.$followUp."</h3>";
+
+                
+            }
+                
+            else
+                {
+                    echo '<h1>Please complete the form!</h1>';
+                }
+                
+                
+                require 'db.php';
+
+                $sql = "insert into Application (employer, title, jobDescriptionURL, jobDescription, date, status, updates, followUpDate) values ('$employer', '$role', '$job', '$description', '$date','$status','$updates' ,'$followUp')";
+                
+                $result = @mysqli_query($cnxn, $sql);
+
+
+                
+                
         ?>
         
         
