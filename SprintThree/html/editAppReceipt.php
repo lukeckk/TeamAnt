@@ -58,7 +58,6 @@
 
         require 'db.php';
 
-        $prevUrl = $_POST['prevUrl'];
         $employer = $_POST['employer'];
         $role = $_POST['role'];
         $job = $_POST['job'];
@@ -70,7 +69,7 @@
 
 
 
-        $sql = "insert into Application (employer, title, jobDescriptionURL, jobDescription, date, status, updates, followUpDate) values ('$employer', '$role', '$job', '$description', '$date','$status','$updates' ,'$followUp') WHERE jobDescriptionURL = '$prevUrl'";
+        $sql = "UPDATE Application SET employer = $employer, title = $role, jobDescriptionURL = $job, jobDescription = $description, date = $date, status = $status, updates = $updates, followUpDate = $followUp";
 
 
         // echo ", formatted sql string: " . $sql;
