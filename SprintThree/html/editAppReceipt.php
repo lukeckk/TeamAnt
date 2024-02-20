@@ -66,10 +66,12 @@
         $status = $_POST['status'];
         $updates = $_POST['updates'];
         $followUp = $_POST['followUp'];
+        $id = $_POST['idNum'];
 
 
 
-        $sql = "UPDATE Application SET employer = $employer, title = $role, jobDescriptionURL = $job, jobDescription = $description, date = $date, status = $status, updates = $updates, followUpDate = $followUp";
+        $sql = "UPDATE Application SET employer = '".$employer."', title = '".$role."', jobDescriptionURL = '".$job."', jobDescription = '".$description."',
+        date = '".$date."', status = '".$status."', updates = '".$updates."', followUpDate = '".$followUp."' where idNum = '".$id."'";
 
 
         // echo ", formatted sql string: " . $sql;
@@ -79,12 +81,12 @@
 
         $result = @mysqli_query($cnxn, $sql);
 
-        // if ($result) {
-        //     echo "Success!";
-        // } else {
-        //     echo mysqli_error($cnxn);
-        //     echo "error";
-        // }
+        if ($result) {
+            echo "Success!";
+        } else {
+            echo mysqli_error($cnxn);
+            echo "error";
+        }
 
 
         ?>

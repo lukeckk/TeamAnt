@@ -20,30 +20,34 @@
 <div  class="container-fluid col-sm-8 col-xs-8 applicationContainer">
     <h3 class="text-center">EDIT APPLICATION</h3>
     <?php
-        //echo $_POST['updateBtn'];
-        $index = $_POST['updateBtn'];
+    //echo $_POST['updateBtn'];
+    $index = $_POST['updateBtn'];
 
-        require 'db.php';
-        $sql = "select * from Application where idNum=$index";
+    require 'db.php';
+    $sql = "select * from Application where idNum=$index";
 
-        $result = @mysqli_query($cnxn, $sql);
+    $result = @mysqli_query($cnxn, $sql);
 
-        while ($row = mysqli_fetch_assoc($result))
-        {
+    while ($row = mysqli_fetch_assoc($result))
+    {
 
-            $date = $row['date'];
-            $title = $row['title'];
-            $status = $row['status'];
-            $employer = $row['employer'];
-            $followUpDate = $row['followUpDate'];
-            $jobDescription = $row['jobDescription'];
-            $jobDescriptionURL = $row['jobDescriptionURL'];
-            $updates = $row['updates'];
+        $id = $index;
+
+        $date = $row['date'];
+        $title = $row['title'];
+        $status = $row['status'];
+        $employer = $row['employer'];
+        $followUpDate = $row['followUpDate'];
+        $jobDescription = $row['jobDescription'];
+        $jobDescriptionURL = $row['jobDescriptionURL'];
+        $updates = $row['updates'];
 
 
 
-                echo '<form action="editAppReceipt.php" method="POST">
+        echo '<form action="editAppReceipt.php" method="POST">
                 <div id="applicationShared" class="rounded-4">
+        
+                    <input type="hidden" id="idNum" name="idNum" class="form-control" value="'.$index, '">
         
                     <label for="employer" class="form-label text-start mt-3">Employer Name</label>
                     <input type="text" id="employer" name="employer" class="form-control" value="'.$employer, '">
@@ -84,7 +88,7 @@
                     <button type="submit" class="mt-3 dashButtonLinks">Submit</button>
                 </section>
             </form>';
-        }
+    }
     ?>
 </div>
 
