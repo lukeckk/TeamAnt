@@ -78,7 +78,7 @@
 
 <div id="Dashcontainer" class="container-fluid pt-5">
   <div class="row justify-content-evenly h-100 ">
-    <div id="dashleftcolumn" class="col-lg-7 col-md-7 col-sm-12 col-xs-12 p-0">
+    <div id="dashleftcolumn" class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p-0">
         <h3 class="mb-0">Recent Application</h3>
       
          <table id="dashtable" class="table table-striped table-hover mb-0">
