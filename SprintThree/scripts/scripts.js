@@ -51,7 +51,7 @@ function populateNavBar() {
         "    <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n" +
         "      <ul class=\"navbar-nav me-auto mb-2 mb-lg-0\">\n" +
         "        <li class=\"nav-item\">\n" +
-        "          <a class=\"nav-link\" id=\"navDashboard\" href=\"dashboard.html\">Dashboard</a>\n" +
+        "          <a class=\"nav-link\" id=\"navDashboard\" href=\"dashboard.php\">Dashboard</a>\n" +
         "        </li>\n" +
         "        <li class=\"nav-item\">\n" +
         "          <a class=\"nav-link\" id=\"navSignup\" href=\"signup.html\">Sign Up</a>\n" +
@@ -60,7 +60,7 @@ function populateNavBar() {
         "          <a class=\"nav-link\" id=\"navContact\" href=\"contact.html\">Contact</a>\n" +
         "        </li>\n" +
         "        <li class=\"nav-item\">\n" +
-        "          <a class=\"nav-link\" id=\"navAdmin\" href=\"adminDashboard.html\">Admin</a>\n" +
+        "          <a class=\"nav-link\" id=\"navAdmin\" href=\"adminDashboard.php\">Admin</a>\n" +
         "        </li>\n" +
         "        <li class=\"nav-item\">\n" +
         "          <a class=\"nav-link\" href=\"../../index.html\"><i>Powered by Team ANT</i></a>\n" +
