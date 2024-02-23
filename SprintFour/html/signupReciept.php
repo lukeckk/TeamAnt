@@ -16,7 +16,7 @@
 
 
 <body onload="onloadGroup('navSignup')">
-<nav id="navbarTarget" class="navbar navbar-expand-lg bg-body-tertiary"></nav>
+<nav id="navbarTarget"></nav>
 <!--NAVBAR ENDS HERE, NO ELEMENTS ABOVE THIS LINE-->
 
 
