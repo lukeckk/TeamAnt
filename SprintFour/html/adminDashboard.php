@@ -15,129 +15,124 @@
 </head>
 
 <body onload="onloadGroup('navAdmin')">
-<nav id="navbarTarget" class="navbar navbar-expand-lg bg-body-tertiary"></nav>
+<!--<nav id="navbarTarget" class="navbar navbar-expand-lg bg-body-tertiary"></nav>-->
+<nav id="navbarTarget"></nav>
 <!--NAVBAR ENDS HERE, NO ELEMENTS ABOVE THIS LINE-->
+<div class="container-fluid">
+<div class="row">
+<div id="Dashcontainer" class="pt-5 fixed-table-body col-lg-6 col-md-6 col-sm-12 col-xs-12 p-5 mb-0 dashtable3 ">
+    <div class="row justify-content-evenly h-100 ">
+        <div id="dashleftcolumn" class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p-0">
+            <div id="dashleftcolumn" class="">
+                <h3 class="mb-0">Admin Dashboard</h3>
+                <table id="dashtable" class="table table-striped table-hover mb-0 dashtable2 ">
+                    <thead>
+                    <tr>
+                        <th scope="col">NAME</th>
+                        <th scope="col">EMAIL</th>
+                        <th></th>
+                        <th></th>
 
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                    require 'db.php';
+                    $sql = "select * from User";
 
-<div id="Dashcontainer" class="container-fluid pt-5">
-    <div class="row justify-content-evenly h-100">
-        <div id="dashleftcolumn" class="col-lg-7 col-md-7 col-sm-12 col-xs-12 p-0">
-            <h3 class="mb-0">Admin Dashboard</h3>
-            <table id="dashtable" class="table table-striped table-hover mb-0">
-                <thead>
-                <tr>
-                    <th scope="col">NAME</th>
-                    <th scope="col">EMAIL</th>
-                    <th></th>
-                    <th></th>
+                    $result = @mysqli_query($cnxn, $sql);
 
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>Brenden Haskins</td>
-                    <td>bigdawg@student.greenriver.edu</td>
-                    <th scope="col"><button class="ApplicationButtonUP">View</button></th>
-                    <th scope="col"><button class="ApplicationButtonDE">Delete</button></th>
-                </tr>
-                <tr>
-                    <td>John Doe</td>
-                    <td>doejohn@student.greenriver.edu</td>
-                    <th scope="col"><button class="ApplicationButtonUP">View</button></th>
-                    <th scope="col"><button class="ApplicationButtonDE">Delete</button></th>
-                </tr>
-                <tr>
-                    <td>Keyser Soze</td>
-                    <td>sozekeyser@student.greenriver.edu</td>
-                    <th scope="col"><button class="ApplicationButtonUP">View</button></th>
-                    <th scope="col"><button class="ApplicationButtonDE">Delete</button></th>
-                </tr>
-                <tr>
-                    <td>John Shepard</td>
-                    <td>shepardjohn@student.greenriver.edu</td>
-                    <th scope="col"><button class="ApplicationButtonUP">View</button></th>
-                    <th scope="col"><button class="ApplicationButtonDE">Delete</button></th>
-                </tr>
-                <tr>
-                    <td>Gary Pherson</td>
-                    <td>garyp@hotmail.com</td>
-                    <th scope="col"><button class="ApplicationButtonUP">View</button></th>
-                    <th scope="col"><button class="ApplicationButtonDE">Delete</button></th>
-                </tr>
+                    while ($row = mysqli_fetch_assoc($result))
+                    {
 
-                </tbody>
-            </table>
+                        $name = $row['name'];
+                        $email = $row['email'];
+
+                        echo'
+                 <tr>
+                   
+                   <td>'.$name.'</td>
+                   <td>'.$email.'</td>
+                    <th ><button class="ApplicationButtonUP">Update</button></th>
+                    <th ><button class="ApplicationButtonDE">Delete</button></th>
+                 </tr>';
+
+                    }
+                    ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
+    </div>
+
+    <div class="linkbutton col-12 text-center">
+        <a href="announcement.html"><button class="dashButtonLinks" role="button">New Announcement</button></a>
+
     </div>
 </div>
 
-<div class="linkbutton col-12 text-center">
-    <a href="announcement.html"><button class="dashButtonLinks" role="button">New Announcement</button></a>
+    <div id="Dashcontainer" class="pt-5 col-lg-6 col-md-6 col-sm-12 col-xs-12 p-5">
+        <div class="row justify-content-evenly h-100 ">
+            <div id="dashleftcolumn" class="p-0">
+                <h3 class="mb-0">Recent Application</h3>
 
-</div>
+                <table id="dashtable" class="table table-striped table-responsive table-hover mb-0 dashtable2 ">
+                    <thead>
+                    <tr>
+                        <th scope="col">DATE</th>
+                        <th scope="col">TITLE</th>
+                        <th scope="col">STATUS</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    </thead>
 
-<div id="Dashcontainer" class="container-fluid pt-5">
-  <div class="row justify-content-evenly h-100 ">
-    <div id="dashleftcolumn" class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p-0">
-        <h3 class="mb-0">Recent Application</h3>
-      
-         <table id="dashtable" class="table table-striped table-hover mb-0">
-           <thead>
-           <tr>
-             <th scope="col">DATE</th>
-             <th scope="col">TITLE</th>
-             <th scope="col">STATUS</th>
-             <th></th>
-             <th></th>
-           </tr>
-           </thead>
-           
-           <tbody>
-    
-           <?php 
-             require 'db.php';
-             $sql = "select * from Application";
-    
-             $result = @mysqli_query($cnxn, $sql);
-    
-             while ($row = mysqli_fetch_assoc($result))
-             {
-                 $date = $row['date'];
-                 $title = $row['title'];
-                 $status = $row['status'];
-             
-                 echo'
+                    <tbody>
+
+                    <?php
+                    require 'db.php';
+                    $sql = "select * from Application";
+
+                    $result = @mysqli_query($cnxn, $sql);
+
+                    while ($row = mysqli_fetch_assoc($result))
+                    {
+                        $date = $row['date'];
+                        $title = $row['title'];
+                        $status = $row['status'];
+
+                        echo'
                  <tr>
                    <th class="date" scope="row">'.$date.'</th>
                    <td>'.$title.'</td>
                    <td>'.$status.'</td>
-                   <th scope="col"><button class="ApplicationButtonUP">Update</button></th>
-                   <th scope="col"><button class="ApplicationButtonDE">Delete</button></th>
+                   <th><button class="ApplicationButtonUP">Update</button></th>
+                   <th><button class="ApplicationButtonDE">Delete</button></th>
                  </tr>';
-    
-             }
-           ?>
-           
-         
-          
-           <tr>
-             <td class="loadmore text-center" colspan="5" ><p id="LeftLoadMore">Load More</p></td>
-           </tr>
-           
-           </tbody>
-           
-         </table>
+
+                    }
+                    ?>
+
+
+
+                    <tr>
+                        <td class="loadmore text-center" colspan="5" ><p id="LeftLoadMore">Load More</p></td>
+                    </tr>
+
+                    </tbody>
+
+                </table>
+            </div>
         </div>
     </div>
+</div>
 </div>
 
 
 
 
-
-
-<!--FOOTER STARTS HERE, NO ELEMENTS BELOW THIS LINE-->
-<footer id="footerTarget" class="container-fluid text-center"></footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!--FOOTER STARTS HERE, NO ELEMENTS BELOW THIS LINE-->
+    <footer id="footerTarget" class="container-fluid text-center"></footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
