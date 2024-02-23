@@ -97,31 +97,65 @@
 
         <div id="dashrightcolumn" class="col-lg-4 col-md-4 col-sm-12 col-xs-12  text-left p-0" >
             <h3 class="mb-0">Reminders</h3>
+
+
             <table id="remindertable" class="table table-striped mb-0">
                 <thead>
                 <tr>
-                    <th>Total Reminders: ##</th>
+
+                    <th>Total Reminders:  </th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <th class="reminder" scope="row">You have received a reply!</th>
-                </tr>
-                <tr>
-                    <th class="reminder" scope="row">You have a pending request!</th>
-                </tr>
-                <tr>
-                    <th class="reminder" scope="row">You have received a reply!</th>
-                </tr>
-                <tr>
-                    <th class="reminder" scope="row">You have a pending request!</th>
-                </tr>
-                <tr>
-                    <th class="reminder" scope="row">You have received a reply!</th>
-                </tr>
-                <tr>
-                    <th class="reminder" scope="row">You have a pending request!</th>
-                </tr>
+                <script>
+                    function setId(id)
+                    {
+                        localStorage.setItem(index, id);
+                    }
+                </script>
+
+
+
+                <?php
+
+
+
+                require 'db.php';
+                $sql = "select * from Application";
+
+                $result = @mysqli_query($cnxn, $sql);
+
+                while ($row = mysqli_fetch_assoc($result))
+                {
+                    $date = $row['date'];
+                    $title = $row['title'];
+                    $followUpDate = $row['followUpDate'];
+                    $index = $row['idNum'];
+                    $currentDate = date('y-m-d');
+                    $addonDate = ' + 1 days';
+                    $employer = $row['employer'];
+                    $counter++;
+
+
+
+
+                    if($followUpDate <= (date('Y-m-d', strtotime($currentDate . ' + 5 days'))) && $followUpDate >= (date('Y-m-d', strtotime($currentDate . ' - 5 days')))) {
+                    echo '<form action="editApplication.php" method="POST">
+                  <tr>
+                    
+                        
+                
+                    
+                    <td>Your Application for ' . $title . ' role at '.$employer.' is due! </td>
+                    
+                  
+                  
+                  
+                  </tr>
+                </form>';
+                    }
+                }
+                ?>
 
                 </tbody>
             </table>
