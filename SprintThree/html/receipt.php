@@ -5,14 +5,15 @@
         <!--CDN-->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-        <script src="../scripts/scripts.js"></script>
-        <link href="../styles/styles.css" rel="stylesheet" type="text/css">
+        <script src="../scripts/scripts.js.bak"></script>
+        <link href="../styles/stylesbak.css" rel="stylesheet" type="text/css">
         <script src="https://kit.fontawesome.com/dacf05fad1.js" crossorigin="anonymous"></script>
         <link href="https://fonts.cdnfonts.com/css/bignoodletitling" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body onload="onloadGroup('navAdmin')">
-    <nav id="navbarTarget" class="navbar navbar-expand-lg bg-body-tertiary"></nav>
+<!--    <nav id="navbarTarget" class="navbar navbar-expand-lg bg-body-tertiary"></nav>-->
+    <nav id="navbarTarget"></nav>
 
       <div class="container-fluid col-sm-8 col-xs-8 receptContainer mt-3">
         <div id="receptShared" class="rounded-4 ">

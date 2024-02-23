@@ -43,55 +43,68 @@ function lightingRequest(color){
 }
 
 function populateNavBar() {
-    document.getElementById("navbarTarget").innerHTML = "<div class=\"container-fluid\">\n" +
-        "    <a class=\"navbar-brand\" href=\"dashboard.html\"><i>Gator</i>ATT</a>\n" +
-        "    <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarSupportedContent\">\n" +
-        "      <span class=\"navbar-toggler-icon\"></span>\n" +
-        "    </button>\n" +
-        "    <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n" +
-        "      <ul class=\"navbar-nav me-auto mb-2 mb-lg-0\">\n" +
-        "        <li class=\"nav-item\">\n" +
-        "          <a class=\"nav-link\" id=\"navDashboard\" href=\"dashboard.php\">Dashboard</a>\n" +
-        "        </li>\n" +
-        "        <li class=\"nav-item\">\n" +
-        "          <a class=\"nav-link\" id=\"navSignup\" href=\"signup.html\">Sign Up</a>\n" +
-        "        </li>\n" +
-        "        <li class=\"nav-item\">\n" +
-        "          <a class=\"nav-link\" id=\"navContact\" href=\"contact.html\">Contact</a>\n" +
-        "        </li>\n" +
-        "        <li class=\"nav-item\">\n" +
-        "          <a class=\"nav-link\" id=\"navAdmin\" href=\"adminDashboard.php\">Admin</a>\n" +
-        "        </li>\n" +
-        "        <li class=\"nav-item\">\n" +
-        "          <a class=\"nav-link\" href=\"../../index.html\"><i>Powered by Team ANT</i></a>\n" +
-        "        </li>\n" +
-        "      </ul>\n" +
-        "      <div class=\"d-flex\">\n" +
-        "        <i class=\"fa-solid fa-circle-half-stroke\" id=\"lights\" onclick=\"lightingButton()\"></i>\n" +
-        "      </div>\n" +
+
+    document.getElementById("navbarTarget").innerHTML = "<nav class=\"navbar navbar-expand-lg shadow-sm py-0\">\n" +
+        "    <div class=\" main_container container-fluid p-0\">\n" +
+        "        <a href=\"../../index.html\" class=\"navbar-brand\">\n" +
+        "            <!-- Logo Image -->\n" +
+        "            <img src=\"../../Images/team-ant-logo-white.png\" alt=\"team ant logo\" class=\"d-inline-block align-middle mr-2\">\n" +
+        "        </a>\n" +
+        "\n" +
+        "        <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n" +
+        "            <span class=\"navbar-toggler-icon\" ></span>\n" +
+        "        </button>\n" +
+        "\n" +
+        "\n" +
+        "        <div id=\"navbarSupportedContent\" class=\"collapse navbar-collapse\">\n" +
+        "            <ul class=\"navbar-nav ml-auto\">\n" +
+        "                <li class=\"nav-item active\">\n" +
+        "                    <a href=\"dashboard.php\" class=\"nav-link\">Dashboard <span class=\"sr-only\">(current)</span></a>\n" +
+        "                </li>\n" +
+        "                <li class=\"nav-item\">\n" +
+        "                    <a href=\"signup.html\" class=\"nav-link\">Sign Up</a>\n" +
+        "                </li>\n" +
+        "                <li class=\"nav-item\">\n" +
+        "                    <a href=\"contact.html\" class=\"nav-link\">Contact</a>\n" +
+        "                </li>\n" +
+        "                <li class=\"nav-item\">\n" +
+        "                    <a href=\"adminDashboard.php\" class=\"nav-link\">Admin</a>\n" +
+        "                </li>\n" +
+        "            </ul>\n" +
+        "<div class=\"d-flex\">\n" +
+                "        <i class=\"fa-solid fa-circle-half-stroke\" id=\"lights\" onclick=\"lightingButton()\"></i>\n" +
+                "      </div>\n" +
+        "        </div>\n" +
         "    </div>\n" +
-        "  </div>"
+        "</nav>";
+
 }
 
 function populateFooter() {
-    document.getElementById("footerTarget").className = "container-fluid text-center fixed-bottom mt-5";
-    document.getElementById("footerTarget").innerHTML = "<div class=\"row\" style=\"border: 10px black\">\n" +
-        "        <div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\n" +
-        "            <h3>Resources</h3>\n" +
-        "            <a href=\"https://www.facebook.com/GreenRiverCollege/\" class=\"fa fa-facebook\"></a>\n" +
-        "            <a href=\"https://www.linkedin.com/school/green-river-community-college/\" class=\"fa fa-linkedin\"></a>\n" +
-        "            <a href=\"https://slack.com/community\" class=\"fa fa-slack\"></a>\n" +
-        "            <a href=\"https://github.com/greenrivercollege\" class=\"fa fa-git\"></a>\n" +
-        "            <a href=\"https://www.devs.greenrivertech.net/\" class=\"fa fa-external-link-square\"></a>\n" +
-        "        </div>\n" +
-        "        <div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\n" +
-        "            <h3>School of Technology</h3>\n" +
-        "            <p>Affordable tuition, instructors who care, access to tech industry mentors, and project-based learning\n" +
+
+    document.getElementById("footerTarget").innerHTML = "<footer id=\"footerid\" class=\"container-fluid text-center fixed-bottom\">\n" +
+        "    <div>\n" +
+        "        <div class=\"row\">\n" +
+        "            <div class=\"col-xl-6 col-lg-6 col-sm-12 \">\n" +
+        "                <h3>Resources</h3>\n" +
+        "                <a href=\"https://www.facebook.com/GreenRiverCollege\" class=\"fa fa-facebook\"></a>\n" +
+        "                <a href=\"https://www.linkedin.com/school/green-river-community-college\" class=\"fa fa-linkedin\"></a>\n" +
+        "                <a href=\"https://slack.com/community\" class=\"fa fa-slack\"></a>\n" +
+        "                <a href=\"https://github.com/greenrivercollege\" class=\"fa fa-git\"></a>\n" +
+        "                <a href=\"https://www.devs.greenrivertech.net\" class=\"fa fa-external-link-square\"></a>\n" +
+        "            </div>\n" +
+        "            <div class=\"col-xl-6 col-lg-6 col-sm-12 \">\n" +
+        "                <h3>School of Technology</h3>\n" +
+        "                <p>Affordable tuition, instructors who care, access to tech industry mentors, and project-based learning\n" +
         "                make our applied bachelor’s program a popular destination for computing majors throughout the\n" +
-        "                Seattle-Tacoma region.\n" +
-        "            </p>\n" +
+        "                 Seattle-Tacoma region.\n" +
+        "                </p>\n" +
+        "            </div>\n" +
         "        </div>\n" +
-        "    </div>"
+        "    </div>\n" +
+        "</footer>";
+    document.getElementById("footerTarget").className = "";
+
 }
 
 function decorateActive(active) {
@@ -107,7 +120,7 @@ function decorateActive(active) {
 // APPLICATION FORM CODE STARTS HERE
 
 document.getElementById("dateInput").valueAsDate = new Date();
-  
+
 document.getElementById("followUpInput").valueAsDate = new Date( Date.now() + (6.048e+8 * 2));
 
 

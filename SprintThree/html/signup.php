@@ -39,26 +39,47 @@
 
                         echo '<h1 class="font-weight-bold">Cohort Number:</h1>';
                         echo '<h3 class="bg-white">'.$_POST["cohortnumber"]."</h3>";
-                        
+
                         echo '<h1 class="font-weight-bold">Current Status:</h1>';
-                        echo '<h3 class="bg-white">'.$_POST["seekingInternship"]."</h3>";
+                        echo '<h3 class="bg-white">'.$_POST["status"]."</h3>";
 
                         echo '<h1 class="font-weight-bold">Message:</h1>';
                         echo '<h3 class="bg-white">'.$_POST["textmsgsignup"]."</h3>";
 
 
+                        $name = $_POST['name'];
+                        $email = $_POST['email'];
+                        $cohort = $_POST['cohortnumber'];
 
+                        if($_POST['status'] == "Seeking Internship") {
+                            $status = "Seeking Internship";
+                        }
+                        if ($_POST['status'] == "Seeking Job") {
+                            $status = "Seeking Job";
+                        }
+                        if ($_POST['status'] == "Not Actively Searching") {
+                            $status = "Not Actively Searching";
+                        }
 
-                        $to = $_POST["email"];
-                        $subject = "Signup Form";
-                        $information = $_POST["textmsgsignup"];
+                        $roles = $_POST['textmsgsignup'];
 
+                        require 'db.php';
 
-                        mail($to, $subject, "Name: ".$_POST["name"]."\n Email: ".$_POST["email"]."\n Message: ".$information);
+                        $sql = "insert into User (name, email, cohort, status, roles) values ('$name', '$email', '$cohort', '$status', '$roles')";
+
+                        $result = @mysqli_query($cnxn, $sql);
+
                     }
                     else
                     {
                         echo '<h1 class="font-weight-bold">Please fill out the form!</h1>';
+                    }
+
+                    if ($result) {
+                        echo "Success!";
+                        echo "<br><p>We have received your request. Thank you! </p>";
+                    } else {
+                        echo mysqli_error($cnxn);
                     }
                     ?>
                 </div>
