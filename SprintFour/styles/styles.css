@@ -427,3 +427,8 @@ poweredcontainer {
 .bg-white {
 
 }
+
+.d-flex {
+ display: flex;
+    align-items: end;
+}

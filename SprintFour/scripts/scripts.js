@@ -76,6 +76,7 @@ function populateNavBar() {
                 "      </div>\n" +
         "        </div>\n" +
         "    </div>\n" +
+        "    </div>\n" +
         "</nav>";
 
 }
@@ -125,3 +126,4 @@ document.getElementById("followUpInput").valueAsDate = new Date( Date.now() + (6
 
 
 // APPLICATION FORM ODE ENDS HERE
+
