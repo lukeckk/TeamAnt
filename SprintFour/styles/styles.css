@@ -1,0 +1,429 @@
+/*#navbarTarget {*/
+/*    background-color: #2C882B !important;*/
+/*    font-weight: bold;*/
+/*}*/
+
+#footerTarget {
+    background-color: #2C882B !important;
+    font-weight: bold;
+    position: relative;
+
+}
+
+@media (min-width: 1175px) {
+    #footerTarget {
+        flex-shrink: 0;
+
+    }
+}
+
+#applicationShared, #announcementShared, #contactShared, #receptShared {
+    background-color: #2C882B;
+    padding: 20px;
+}
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 100px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.fa-linkedin {
+    color:white;
+    background-color: #0077B5;
+}
+
+.fa-slack {
+    color: white;
+    background-color: #4A154B;
+}
+
+.fa-git {
+    color:white;
+    background-color: #bd2c00;
+}
+
+.fa-external-link-square {
+    color:white;
+    background-color: #6CB443;
+}
+
+
+/*Dashboard Styles*/
+
+#dashleftcolumn, #dashrightcolumn {
+    margin:0 auto;
+    overflow-x: auto;
+    width: fit-content;
+}
+
+#dashtable td{
+    font-family: proxima-nova,sans-serif,Arial,Helvetica,Verdana;;
+    font-weight: 300;
+    font-size:2vw;
+    white-space: nowrap;
+    /*font-size: 2rem;*/
+    height:100%;
+}
+
+#dashtable thead th, #remindertable thead th {
+    font-family: proxima-nova,sans-serif,Arial,Helvetica,Verdana;
+    background-color: #333333;
+    font-weight: 600;
+    /*font-size: 130%;*/
+    font-size:2vw;
+    white-space: nowrap;
+    color: white;
+    height:100%;
+    border-top:2px solid black;
+}
+
+.date {
+    font-family: proxima-nova,sans-serif,Arial,Helvetica,Verdana;
+    font-weight: 600;
+    font-size:2vw;
+    white-space: nowrap;
+    /*font-size: 2.3rem;*/
+}
+
+#dashtable button {
+    width:100%;
+}
+
+#Dashcontainer h3 {
+    font-family: 'BigNoodleTitling', sans-serif,Impact,Arial,Verdana;
+    font-weight: 500;
+    font-size: 5rem!important;
+    padding:0;
+}
+
+.contactContainer h3, .applicationContainer h3, .signupheading h3{
+    font-family: 'BigNoodleTitling', sans-serif,Impact,Arial,Verdana;
+    font-weight: 500;
+    font-size: 5rem!important;
+    padding:0;
+}
+
+.announcementContainer h3 {
+    font-family: 'BigNoodleTitling', sans-serif,Impact,Arial,Verdana;
+    font-weight: 500;
+    font-size: 4rem!important;
+    padding:0;
+}
+
+#dashrightcolumn h3, #dashleftcolumn h3 {
+
+
+
+}
+
+#dashtable thead th, #remindertable thead th {
+    height:100%;
+    font-family: proxima-nova,sans-serif,Arial,Helvetica,Verdana;;
+    /*font-size: 2rem;*/
+    font-size:2vw;
+    white-space: nowrap;
+    border-top:2px solid black;
+}
+
+#dashleftcolumn, #dashrightcolumn {
+    height:100%;
+}
+
+#dashtable, #remindertable {
+    border: 5px solid black;
+    height:100%;
+}
+
+#dashtable tbody tr, #remindertable tbody tr {
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+}
+
+#LeftLoadMore, #RightLoadMore {
+    font-family: 'BigNoodleTitling', sans-serif,Impact,Arial,Verdana;
+    letter-spacing:1.6px;
+    font-weight: 600;
+    font-size: 32px;
+    color: #6CB443;
+    text-align: center;
+    margin:0px;
+
+}
+
+#remindertable .loadmore, #dashtable .loadmore {
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
+}
+
+.linkbutton {
+    margin-top: 1rem;
+}
+
+
+#remindertable thead tr {
+    text-align: center;
+    font-size: 130%;
+
+}
+
+.ApplicationButtonUP{
+    width:100%;
+    height:100%;
+    padding:4px;
+    background-color: #6CB443;
+    background: linear-gradient(180deg, rgba(90,170,62,1), rgba(108,180,68,1) 100%);
+
+}
+
+.ApplicationButtonDE {
+    width:100%;
+    height:100%;
+    padding:4px;
+    background-color: #D14900;
+    background: linear-gradient(180deg, rgb(190, 70, 0) 10.6%, rgb(209, 73, 0) 100%);
+
+}
+.dashButtonLinks {
+
+    border: 1px solid #545454;
+    padding: 10px 25px;
+    font-size: 1rem;
+    /*easter egg*/
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 5px;
+    font-family: proxima-nova,sans-serif,Arial,Helvetica,Verdana!important;
+    font-weight: 300;
+
+
+
+}
+
+.dashButtonLinks, .ApplicationButtonUP, .ApplicationButtonDE {
+    align-items: center;
+    font-family: IMPACT;
+    letter-spacing:1.4px;
+    font-weight: 500;
+    font-decoration: none;
+    /*color: white;*/
+    border: black solid 1px;
+    box-shadow: 0 0.7em 1.5em -0.5em #14a73e98;
+    letter-spacing: 0.05em;
+    border-radius: 0;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    box-shadow: 0 0.3em 1em -0.5em #14a73e98;
+}
+
+.dashButtonLinks:hover, .ApplicationButtonUP, .ApplicationButtonDE {
+    box-shadow: 0 0.5em 1.5em -0.5em #14a73e98;
+}
+
+/*End of Dashboard Styles*/
+
+
+/*Form Styles Start*/
+
+.required:after {
+    content:" *";
+    color: red;
+}
+
+.required {
+    font-weight: bold; !important;
+}
+
+.signuphead {
+    background-color: #666666;
+    border-radius: 6px;
+    margin-bottom: 1.5em;
+    margin-top: 10px;
+
+}
+
+.signuphead p {
+    color:white;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 1em !important;
+    margin:0;
+
+}
+
+.requiredwarning {
+    display: flex;
+}
+
+.requiredwarning2 {
+    font-size: 16px;
+    font-family: 'Lato', Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Arial, Verdana, sans-serif
+}
+
+
+#signupShared label {
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 18px;
+    font-weight: bold;
+
+}
+
+#submitbutton {
+
+    color: black !important;
+    border: solid 1px #538312 !important;
+    background: white;
+    display: inline-block;
+    margin: 0 2px ;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font: 14px/100% Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    padding: 0.5em 2em 0.55em;
+    border-radius: 0.5em !important;
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    text-shadow: 0 1px 1px rgba(0,0,0,.3);
+
+}
+
+.form-check-label {
+    font-weight: normal !important;
+}
+
+.overall {
+
+    background-color: #2C882B;
+}
+
+#dashtable {
+
+    height: 400px;
+    overflow-y: scroll;
+    display: block;
+
+}
+
+
+/*Form Styles End*/
+
+
+
+.navbar-brand img {
+
+    width: 100px;
+    height: 62px;
+    padding:10px;
+}
+
+.navbar-brand {
+    width: 200px;
+    background-color: forestgreen;
+    text-align: center;
+}
+
+.nav-item a {
+    font-family: 'BigNoodleTitling', sans-serif, Impact, Arial, Verdana;
+    font-size: x-large;
+    letter-spacing: 1.5px;
+}
+
+.nav-item {
+    padding-left: 25px;
+    padding-right: 25px;
+
+
+}
+
+.nav-link {
+    position: relative;
+
+}
+
+.nav-link::after {
+    content: '';
+    transition: all 1s;
+    opacity: 0;
+    height: 2px;
+    width: 100%;
+    background-color: forestgreen;
+    position: relative;
+
+}
+
+.nav-link:hover {
+    /*border-bottom: 3px solid forestgreen;*/
+    text-decoration: underline;
+    color: forestgreen;
+    /*color: forestgreen;*/
+
+
+}
+
+.nav-link:hover::after {
+    opacity: 1;
+}
+
+poweredcontainer {
+    text-align: right;
+}
+
+#footerid {
+    background-color: rgb(51, 51, 51);
+    border-top: 5px solid dimgrey;
+    position: relative;
+    bottom:0px;
+}
+
+#footerid h3, #footerid p {
+    font-family: Bahnschrift;
+    color: rgb(199, 199, 199);
+
+    text-align: center;
+}
+
+#footerid h3 {
+    text-decoration: underline;
+    font-size: 100%; !important;
+}
+
+#footerid {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom:10px;
+    margin-top:200px; !important;
+}
+
+.nav-item {
+    padding:0px;
+}
+
+#dashtable {
+
+    width: fit-content;
+}
+
+#Dashcontainer {
+    margin-bottom: 200px; !important;
+    width: 100%; !important
+
+}
+
+.dashtable3 {
+    padding-top: 0; !important;
+    margin-bottom: 0; !important;
+}
+
+.bg-white {
+
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="script.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>New Application</title>
+  <link href="../styles/style.css" rel="stylesheet" type="text/css"/>
+  
+  <!-- <link href="style.css" rel="stylesheet" type="text/css"/> -->
+
+  <!--BOOTSTRAP CDN-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <!--END BOOTSTRAP CDN-->
+
+</head>
+
+<body>
+  <!--BEGIN NAVBAR-->
+      <div id="navbarShared">
+          <div class="mx-auto m2 p2">
+              <nav class="navbar navbar-expand-lg" >
+                  <a class="navbar-brand"><i>Gator</i>ATT</a>
+                  <div class="navbar-nav">
+                    <a class="nav-link" href="dashboard.html">Dashboard</a>
+                    <a class="nav-link" href="signup.html">Sign Up</a>
+                    <a class="nav-link" href="contact.html">Contact</a>
+                    <a class="nav-link" id="promo" href="../index.html">Powered by Team ANT</a>
+
+          </div>
+        </nav>
+      </div>
+
+  </div>
+
+  <!--END NAVBAR-->
+<h1>New Application Form</h1>
+<div class="container-fluid">
+ <div class="row">
+    <p class="fs-3 col-5 text-center align-self-center">Please feel free to apply using the application form on the right!</p>
+
+  <div id="applicationShared" class="col-5 border border-3 border-dark container-fluid col-5">
+    <form name="applicationForm" method="get">
+      <section class=" row mb-4">
+        <label for="role" class="col-5">Name of Role</label>
+        <input type="text" id="roleInput" name="role" class="col-5">
+      </section>
+
+      <section class="mb-4 row">
+        <label for="job" class="col-5">Job Description URL</label>
+        <input type="text" id="jobInput" name="job" class="col-5">
+      </section>
+
+      <section class="mb-4 row">
+        <label for="date" class="col-5">Date of Application</label>
+        <input type="date" id="dateInput" name="date" class="col-5">
+      </section>
+
+      <section class="mb-4 row">
+        <label for="status" class="col-12">Status</label>
+        <label class="col-4">
+          <input type="radio" name="status" value="needToApply"> Need to Apply
+        </label>
+
+        <label class="col-4">
+        <input type="radio" name="status" value="applied"> Applied
+        </label>
+
+        <label class="col-4">
+          <input type="radio" name="status" value="interviewing"> Interviewing
+        </label>
+
+        <label class="col-4">
+          <input type="radio" name="status" value="rejected"> Rejected
+        </label>
+
+        <label class="col-4">
+          <input type="radio" name="status" value="other"> Accepted
+        </label>
+
+        <label class="col-4">
+          <input type="radio" name="status" value="inavtive"> Inactive/Expired
+        </label>
+      </section>
+
+      <section class="mb-4 row">
+        <label for="updates" class="col-12">Updates</label>
+        <textarea name="updates" rows="4" cols="50" >Who have you spoken with interviewed? Contact info?</textarea>
+      </section>
+
+      <section class="mb-4 row">
+        <label for="followUp" class="col-5" id="followUpDate">Follow up date</label>
+        <input type="date" id="followUpInput" name="followUp" class="col-5">
+      </section>
+        
+      <section class="mb-4 text-center">
+          <input type="submit" value="Submit">
+      </section>
+      </form>  
+    </div>
+  </div>
+</div>
+  <script src="scripts/application/script.js"></script> 
+  <!-- <script src="script.js"></script>  -->
+</body>
+</html>
