@@ -1,7 +1,7 @@
-/*#navbarTarget {*/
-/*    background-color: #2C882B !important;*/
-/*    font-weight: bold;*/
-/*}*/
+#navbarTarget {
+    background-color: #2C882B !important;
+    font-weight: bold;
+}
 
 #footerTarget {
     background-color: #2C882B !important;
@@ -20,7 +20,7 @@
 #applicationShared, #announcementShared, #contactShared, #receptShared {
     background-color: #2C882B;
     padding: 20px;
-}
+  }
 
 .fa {
     padding: 20px;
@@ -61,15 +61,12 @@
 #dashleftcolumn, #dashrightcolumn {
     margin:0 auto;
     overflow-x: auto;
-    width: fit-content;
 }
 
 #dashtable td{
     font-family: proxima-nova,sans-serif,Arial,Helvetica,Verdana;;
     font-weight: 300;
-    font-size:2vw;
-    white-space: nowrap;
-    /*font-size: 2rem;*/
+    font-size: 2rem;
     height:100%;
 }
 
@@ -77,9 +74,7 @@
     font-family: proxima-nova,sans-serif,Arial,Helvetica,Verdana;
     background-color: #333333;
     font-weight: 600;
-    /*font-size: 130%;*/
-    font-size:2vw;
-    white-space: nowrap;
+    font-size: 130%;
     color: white;
     height:100%;
     border-top:2px solid black;
@@ -88,9 +83,7 @@
 .date {
     font-family: proxima-nova,sans-serif,Arial,Helvetica,Verdana;
     font-weight: 600;
-    font-size:2vw;
-    white-space: nowrap;
-    /*font-size: 2.3rem;*/
+    font-size: 2.3rem;
 }
 
 #dashtable button {
@@ -111,7 +104,7 @@
     padding:0;
 }
 
-.announcementContainer h3 {
+.announcementContainer h3 { 
     font-family: 'BigNoodleTitling', sans-serif,Impact,Arial,Verdana;
     font-weight: 500;
     font-size: 4rem!important;
@@ -127,9 +120,7 @@
 #dashtable thead th, #remindertable thead th {
     height:100%;
     font-family: proxima-nova,sans-serif,Arial,Helvetica,Verdana;;
-    /*font-size: 2rem;*/
-    font-size:2vw;
-    white-space: nowrap;
+    font-size: 2rem;
     border-top:2px solid black;
 }
 
@@ -302,7 +293,7 @@
 }
 
 #dashtable {
-
+ 
     height: 400px;
     overflow-y: scroll;
     display: block;
@@ -311,114 +302,3 @@
 
 
 /*Form Styles End*/
-
-
-
-.navbar-brand img {
-
-    width: 100px;
-    height: 62px;
-    padding:10px;
-}
-
-.navbar-brand {
-    width: 200px;
-    background-color: forestgreen;
-    text-align: center;
-}
-
-.nav-item a {
-    font-family: 'BigNoodleTitling', sans-serif, Impact, Arial, Verdana;
-    font-size: x-large;
-    letter-spacing: 1.5px;
-}
-
-.nav-item {
-    padding-left: 25px;
-    padding-right: 25px;
-
-
-}
-
-.nav-link {
-    position: relative;
-
-}
-
-.nav-link::after {
-    content: '';
-    transition: all 1s;
-    opacity: 0;
-    height: 2px;
-    width: 100%;
-    background-color: forestgreen;
-    position: relative;
-
-}
-
-.nav-link:hover {
-    /*border-bottom: 3px solid forestgreen;*/
-    text-decoration: underline;
-    color: forestgreen;
-    /*color: forestgreen;*/
-
-
-}
-
-.nav-link:hover::after {
-    opacity: 1;
-}
-
-poweredcontainer {
-    text-align: right;
-}
-
-#footerid {
-    background-color: rgb(51, 51, 51);
-    border-top: 5px solid dimgrey;
-    position: relative;
-    bottom:0px;
-}
-
-#footerid h3, #footerid p {
-    font-family: Bahnschrift;
-    color: rgb(199, 199, 199);
-
-    text-align: center;
-}
-
-#footerid h3 {
-    text-decoration: underline;
-    font-size: 100%; !important;
-}
-
-#footerid {
-    text-align: center;
-    padding-top: 10px;
-    padding-bottom:10px;
-    margin-top:200px; !important;
-}
-
-.nav-item {
-    padding:0px;
-}
-
-#dashtable {
-
-    width: fit-content;
-}
-
-#Dashcontainer {
-    margin-bottom: 200px; !important;
-    width: 100%; !important
-
-}
-
-.dashtable3 {
-    padding-top: 0; !important;
-    margin-bottom: 0; !important;
-}
-
-.bg-white {
-
-}
