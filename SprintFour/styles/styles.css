@@ -240,7 +240,7 @@
     color: red;
 }
 
-.required, .form-label {
+.required {
     font-weight: bold; !important;
 }
 
@@ -413,11 +413,11 @@ poweredcontainer {
     width: fit-content;
 }
 
-/*#Dashcontainer {*/
-/*    margin-bottom: 200px; !important;*/
-/*    width: 100%; !important*/
+#Dashcontainer {
+    margin-bottom: 200px; !important;
+    width: 100%; !important
 
-/*}*/
+}
 
 .dashtable3 {
     padding-top: 0; !important;
