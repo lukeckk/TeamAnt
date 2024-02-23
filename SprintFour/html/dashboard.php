@@ -81,9 +81,7 @@
                 }
                 ?>
 
-                <tr>
-                    <td class="loadmore text-center" colspan="5" ><p id="LeftLoadMore">Load More</p></td>
-                </tr>
+
 
                 </tbody>
 
@@ -124,16 +122,14 @@
                 <tr>
                     <th class="reminder" scope="row">You have a pending request!</th>
                 </tr>
-                <tr>
-                    <td class="loadmore text-center" colspan="5"><p id="RightLoadMore">Load More</p></td>
-                </tr>
+
                 </tbody>
             </table>
 
 
-            <div class=" linkbutton col-12 text-center">
-                <a href=""><button class="dashButtonLinks" role="button">Update Account Settings</button></a>
-            </div>
+<!--            <div class=" linkbutton col-12 text-center">-->
+<!--                <a href=""><button class="dashButtonLinks" role="button">Update Account Settings</button></a>-->
+<!--            </div>-->
         </div>
     </div>
 

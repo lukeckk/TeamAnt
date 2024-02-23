@@ -240,6 +240,10 @@
     color: red;
 }
 
+.required, .form-label {
+    font-weight: bold; !important;
+}
+
 .signuphead {
     background-color: #666666;
     border-radius: 6px;
@@ -409,11 +413,11 @@ poweredcontainer {
     width: fit-content;
 }
 
-#Dashcontainer {
-    margin-bottom: 200px; !important;
-    width: 100%; !important
+/*#Dashcontainer {*/
+/*    margin-bottom: 200px; !important;*/
+/*    width: 100%; !important*/
 
-}
+/*}*/
 
 .dashtable3 {
     padding-top: 0; !important;

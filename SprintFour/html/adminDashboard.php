@@ -18,6 +18,8 @@
 <!--<nav id="navbarTarget" class="navbar navbar-expand-lg bg-body-tertiary"></nav>-->
 <nav id="navbarTarget"></nav>
 <!--NAVBAR ENDS HERE, NO ELEMENTS ABOVE THIS LINE-->
+
+
 <div class="container-fluid">
 <div class="row">
 <div id="Dashcontainer" class="pt-5 fixed-table-body col-lg-6 col-md-6 col-sm-12 col-xs-12 p-5 mb-0 dashtable3 ">
@@ -53,8 +55,8 @@
                    
                    <td>'.$name.'</td>
                    <td>'.$email.'</td>
-                    <th ><button class="ApplicationButtonUP">Update</button></th>
-                    <th ><button class="ApplicationButtonDE">Delete</button></th>
+                    <th ><button class="ApplicationButtonUP">View User</button></th>
+                    <th ><button class="ApplicationButtonDE">Edit User</button></th>
                  </tr>';
 
                     }
@@ -71,7 +73,7 @@
     </div>
 </div>
 
-    <div id="Dashcontainer" class="pt-5 col-lg-6 col-md-6 col-sm-12 col-xs-12 p-5">
+    <div id="Dashcontainer" class="pt-5 col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
         <div class="row justify-content-evenly h-100 ">
             <div id="dashleftcolumn" class="p-0">
                 <h3 class="mb-0">Recent Application</h3>
@@ -100,24 +102,25 @@
                         $date = $row['date'];
                         $title = $row['title'];
                         $status = $row['status'];
+                        $index = $row['idNum'];
 
                         echo'
+               <form action="editApplication.php" method="POST">
                  <tr>
                    <th class="date" scope="row">'.$date.'</th>
                    <td>'.$title.'</td>
                    <td>'.$status.'</td>
-                   <th><button class="ApplicationButtonUP">Update</button></th>
-                   <th><button class="ApplicationButtonDE">Delete</button></th>
-                 </tr>';
+                   <td scope="col"><button onclick="setId('.$index,')" value="'.$index,'" name="updateBtn" class="ApplicationButtonUP">Update</button></th>
+                    <td scope="col"><button class="ApplicationButtonDE">Delete</button></td>
+                 </tr>
+                </form>';
 
                     }
                     ?>
 
 
 
-                    <tr>
-                        <td class="loadmore text-center" colspan="5" ><p id="LeftLoadMore">Load More</p></td>
-                    </tr>
+
 
                     </tbody>
 
