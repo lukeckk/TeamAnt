@@ -46,7 +46,7 @@
                 echo '<h1 class="font-weight-bold">Job Description</h1>';
                 echo '<h3 class="bg-white">'.$description."</h3>";
 
-                echo '<h1 class="font-weight-bold">Date od Application</h1>';
+                echo '<h1 class="font-weight-bold">Date of Application</h1>';
                 echo '<h3 class="bg-white">'.$date."</h3>";
 
                 echo '<h1 class="font-weight-bold">Status</h1>';
