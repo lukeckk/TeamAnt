@@ -102,7 +102,7 @@
             <table id="remindertable" class="table table-striped mb-0">
                 <thead>
                 <tr>
-
+                
                     <th>Total Reminders:  </th>
                 </tr>
                 </thead>
@@ -121,6 +121,7 @@
 
 
                 require 'db.php';
+                
                 $sql = "select * from Application";
 
                 $result = @mysqli_query($cnxn, $sql);
@@ -155,7 +156,30 @@
                 </form>';
                     }
                 }
+                
+                $sql2 = "select * from Announcement";
+
+                $result2 = @mysqli_query($cnxn, $sql2);
+
+                while ($row = mysqli_fetch_assoc($result2))
+                {
+                    $date = $row['date'];
+                    $title = $row['title'];
+                    $status = $row['status'];
+                    $index = $row['id'];
+
+                  echo '
+                  <form action="viewAnnouncementReceipt.php" method="POST">
+                  <tr>
+                    
+                    <td scope="col">Job position of <button onclick="setId('.$index,')" value="'.$index,'" name="viewBtn">'.$title.'</button> at '.$employer.' was announced on '.$date. '! </td>
+                 
+                  </tr>
+                    </form>';
+                    
+                }
                 ?>
+                
 
                 </tbody>
             </table>

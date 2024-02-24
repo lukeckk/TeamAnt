@@ -18,8 +18,6 @@
 <!--<nav id="navbarTarget" class="navbar navbar-expand-lg bg-body-tertiary"></nav>-->
 <nav id="navbarTarget"></nav>
 <!--NAVBAR ENDS HERE, NO ELEMENTS ABOVE THIS LINE-->
-
-
 <div class="container-fluid">
 <div class="row">
 <div id="Dashcontainer" class="pt-5 fixed-table-body col-lg-6 col-md-6 col-sm-12 col-xs-12 p-5 mb-0 dashtable3 ">
@@ -66,12 +64,67 @@
             </div>
         </div>
     </div>
+</div>
+    
+  
+<div id="Dashcontainer" class="pt-5 fixed-table-body col-lg-6 col-md-6 col-sm-12 col-xs-12 p-5 mb-0 dashtable3 ">
+    <div class="row justify-content-evenly h-100 ">
+        <div id="dashleftcolumn" class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p-0">
+            <div id="dashleftcolumn" class="">
+                <h3 class="mb-0">Announcements</h3>
+                <table id="dashtable" class="table table-striped table-hover mb-0 dashtable2 ">
+                    <thead>
+                    <tr>
+                        <th scope="col">DATE</th>
+                        <th scope="col">TITLE</th>
+                        <th scope="col">JOB TYPE</th>
+                        <th scope="col">EMPLOYER</th>
+                        <th></th>
+                        
+                    </tr>
+                    </thead>
+                    <tbody>
+                        
+                    <?php
+                    require 'db.php';
+                    $sql = "select * from Announcement";
+
+                    $result = @mysqli_query($cnxn, $sql);
+
+                    while ($row = mysqli_fetch_assoc($result))
+                    {
+
+                        $date = $row['date'];
+                        $title = $row['title'];
+                        $jobType = $row['jobType'];
+                        $employer = $row['employer'];
+                        $index = $row['id'];
+
+                        echo'
+                <form action="viewAnnouncementReceipt.php" method="POST">
+                 <tr>
+                   <td>'.$date.'</td>
+                   <td>'.$title.'</td> 
+                   <td>'.$jobType.'</td>
+                   <td>'.$employer.'</td>
+                   <td scope="col"><button onclick="setId('.$index,')" value="'.$index,'" name="viewBtn" class="ApplicationButtonUP">View</button></th>
+                 </tr>
+                 </form>';
+
+                    }
+                    ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
 
     <div class="linkbutton col-12 text-center">
         <a href="announcement.html"><button class="dashButtonLinks" role="button">New Announcement</button></a>
 
     </div>
-</div>
+
 
     <div id="Dashcontainer" class="pt-5 col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
         <div class="row justify-content-evenly h-100 ">
