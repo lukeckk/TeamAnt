@@ -21,19 +21,20 @@
 <div  class="container-fluid col-sm-8 col-xs-8 applicationContainer">
     <h3 class="text-center">EDIT APPLICATION</h3>
     <?php
-    //echo $_POST['updateBtn'];
-    $index = $_POST['updateBtn'];
 
     require 'db.php';
+    //echo $_POST['updateBtn'];
+    $index = $_POST['updateBtn'];
+    $softDeleteIndex = $_POST['deleteBtn'];
+
+    if(isset($updateIndex)){    //Update Request Starts Here
     $sql = "select * from Application where idNum=$index";
 
     $result = @mysqli_query($cnxn, $sql);
 
-    while ($row = mysqli_fetch_assoc($result))
-    {
+    while ($row = mysqli_fetch_assoc($result)) {
 
         $id = $index;
-
         $date = $row['date'];
         $title = $row['title'];
         $status = $row['status'];
@@ -43,32 +44,30 @@
         $jobDescriptionURL = $row['jobDescriptionURL'];
         $updates = $row['updates'];
 
-
-
         echo '<form action="editAppReceipt.php" method="POST">
                 <div id="applicationShared" class="rounded-4">
         
-                    <input type="hidden" id="idNum" name="idNum" class="form-control" value="'.$index, '">
+                    <input type="hidden" id="idNum" name="idNum" class="form-control" value="' . $index, '">
         
                     <label for="employer" class="form-label text-start mt-3">Employer Name</label>
-                    <input type="text" id="employer" name="employer" class="form-control" value="'.$employer, '">
+                    <input type="text" id="employer" name="employer" class="form-control" value="' . $employer, '">
         
                     <label for="role" class="form-label text-start mt-3">Name of Role</label>
-                    <input type="text" id="role" name="role" class="form-control" value="'.$title, '">
+                    <input type="text" id="role" name="role" class="form-control" value="' . $title, '">
         
                     <label for="job" class="col-5 mt-3">Job Description URL</label>
-                    <input type="text" id="job" name="job" class="form-control" value="'.$jobDescriptionURL, '">
+                    <input type="text" id="job" name="job" class="form-control" value="' . $jobDescriptionURL, '">
         
                     <label for="description" class="form-label text-start mt-3">Job Description</label>
-                    <textarea id="description" name="description" rows="4" cols="50" class="form-control">'.$jobDescription, '</textarea>
+                    <textarea id="description" name="description" rows="4" cols="50" class="form-control">' . $jobDescription, '</textarea>
         
                     <label for="date" class="form-label text-start mt-3"></label>Date of Application</label>
-                    <input type="date" id="date" name="date" class="form-control" value="'.$date, '">
+                    <input type="date" id="date" name="date" class="form-control" value="' . $date, '">
         
                     <section class="form-label text-start mt-3">
                         <label for="dropdown" class="form-label text-start mt-3">Status</label>
                         <select id="dropdown" name="status">
-                            <option>'.$status,'</option>
+                            <option>' . $status, '</option>
                             <option>Need to Apply</option>
                             <option>Applied</option>
                             <option>Interviewing</option>
@@ -80,15 +79,26 @@
                     </section>
         
                     <label for="updates" class="form-label text-start mt-3">Updates</label>
-                    <textarea name="updates" id="updates" rows="4" cols="50" class=" form-control">'.$updates, '</textarea>
+                    <textarea name="updates" id="updates" rows="4" cols="50" class=" form-control">' . $updates, '</textarea>
         
-                    <label for="followUp" class="form-label text-start mt-3" id="followUpDate">Follow up date</label>
-                    <input type="date" id="followUp" name="followUp" value="'.$followUpDate, '">
+                    <label for="followUp" class="form-label text-start mt-3" id="followUpDate">Follow-up Date</label>
+                    <input type="date" id="followUp" name="followUp" value="' . $followUpDate, '">
                 </div>
                 <section class="mb-4 text-center">
                     <button type="submit" class="mt-3 dashButtonLinks">Submit</button>
                 </section>
             </form>';
+    }
+    if (isset($softDeleteIndex)) { //Delete Request Starts Here
+                $id = $softDeleteIndex;
+                $sql = "UPDATE Application SET `visiblity` = '0' WHERE idNum=$index";
+
+                header('Location: https://teamant.greenriverdev.com/SprintFour/html/dashboard.php');
+                exit();
+
+        }
+
+
     }
     ?>
 </div>

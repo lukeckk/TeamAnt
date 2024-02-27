@@ -69,7 +69,7 @@
                 
                 require 'db.php';
 
-                $sql = "insert into Application (employer, title, jobDescriptionURL, jobDescription, date, status, updates, followUpDate) values ('$employer', '$role', '$job', '$description', '$date','$status','$updates' ,'$followUp')";
+                $sql = "insert into Application (employer, title, jobDescriptionURL, jobDescription, date, status, updates, followUpDate, visibility) values ('$employer', '$role', '$job', '$description', '$date','$status','$updates' ,'$followUp','1')";
                 
                 $result = @mysqli_query($cnxn, $sql);
 

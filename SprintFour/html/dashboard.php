@@ -67,17 +67,21 @@
                     $title = $row['title'];
                     $status = $row['status'];
                     $index = $row['idNum'];
+                    $isVisible = $row['visibility'];
 
-                    echo'
+
+                    if($isVisible == 1) {
+                        echo '
                 <form action="editApplication.php" method="POST">
                   <tr>
-                    <td class="date" scope="row">'.$date.'</td>
-                    <td>'.$title.'</td>
-                    <td>'.$status.'</td>
-                    <td scope="col"><button onclick="setId('.$index,')" value="'.$index,'" name="updateBtn" class="ApplicationButtonUP">Update</button></th>
-                    <td scope="col"><button class="ApplicationButtonDE">Delete</button></td>
+                    <td class="date" scope="row">' . $date . '</td>
+                    <td>' . $title . '</td>
+                    <td>' . $status . '</td>
+                    <td scope="col"><button onclick="setId(' . $index, ')" value="' . $index, '" name="updateBtn" class="ApplicationButtonUP">Update</button></th>
+                    <td scope="col"><button name="deleteBtn" value="' . $index . '"class="ApplicationButtonDE">Delete</button></td>
                   </tr>
                 </form>';
+                    }
                 }
                 ?>
 
