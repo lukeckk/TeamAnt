@@ -47,8 +47,10 @@
 
                         $name = $row['name'];
                         $email = $row['email'];
+                        $isVisible = $row['visibility'];
 
-                        echo'
+                        if($isVisible == 1) {
+                            echo'
                  <tr>
                    
                    <td>'.$name.'</td>
@@ -56,6 +58,8 @@
                     <th ><button class="ApplicationButtonUP">View User</button></th>
                     <th ><button class="ApplicationButtonDE">Edit User</button></th>
                  </tr>';
+
+                        }
 
                     }
                     ?>
@@ -156,8 +160,10 @@
                         $title = $row['title'];
                         $status = $row['status'];
                         $index = $row['idNum'];
+                        $isVisible = $row['visibility'];
 
-                        echo'
+                        if($isVisible == 1) {
+                            echo'
                <form action="editApplication.php" method="POST">
                  <tr>
                    <th class="date" scope="row">'.$date.'</th>
@@ -167,6 +173,7 @@
                     <td scope="col"><button class="ApplicationButtonDE">Delete</button></td>
                  </tr>
                 </form>';
+                        }
 
                     }
                     ?>
