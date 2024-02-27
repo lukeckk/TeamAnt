@@ -27,7 +27,7 @@
     $index = $_POST['updateBtn'];
     $softDeleteIndex = $_POST['deleteBtn'];
 
-    if(isset($updateIndex)){    //Update Request Starts Here
+    if($index){    //Update Request Starts Here
     $sql = "select * from Application where idNum=$index";
 
     $result = @mysqli_query($cnxn, $sql);
@@ -89,11 +89,15 @@
                 </section>
             </form>';
     }
-    if (isset($softDeleteIndex)) { //Delete Request Starts Here
+    if ($softDeleteIndex) { //Delete Request Starts Here
                 $id = $softDeleteIndex;
-                $sql = "UPDATE Application SET `visiblity` = '0' WHERE idNum=$index";
+                $sql = "UPDATE Application SET `visiblity` = '0' WHERE idNum='".$id."'";
 
-                header('Location: https://teamant.greenriverdev.com/SprintFour/html/dashboard.php');
+                $result = @mysqli_query($cnxn, $sql);
+
+                echo '<p>Application Deleted.</p>';
+
+                header("Location: https://teamant.greenriverdev.com/SprintFour/html/dashboard.php");
                 exit();
 
         }
