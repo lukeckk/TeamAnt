@@ -51,13 +51,14 @@
 
                         if($isVisible == 1) {
                             echo'
-                 <tr>
-                   
-                   <td>'.$name.'</td>
-                   <td>'.$email.'</td>
-                    <th ><button class="ApplicationButtonUP">View User</button></th>
-                    <th ><button class="ApplicationButtonDE">Edit User</button></th>
-                 </tr>';
+                    <form action="editUser.php" method="post">
+                     <tr>
+                       <td>'.$name.'</td>
+                       <td>'.$email.'</td>
+                        <th ><button class="ApplicationButtonUP">View User</button></th>
+                        <th ><button class="ApplicationButtonDE">Delete User</button></th>
+                     </tr>
+                     </form>';
 
                         }
 
