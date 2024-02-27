@@ -23,7 +23,6 @@
     <?php
 
     require 'db.php';
-    //echo $_POST['updateBtn'];
     $index = $_POST['updateBtn'];
     $softDeleteIndex = $_POST['deleteBtn'];
 
@@ -88,22 +87,24 @@
                     <button type="submit" class="mt-3 dashButtonLinks">Submit</button>
                 </section>
             </form>';
-    }
-    if ($softDeleteIndex) { //Delete Request Starts Here
-                $id = $softDeleteIndex;
-                $sql = "UPDATE Application SET `visiblity` = '0' WHERE idNum='".$id."'";
-
-                $result = @mysqli_query($cnxn, $sql);
-
-                echo '<p>Application Deleted.</p>';
-
-                header("Location: https://teamant.greenriverdev.com/SprintFour/html/dashboard.php");
-                exit();
-
         }
-
-
     }
+
+     if($softDeleteIndex) { //Delete Request Starts Here
+         $id = $softDeleteIndex;
+
+         $sql = "UPDATE Application SET `visibility` = '0' WHERE idNum=$id";
+
+         $result = @mysqli_query($cnxn, $sql);
+
+         echo'<p>Application Deleted.</p>';
+     }
+
+
+
+
+
+
     ?>
 </div>
 
