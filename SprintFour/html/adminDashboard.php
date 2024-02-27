@@ -48,6 +48,7 @@
                         $name = $row['name'];
                         $email = $row['email'];
                         $isVisible = $row['visibility'];
+                        $id = $row['IDNUM'];
 
                         if($isVisible == 1) {
                             echo'
@@ -56,7 +57,7 @@
                        <td>'.$name.'</td>
                        <td>'.$email.'</td>
                         <th ><button class="ApplicationButtonUP">View User</button></th>
-                        <th ><button class="ApplicationButtonDE">Delete User</button></th>
+                        <th ><button name="deleteBtn" value="'.$id.'" class="ApplicationButtonDE">Delete User</button></th>
                      </tr>
                      </form>';
 
