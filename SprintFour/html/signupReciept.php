@@ -65,7 +65,7 @@
 
                         require 'db.php';
 
-                        $sql = "insert into User (name, email, cohort, status, roles) values ('$name', '$email', '$cohort', '$status', '$roles')";
+                        $sql = "insert into User (name, email, cohort, status, roles, visibility) values ('$name', '$email', '$cohort', '$status', '$roles', 1)";
 
                         $result = @mysqli_query($cnxn, $sql);
 
