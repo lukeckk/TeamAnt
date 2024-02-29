@@ -47,8 +47,10 @@
             $subject = "Admin Announcement Form";
             $information = $_POST["information"];
             
-
-            $date = date('d-m-y');
+            // date_default_timezone_set("America/Los_Angeles");
+            
+            $date = date("Y/m/d");
+            // $date = date_default_timezone_get();
             $title = $_POST['title'];
             $jobType = $_POST['jobType'];
             $location = $_POST['location'];
