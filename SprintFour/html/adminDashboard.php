@@ -127,7 +127,7 @@
 </div>
 
     <div class="linkbutton col-12 text-center">
-        <a href="announcement.html"><button class="dashButtonLinks" role="button">New Announcement</button></a>
+        <a href="../../TrashBin/announcement.html"><button class="dashButtonLinks" role="button">New Announcement</button></a>
 
     </div>
 
