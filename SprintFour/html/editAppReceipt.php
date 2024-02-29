@@ -62,7 +62,7 @@
         $employer = filter_var($_POST['employer'], FILTER_SANITIZE_STRING);
         $role = filter_var($_POST['role'], FILTER_SANITIZE_STRING);
         $job = filter_var($_POST['job'], FILTER_SANITIZE_STRING);
-        $description = filter_var($_POST['description'], FILTER_SANITIZE_STRING);
+        $description = filter_var($_POST['description'], FILTER_SANITIZE_URL);
         $date = filter_var($_POST['date'], FILTER_SANITIZE_SPECIAL_CHARS);
         $status = filter_var($_POST['status'] , FILTER_SANITIZE_STRING);
         $updates = filter_var($_POST['updates'] , FILTER_SANITIZE_STRING);

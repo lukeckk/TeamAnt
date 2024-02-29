@@ -38,14 +38,14 @@
     
             $id = $index;
     
-            $date = $row['date'];
-            $title = $row['title'];
-            $jobType = $row['jobType'];
-            $employer = $row['employer'];
-            $index = $row['id'];
-            $location = $row['location'];
-            $info = $row['info'];
-            $url = $row['url'];
+            $date = filter_var($row['date'], FILTER_SANITIZE_SPECIAL_CHARS);
+            $title = filter_var($row['title'], FILTER_SANITIZE_STRING);
+            $jobType = filter_var($row['jobType'], FILTER_SANITIZE_STRING);
+            $employer = filter_var($row['employer'], FILTER_SANITIZE_STRING);
+            $index = filter_var($row['id'], FILTER_SANITIZE_NUMBER_INT);
+            $location = filter_var($row['location'], FILTER_SANITIZE_STRING);
+            $info = filter_var($row['info'], FILTER_SANITIZE_STRING);
+            $url = filter_var($row['url'], FILTER_SANITIZE_URL);
     
             echo '<h1 class="font-weight-bold">Date</h1>';
             echo '<h3 class="bg-white">'.$date."</h3>";
