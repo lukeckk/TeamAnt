@@ -47,9 +47,9 @@
                         echo '<h3 class="bg-white">'.$_POST["textmsgsignup"]."</h3>";
 
 
-                        $name = $_POST['name'];
-                        $email = $_POST['email'];
-                        $cohort = $_POST['cohortnumber'];
+                        $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
+                        $email = filter_var(['email'], FILTER_SANITIZE_EMAIL);
+                        $cohort = filter_car($_POST['cohortnumber'], FILTER_SANITIZE_NUMBER_INT);
 
                         if($_POST['status'] == "Seeking Internship") {
                             $status = "Seeking Internship";
@@ -61,7 +61,7 @@
                             $status = "Not Actively Searching";
                         }
 
-                        $roles = $_POST['textmsgsignup'];
+                        $roles = filter_var($_POST['textmsgsignup'], FILTER_SANITIZE_STRING);
 
                         require 'db.php';
 
