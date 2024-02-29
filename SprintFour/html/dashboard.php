@@ -139,23 +139,19 @@
                     $currentDate = date('y-m-d');
                     $addonDate = ' + 1 days';
                     $employer = $row['employer'];
+                    $visibility = $row['visibility'];
                     $counter++;
 
 
 
 
-                    if($followUpDate <= (date('Y-m-d', strtotime($currentDate . ' + 5 days'))) && $followUpDate >= (date('Y-m-d', strtotime($currentDate . ' - 5 days')))) {
+                    if($followUpDate <= (date('Y-m-d', strtotime($currentDate . ' + 5 days'))) && $followUpDate >= (date('Y-m-d', strtotime($currentDate . ' - 5 days'))) && $visibility == 1) {
                     echo '<form action="editApplication.php" method="POST">
                   <tr>
-                    
-                        
-                
-                    
+                   
                     <td>Your Application for ' . $title . ' role at '.$employer.' is due! </td>
                     
-                  
-                  
-                  
+               
                   </tr>
                 </form>';
                     }
