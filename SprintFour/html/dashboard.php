@@ -95,7 +95,7 @@
 
 
             <div class=" linkbutton col-12 text-center">
-                <a href="../../TrashBin/application.html"><button class="dashButtonLinks" role="button">Add new application</button></a>
+                <a href="application.html"><button class="dashButtonLinks" role="button">Add new application</button></a>
             </div>
         </div>
 
