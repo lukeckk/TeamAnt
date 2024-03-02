@@ -87,15 +87,9 @@
             mail($to, $subject, $message , $headers);
 
 
-            echo ' Mail Sent to '.$to.' ';
         }
 
-        if ($result) {
-            echo "Success!";
-            echo "<br><p>We have received your request. Thank you! </p>";
-        } else {
-            echo mysqli_error($cnxn);
-        }
+    
 
         if ($result2) {
             echo "Success!";

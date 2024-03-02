@@ -6,7 +6,7 @@
         <!--CDN-->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-        <script src="../scripts/scripts.js.bak"></script>
+        <script src="../scripts/scripts.js"></script>
         <link href="../styles/styles.css" rel="stylesheet" type="text/css">
         <script src="https://kit.fontawesome.com/dacf05fad1.js" crossorigin="anonymous"></script>
         <link href="https://fonts.cdnfonts.com/css/bignoodletitling" rel="stylesheet">
@@ -18,7 +18,6 @@
 
       <div class="container-fluid col-sm-8 col-xs-8 receptContainer mt-3">
         <div id="receptShared" class="rounded-4 ">
-         
         <?php
 
         $employer = filter_var($_POST['employer'], FILTER_SANITIZE_STRING);
@@ -72,6 +71,13 @@
                 $sql = "insert into Application (employer, title, jobDescriptionURL, jobDescription, date, status, updates, followUpDate, visibility) values ('$employer', '$role', '$job', '$description', '$date','$status','$updates' ,'$followUp','1')";
                 
                 $result = @mysqli_query($cnxn, $sql);
+
+                if ($result) {
+                    echo "Success!";
+                    echo "<br><p>We have received your request. Thank you! </p>";
+                } else {
+                    echo mysqli_error($cnxn);
+                }
 
 
                 

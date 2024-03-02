@@ -167,7 +167,9 @@
                     $title = $row['title'];
                     $status = $row['status'];
                     $index = $row['id'];
-
+                    $currentDate = date('y-m-d');
+                    
+                if($date >= (date('Y-m-d', strtotime($currentDate . ' - 5 days')))) {
                   echo '
                   <form action="viewAnnouncementReceipt.php" method="POST">
                   <tr>
@@ -176,7 +178,7 @@
                  
                   </tr>
                     </form>';
-                    
+                }
                 }
                 ?>
                 
