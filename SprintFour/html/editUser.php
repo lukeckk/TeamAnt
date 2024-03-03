@@ -20,32 +20,31 @@
 <nav id="navbarTarget"></nav>
 <!--NAVBAR ENDS HERE, NO ELEMENTS ABOVE THIS LINE-->
 <div  class="container-fluid col-sm-8 col-xs-8 applicationContainer">
-<div class="container-fluid">
-    <h3 class="text-center">EDIT USER</h3>
+    <div class="container-fluid">
+        <h3 class="text-center">EDIT USER</h3>
 
-    <?php
-    require 'db.php';
-
-
-    $index = $_POST['ApplicationButtonUP'];
-    $index = $_POST['viewBtn'];
-    $softDeleteIndex = $_POST['deleteBtn'];
-
-    if($index) {
-        $sql = "select * from User where IDNUM=$index";
-
-        $result = @mysqli_query($cnxn, $sql);
-
-        while ($row = mysqli_fetch_assoc($result)) {
-
-            $name = $row['name'];
-            $email = $row['email'];
-            $cnumber = $row['cohort'];
-            $roles = $row['roles'];
-            $id = $index;
+        <?php
+        require 'db.php';
 
 
-            echo '<div class="container-fluid col-8 overall border rounded-4 border-3 border-dark ">
+        $index = $_POST['viewBtn'];
+        $softDeleteIndex = $_POST['deleteBtn'];
+
+        if($index) {
+            $sql = "select * from User where IDNUM = $index";
+
+            $result = @mysqli_query($cnxn, $sql);
+
+            while ($row = mysqli_fetch_assoc($result)) {
+
+                $name = $row['name'];
+                $email = $row['email'];
+                $cnumber = $row['cohort'];
+                $roles = $row['roles'];
+                $id = $index;
+
+
+                echo '<div class="container-fluid col-8 overall border rounded-4 border-3 border-dark ">
 	<div class="row">
 		<div class="container-fluid" id="signupShared">
 			<div class="requiredwarning ">
@@ -53,9 +52,9 @@
 
 				<p class="requiredwarning2">Required Information</p>
 			</div>
-<form action="signupReciept.php" id="form" method="post" name="signup">
+<form action="signupupdateReciept.php" id="form" method="post" name="signup">
 
-                <input type="hidden" id="idNum" name="idNum" class="form-control" value="' . $index, '">
+                <input type="hidden" id="IDNUM" name="IDNUM" class="form-control" value="' . $id. '">
 				<section class="mb-4"><label class="required" for="name" id="namesignup">Name</label><br />
 					<input class="form-control input-default " id="name" name="name" placeholder="" type="text" value="'.$name.'"/>
 					<div class="error"></div>
@@ -89,27 +88,27 @@
 
 <section class="text-center"><button class="mt-3 dashButtonLinks" type="submit">Submit</button></section>
 </form>';
+            }
         }
-    }
-    if($softDeleteIndex) {
-        $id = $softDeleteIndex;
+        if($softDeleteIndex) {
+            $id = $softDeleteIndex;
 
-        $sql = "UPDATE User SET `visibility` = '0' WHERE idNum=$id";
-        $result = @mysqli_query($cnxn, $sql);
+            $sql = "UPDATE User SET `visibility` = '0' WHERE idNum=$id";
+            $result = @mysqli_query($cnxn, $sql);
 
-        $result = @mysqli_query($cnxn, $sql);
+            $result = @mysqli_query($cnxn, $sql);
 
-        echo'<p>User Deleted!</p>';
-    }
-
+            echo'<p>User Deleted!</p>';
+        }
 
 
 
 
-    ?>
+
+        ?>
 
 
-</div>
+    </div>
 
 
 </div>
