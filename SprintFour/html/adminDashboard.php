@@ -56,7 +56,7 @@
                      <tr>
                        <td>'.$name.'</td>
                        <td>'.$email.'</td>
-                        <th ><button class="ApplicationButtonUP">View User</button></th>
+                        <th ><button onclick="setId('.$id,')" value="'.$id,'" name="viewBtn" class="ApplicationButtonUP">Edit User</button></th>
                         <th ><button name="deleteBtn" value="'.$id.'" class="ApplicationButtonDE">Delete User</button></th>
                      </tr>
                      </form>';
@@ -127,7 +127,7 @@
 </div>
 
     <div class="linkbutton col-12 text-center">
-        <a href="../../TrashBin/announcement.html"><button class="dashButtonLinks" role="button">New Announcement</button></a>
+        <a href="announcement.html"><button class="dashButtonLinks" role="button">New Announcement</button></a>
 
     </div>
 
