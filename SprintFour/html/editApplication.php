@@ -23,8 +23,9 @@
     <?php
 
     require 'db.php';
+
     $index = $_POST['updateBtn'];
-    $index = $_POST['viewBtn'];
+
     $softDeleteIndex = $_POST['deleteBtn'];
 
     if($index){    //Update Request Starts Here
