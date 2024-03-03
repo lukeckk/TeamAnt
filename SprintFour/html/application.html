@@ -45,23 +45,23 @@
   <form action="newAppReceipt.php" method="POST">
     <div id="applicationShared" class="rounded-4">
 
-      <label for="employer" class="form-label text-start ">Employer Name</label>
+      <label for="employer" class="form-label required text-start ">Employer Name</label>
       <input type="text" id="employerInput" name="employer" class="form-control">
 
-      <label for="role" class="form-label text-start mt-3">Name of Role</label>
+      <label for="role" class="form-label required text-start mt-3">Name of Role</label>
       <input type="text" id="roleInput" name="role" class="form-control">
 
-      <label for="job" class="col-5 mt-3">Job Description URL</label>
+      <label for="job" class="form-label required col-5 mt-3">Job Description URL</label>
       <input type="text" id="jobInput" name="job" class="form-control">
 
-      <label for="description" class="form-label text-start mt-3">Job Description</label>
+      <label for="description" class="form-label required text-start mt-3">Job Description</label>
       <textarea id="descriptionInput" name="description" rows="4" cols="50" class="form-control"></textarea>
 
-      <label for="date" class="form-label text-start mt-3"></label>Date of Application</label>
+      <label for="date" class="form-label required text-start mt-3">Date of Application</label>
       <input type="date" id="dateInput" name="date" class="form-control">
 
       <section class="form-label text-start mt-3">
-        <label for="dropdown" class="form-label text-start mt-3">Status</label>
+        <label for="dropdown" class="form-label required text-start mt-3">Status</label>
         <select id="dropdown" name="status" >
           <option>Need to Apply</option>
           <option>Applied</option>
@@ -73,10 +73,10 @@
 
       </section>
 
-      <label for="updates" class="form-label text-start mt-3">Updates</label>
+      <label for="updates" class="form-label required text-start mt-3">Updates</label>
       <textarea name="updates" rows="4" cols="50" class=" form-control">Who have you spoken with interviewed? Contact info?</textarea>
 
-      <label for="followUp" class="form-label text-start mt-3" id="followUpDate">Follow up date</label>
+      <label for="followUp" class="form-label required text-start mt-3" id="followUpDate">Follow up date</label>
       <input type="date" id="followUpInput" name="followUp">
     </div>
     <section class="mb-4 text-center">
