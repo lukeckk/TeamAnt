@@ -49,7 +49,7 @@
 
                         $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
                         $email = filter_var(['email'], FILTER_SANITIZE_EMAIL);
-                        $cohort = filter_car($_POST['cohortnumber'], FILTER_SANITIZE_NUMBER_INT);
+                        $cohort = filter_var($_POST['cohortnumber'], FILTER_SANITIZE_NUMBER_INT);
 
                         if($_POST['status'] == "Seeking Internship") {
                             $status = "Seeking Internship";
