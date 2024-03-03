@@ -440,3 +440,7 @@ poweredcontainer {
  display: flex;
     align-items: end;
 }
+
+div.error {
+    color: red;
+}

@@ -38,7 +38,7 @@
 
         $result = @mysqli_query($cnxn, $sql);
 
-        echo'<p>Application Deleted.</p>';
+        echo'<p>User Deleted!</p>';
     }
 
 

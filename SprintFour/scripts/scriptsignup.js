@@ -1,13 +1,13 @@
 //signup script
 
-const form = document.getElementById('form2');
+const form = document.getElementById('form');
 const name = document.getElementById('name');
 const email = document.getElementById('email');
 const cnumber = document.getElementById('cohortnumber');
 
 console.log("attempt script");
 
-let validated = true;
+let validated;
 
 
 
@@ -45,6 +45,7 @@ const validateInputs = () => {
     const namevalue = name.value.trim();
     const emailvalue = email.value.trim();
     const cnumbervalue = cnumber.value.trim();
+    validated = true;
 
     if(namevalue === '') {
         setError(name, "Name is required");
