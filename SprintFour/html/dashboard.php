@@ -27,10 +27,14 @@
 <!--NAVBAR ENDS HERE, NO ELEMENTS ABOVE THIS LINE-->
 
 
+
 <div id="Dashcontainer" class="container-fluid pt-5">
     <div class="row justify-content-evenly h-100 ">
         <div id="dashleftcolumn" class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p-0">
-            <h3 class="mb-0">Recent Application</h3>
+
+
+            <h3 class="mb-0">Recent Application </h3>
+
 
             <table id="dashtable" class="table table-striped table-hover mb-0">
                 <thead>
@@ -72,7 +76,7 @@
 
                     if($isVisible == 1) {
                         echo '
-                <form action="editApplication.php" method="POST">
+                <form  action="editApplication.php" method="POST">
                   <tr>
                     <td class="date" scope="row">' . $date . '</td>
                     <td>' . $title . '</td>
@@ -106,8 +110,56 @@
             <table id="remindertable" class="table table-striped mb-0">
                 <thead>
                 <tr>
-                
-                    <th>Total Reminders:  </th>
+
+<!-- Reminder Counter-->
+<?php
+require 'db.php';
+
+$sql = "select * from Application";
+
+$result = @mysqli_query($cnxn, $sql);
+$counter=0;
+
+while ($row = mysqli_fetch_assoc($result))
+{
+    $date = $row['date'];
+    $title = $row['title'];
+    $followUpDate = $row['followUpDate'];
+    $index = $row['idNum'];
+    $currentDate = date('y-m-d');
+    $addonDate = ' + 1 days';
+    $employer = $row['employer'];
+    $visibility = $row['visibility'];
+
+if($followUpDate <= (date('Y-m-d', strtotime($currentDate . ' + 5 days'))) && $followUpDate >= (date('Y-m-d', strtotime($currentDate . ' - 5 days'))) && $visibility == 1) {
+
+    $counter++;
+}
+}
+$sql2 = "select * from Announcement";
+
+$result2 = @mysqli_query($cnxn, $sql2);
+$counter2=0;
+
+while ($row = mysqli_fetch_assoc($result2))
+{
+$date = $row['date'];
+$title = $row['title'];
+$status = $row['status'];
+$index = $row['id'];
+$currentDate = date('y-m-d');
+
+
+
+if($date >= (date('Y-m-d', strtotime($currentDate . ' - 5 days')))) {
+    $counter2++;
+}
+}
+ $TotalCount = $counter + $counter2;
+
+
+    echo '<th>Total Reminders: '.$TotalCount.'  </th>';
+     ?>
                 </tr>
                 </thead>
                 <tbody>
@@ -125,7 +177,7 @@
 
 
                 require 'db.php';
-                
+
                 $sql = "select * from Application";
 
                 $result = @mysqli_query($cnxn, $sql);
@@ -146,17 +198,17 @@
 
 
                     if($followUpDate <= (date('Y-m-d', strtotime($currentDate . ' + 5 days'))) && $followUpDate >= (date('Y-m-d', strtotime($currentDate . ' - 5 days'))) && $visibility == 1) {
-                    echo '<form action="editApplication.php" method="POST">
+                        echo '<form class="tablecounter" action="editApplication.php" method="POST">
                   <tr>
                    
-                    <td>Your Application for ' . $title . ' role at '.$employer.' is due! </td>
+                    <td>Your Application for <button onclick="setId(' . $index, ')" value="' . $index, '" name="viewBtn" ">'.$title.'</button> role at '.$employer.' is due! </td>
                     
                
                   </tr>
                 </form>';
                     }
                 }
-                
+
                 $sql2 = "select * from Announcement";
 
                 $result2 = @mysqli_query($cnxn, $sql2);
@@ -168,28 +220,29 @@
                     $status = $row['status'];
                     $index = $row['id'];
                     $currentDate = date('y-m-d');
-                    
-                if($date >= (date('Y-m-d', strtotime($currentDate . ' - 5 days')))) {
-                  echo '
-                  <form action="viewAnnouncementReceipt.php" method="POST">
+
+
+                    if($date >= (date('Y-m-d', strtotime($currentDate . ' - 5 days')))) {
+                        echo '
+                  <form class="tablecounter" action="viewAnnouncementReceipt.php" method="POST">
                   <tr>
                     
                     <td scope="col">Job position of <button onclick="setId('.$index,')" value="'.$index,'" name="viewBtn">'.$title.'</button> at '.$employer.' was announced on '.$date. '! </td>
                  
                   </tr>
                     </form>';
-                }
+                    }
                 }
                 ?>
-                
+
 
                 </tbody>
             </table>
 
 
-<!--            <div class=" linkbutton col-12 text-center">-->
-<!--                <a href=""><button class="dashButtonLinks" role="button">Update Account Settings</button></a>-->
-<!--            </div>-->
+            <!--            <div class=" linkbutton col-12 text-center">-->
+            <!--                <a href=""><button class="dashButtonLinks" role="button">Update Account Settings</button></a>-->
+            <!--            </div>-->
         </div>
     </div>
 
