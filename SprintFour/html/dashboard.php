@@ -201,7 +201,7 @@ if($date >= (date('Y-m-d', strtotime($currentDate . ' - 5 days')))) {
                         echo '<form class="tablecounter" action="editApplication.php" method="POST">
                   <tr>
                    
-                    <td>Your Application for <button onclick="setId(' . $index, ')" value="' . $index, '" name="viewBtn" ">'.$title.'</button> role at '.$employer.' is due! </td>
+                    <td>Your Application for <button onclick="setId(' . $index, ')" value="' . $index, '" name="updateBtn" ">'.$title.'</button> role at '.$employer.' is due! </td>
                     
                
                   </tr>
