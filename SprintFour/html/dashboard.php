@@ -111,55 +111,55 @@
                 <thead>
                 <tr>
 
-<!-- Reminder Counter-->
-<?php
-require 'db.php';
+                    <!-- Reminder Counter-->
+                    <?php
+                    require 'db.php';
 
-$sql = "select * from Application";
+                    $sql = "select * from Application";
 
-$result = @mysqli_query($cnxn, $sql);
-$counter=0;
+                    $result = @mysqli_query($cnxn, $sql);
+                    $counter=0;
 
-while ($row = mysqli_fetch_assoc($result))
-{
-    $date = $row['date'];
-    $title = $row['title'];
-    $followUpDate = $row['followUpDate'];
-    $index = $row['idNum'];
-    $currentDate = date('y-m-d');
-    $addonDate = ' + 1 days';
-    $employer = $row['employer'];
-    $visibility = $row['visibility'];
+                    while ($row = mysqli_fetch_assoc($result))
+                    {
+                        $date = $row['date'];
+                        $title = $row['title'];
+                        $followUpDate = $row['followUpDate'];
+                        $index = $row['idNum'];
+                        $currentDate = date('y-m-d');
+                        $addonDate = ' + 1 days';
+                        $employer = $row['employer'];
+                        $visibility = $row['visibility'];
 
-if($followUpDate <= (date('Y-m-d', strtotime($currentDate . ' + 5 days'))) && $followUpDate >= (date('Y-m-d', strtotime($currentDate . ' - 5 days'))) && $visibility == 1) {
+                        if($followUpDate <= (date('Y-m-d', strtotime($currentDate . ' + 5 days'))) && $followUpDate >= (date('Y-m-d', strtotime($currentDate . ' - 5 days'))) && $visibility == 1) {
 
-    $counter++;
-}
-}
-$sql2 = "select * from Announcement";
+                            $counter++;
+                        }
+                    }
+                    $sql2 = "select * from Announcement";
 
-$result2 = @mysqli_query($cnxn, $sql2);
-$counter2=0;
+                    $result2 = @mysqli_query($cnxn, $sql2);
+                    $counter2=0;
 
-while ($row = mysqli_fetch_assoc($result2))
-{
-$date = $row['date'];
-$title = $row['title'];
-$status = $row['status'];
-$index = $row['id'];
-$currentDate = date('y-m-d');
-
-
-
-if($date >= (date('Y-m-d', strtotime($currentDate . ' - 5 days')))) {
-    $counter2++;
-}
-}
- $TotalCount = $counter + $counter2;
+                    while ($row = mysqli_fetch_assoc($result2))
+                    {
+                        $date = $row['date'];
+                        $title = $row['title'];
+                        $status = $row['status'];
+                        $index = $row['id'];
+                        $currentDate = date('y-m-d');
 
 
-    echo '<th>Total Reminders: '.$TotalCount.'  </th>';
-     ?>
+
+                        if($date >= (date('Y-m-d', strtotime($currentDate . ' - 5 days')))) {
+                            $counter2++;
+                        }
+                    }
+                    $TotalCount = $counter + $counter2;
+
+
+                    echo '<th>Total Reminders: '.$TotalCount.'  </th>';
+                    ?>
                 </tr>
                 </thead>
                 <tbody>
@@ -209,7 +209,7 @@ if($date >= (date('Y-m-d', strtotime($currentDate . ' - 5 days')))) {
                     }
                 }
 
-                $sql2 = "select * from Announcement";
+                $sql2 = "select * from Announcement ORDER BY ID DES";
 
                 $result2 = @mysqli_query($cnxn, $sql2);
 
@@ -217,6 +217,7 @@ if($date >= (date('Y-m-d', strtotime($currentDate . ' - 5 days')))) {
                 {
                     $date = $row['date'];
                     $title = $row['title'];
+                    $employer = $row['employer'];
                     $status = $row['status'];
                     $index = $row['id'];
                     $currentDate = date('y-m-d');
