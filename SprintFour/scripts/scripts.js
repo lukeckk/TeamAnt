@@ -72,7 +72,7 @@ function populateNavBar() {
         "                </li>\n" +
         "            </ul>\n" +
         "<div class=\"d-flex\">\n" +
-                "        <i class=\"fa-solid fa-circle-half-stroke\ align-content-end" id=\"lights\" onclick=\"lightingButton()\"></i>\n" +
+                "        <i class=\"fa-solid fa-circle-half-stroke\" id=\"lights\" onclick=\"lightingButton()\"></i>\n" +
                 "      </div>\n" +
         "        </div>\n" +
         "    </div>\n" +
