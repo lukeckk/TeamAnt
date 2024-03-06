@@ -1,5 +1,5 @@
 <?php
-    $name = $_POST['name'];
+    $name = $_POST['logInID'];
     $password = $_POST['password'];
 
     if($name == 'admin' && $password == 'admin') {
@@ -11,5 +11,10 @@
         echo "Username: ".$_SESSION['name']."<br>";
 
 
+    }
+    else
+    {
+
+        echo "Incorret Credentials";
     }
 
