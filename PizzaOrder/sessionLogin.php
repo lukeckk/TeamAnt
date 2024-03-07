@@ -10,11 +10,14 @@
         echo "Session ID: ".session_id()."<br>";
         echo "Username: ".$_SESSION['name']."<br>";
 
+//        echo "<script> location.href='index.php'</script>";
+
 
     }
     else
     {
 
-        echo "Incorret Credentials";
+        echo "<script> alert('Incorret Credentials')</script>";
+        echo "<script>location.href='login.php'</script>";
     }
 
