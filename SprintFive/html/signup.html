@@ -28,6 +28,16 @@
 
 
 			<form action="signupReciept.php" id="form" method="post" name="signup">
+				<section class="mb-4"><label class="required" for="uName" id="userName">Username</label><br />
+					<input class="form-control input-default " id="uName" name="uName" placeholder="" required="" type="text" />
+					<div class="error"></div>
+				</section>
+
+				<section class="mb-4"><label class="required" for="pWord" id="passWord">Password</label><br />
+					<input class="form-control input-default " id="pWord" name="pWord" placeholder="" required="" type="text" />
+					<div class="error"></div>
+				</section>
+
 				<section class="mb-4"><label class="required" for="name" id="namesignup">Name</label><br />
 					<input class="form-control input-default " id="name" name="name" placeholder="" required="" type="text" />
 					<div class="error"></div>
@@ -53,8 +63,9 @@
 				</section>
 
 				<section class="mb-4"><label class="form-label" for="textmsgsignup">Type of roles</label><br />
-					<textarea class="rounded-3 form-control" id="textmsgsignup" name="textmsgsignup" required="" rows="3"></textarea></section>
-
+					<textarea class="rounded-3 form-control" id="textmsgsignup" name="textmsgsignup" required="" rows="3"></textarea>
+				</section>
+			</form>
 		</div>
 	</div>
 </div>

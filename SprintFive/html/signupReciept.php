@@ -29,7 +29,11 @@
                     <?php
                     if($_POST['name'] != "" && $_POST['cohortnumber'] != "" && $_POST['email'] != ""&& $_POST['textmsgsignup'] != "")
                     {
+                        echo '<h1 class="font-weight-bold">Username:</h1>';
+                        echo '<h3 class="bg-white">'.$_POST["uName"]."</h3>";
 
+                        echo '<h1 class="font-weight-bold">Password:</h1>';
+                        echo '<h3 class="bg-white">'.$_POST["pWord"]."</h3>";
 
                         echo '<h1 class="font-weight-bold">Name:</h1>';
                         echo '<h3 class="bg-white">'.$_POST["name"]."</h3>";
@@ -46,7 +50,8 @@
                         echo '<h1 class="font-weight-bold">Message:</h1>';
                         echo '<h3 class="bg-white">'.$_POST["textmsgsignup"]."</h3>";
 
-
+                        $username = $_POST['uName'];
+                        $password = hash('sha256', $_POST['pWord']);
                         $name = $_POST['name'];
                         $email = $_POST['email'];
                         $cohort = $_POST['cohortnumber'];
