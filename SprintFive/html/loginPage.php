@@ -43,8 +43,8 @@ session_start();
             <div class="error"></div>
         </section>
 
-        <section class="input-control mb-4" id="loginpassword"><label class="userinfo required" for="password">Email</label><br />
-            <input class="form-control" id="password" name="password" placeholder="" required="" type="text" />
+        <section class="input-control mb-4" id="loginpassword"><label class="userinfo required" for="password">Password</label><br />
+            <input class="form-control" id="password" name="password" placeholder="" required="" type="password" />
             <div class="error"></div>
         </section>
 
