@@ -76,9 +76,8 @@ function populateNavBar() {
         "                <li class=\"nav-item\">\n" +
         "                    <a id=\"usernameTarget\" class=\"nav-link\">Guest</a>\n" +
         "                </li>\n" +
-
         "            </ul>\n" +
-        "<div class=\"d-flex\">\n" +
+        "<div class=\"position-absolute end-0 mx-3 d-none d-lg-block\">\n" +
                 "        <i class=\"fa-solid fa-circle-half-stroke\" id=\"lights\" onclick=\"lightingButton()\"></i>\n" +
                 "      </div>\n" +
         "        </div>\n" +
