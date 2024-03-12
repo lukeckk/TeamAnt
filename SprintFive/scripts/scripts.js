@@ -4,7 +4,7 @@ function onloadGroup(active) {
     startLighting();
     populateNavBar();
     populateFooter();
-    decorateActive(active);
+    //decorateActive(active); no longer in use.
 }
 function startLighting(){
     console.log("startLighting");
@@ -70,6 +70,10 @@ function populateNavBar() {
         "                <li class=\"nav-item\">\n" +
         "                    <a href=\"adminDashboard.php\" class=\"nav-link\">Admin</a>\n" +
         "                </li>\n" +
+        "                <li class=\"nav-item\">\n" +
+        "                    <a href=\"logout.php\" class=\"nav-link\">Log Out</a>\n" +
+        "                </li>\n" +
+
         "            </ul>\n" +
         "<div class=\"d-flex\">\n" +
                 "        <i class=\"fa-solid fa-circle-half-stroke\" id=\"lights\" onclick=\"lightingButton()\"></i>\n" +
@@ -113,7 +117,7 @@ function decorateActive(active) {
         console.log('found null active');
         return;
     }
-    document.getElementById(active).style.textDecoration = "underline";
+    //document.getElementById(active).style.textDecoration = "underline";
     console.log("attempted to decorate " + active);
 }
 
