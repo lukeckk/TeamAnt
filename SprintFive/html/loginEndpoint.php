@@ -1,3 +1,6 @@
+<?php
+session_start()
+?>
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark" id="htmlTag">
 <head>
@@ -19,7 +22,6 @@
     <div id="receptShared" class="rounded-4 ">
 
         <?php
-        session_start();
         if(!isset($_POST["username"]) || !isset($_POST["password"])) {
             echo '<h1>Please complete the form!</h1>';
             die();

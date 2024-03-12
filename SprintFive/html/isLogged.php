@@ -1,13 +1,12 @@
 <?php
 
-if(session_status() !== PHP_SESSION_ACTIVE) {
-    session_start();
-}
-
+session_start();
 
 if(!isset($_SESSION['username']) || $_SESSION['username'] == '') {
-    header('Location: https://teamant.greenriverdev.com/SprintFive/html/login.html');
+    header('Location: https://teamant.greenriverdev.com/SprintFive/html/loginPage.php');
     die();
 }
+echo '<script>console.log("isLogged Traceback");</script>';
+?>
 
 

@@ -73,6 +73,9 @@ function populateNavBar() {
         "                <li class=\"nav-item\">\n" +
         "                    <a href=\"logout.php\" class=\"nav-link\">Log Out</a>\n" +
         "                </li>\n" +
+        "                <li class=\"nav-item\">\n" +
+        "                    <a id=\"usernameTarget\" class=\"nav-link\">Guest</a>\n" +
+        "                </li>\n" +
 
         "            </ul>\n" +
         "<div class=\"d-flex\">\n" +

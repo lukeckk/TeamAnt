@@ -1,3 +1,7 @@
+<?php
+require 'isLogged.php';
+?>
+
 <!doctype html>
 <html lang="en" data-bs-theme="dark" id="htmlTag">
 <head>
@@ -106,7 +110,7 @@
             <table id="remindertable" class="table table-striped mb-0">
                 <thead>
                 <tr>
-                
+
                     <th>Total Reminders:  </th>
                 </tr>
                 </thead>
@@ -125,7 +129,7 @@
 
 
                 require 'db.php';
-                
+
                 $sql = "select * from Application";
 
                 $result = @mysqli_query($cnxn, $sql);
@@ -160,7 +164,7 @@
                 </form>';
                     }
                 }
-                
+
                 $sql2 = "select * from Announcement";
 
                 $result2 = @mysqli_query($cnxn, $sql2);
@@ -180,10 +184,10 @@
                  
                   </tr>
                     </form>';
-                    
+
                 }
                 ?>
-                
+
 
                 </tbody>
             </table>
@@ -209,3 +213,5 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
+
+

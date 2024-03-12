@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!doctype html>
 <html lang="en" data-bs-theme="dark" id="htmlTag">
 <head>
@@ -33,7 +37,7 @@
     <div class="container-fluid col-8 overall border rounded-4 border-3 border-dark ">
     <div class="container-fluid" id="signupShared">
 
-    <form action="login.php" id="form" method="post" name="login">
+    <form action="loginEndpoint.php" id="form" method="post" name="login">
         <section class="mb-4"><label class="required" for="username" id="usernamelogin">Username</label><br />
             <input class="form-control input-default " id="username" name="username" placeholder="" required="" type="text" />
             <div class="error"></div>

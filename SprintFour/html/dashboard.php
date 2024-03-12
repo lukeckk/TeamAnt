@@ -1,3 +1,10 @@
+<?php
+session_start();
+if($_SESSION['username'] == "") {
+    header("Location: ");
+}
+?>
+
 <!doctype html>
 <html lang="en" data-bs-theme="dark" id="htmlTag">
 <head>
