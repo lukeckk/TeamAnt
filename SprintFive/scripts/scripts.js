@@ -4,6 +4,10 @@ function onloadGroup(active) {
     startLighting();
     populateNavBar();
     populateFooter();
+    if(active === 'loginPage') {
+        loginPageObscureAll();
+        console.log('active param was loginPage');
+    }
     //decorateActive(active); no longer in use.
 }
 function startLighting(){
@@ -59,19 +63,19 @@ function populateNavBar() {
         "        <div id=\"navbarSupportedContent\" class=\"collapse navbar-collapse\">\n" +
         "            <ul class=\"navbar-nav ml-auto\">\n" +
         "                <li class=\"nav-item active\">\n" +
-        "                    <a href=\"dashboard.php\" class=\"nav-link\">Dashboard <span class=\"sr-only\">(current)</span></a>\n" +
+        "                    <a href=\"dashboard.php\" id=\"dashboardItem\" class=\"nav-link\">Dashboard <span class=\"sr-only\">(current)</span></a>\n" +
         "                </li>\n" +
         "                <li class=\"nav-item\">\n" +
-        "                    <a href=\"signup.html\" class=\"nav-link\">Sign Up</a>\n" +
+        "                    <a href=\"signup.html\" id=\"signupItem\" class=\"nav-link\">Sign Up</a>\n" +
         "                </li>\n" +
         "                <li class=\"nav-item\">\n" +
-        "                    <a href=\"contact.html\" class=\"nav-link\">Contact</a>\n" +
+        "                    <a href=\"contact.html\" id=\"contactItem\" class=\"nav-link\">Contact</a>\n" +
         "                </li>\n" +
         "                <li class=\"nav-item\">\n" +
-        "                    <a href=\"adminDashboard.php\" class=\"nav-link\">Admin</a>\n" +
+        "                    <a href=\"adminDashboard.php\" id=\"adminItem\" class=\"nav-link\">Admin</a>\n" +
         "                </li>\n" +
         "                <li class=\"nav-item\">\n" +
-        "                    <a href=\"logout.php\" class=\"nav-link\">Log Out</a>\n" +
+        "                    <a href=\"logout.php\" id=\"logoutItem\" class=\"nav-link\">Log Out</a>\n" +
         "                </li>\n" +
         "                <li class=\"nav-item\">\n" +
         "                    <a id=\"usernameTarget\" class=\"nav-link\">Guest</a>\n" +
@@ -137,5 +141,12 @@ document.getElementById("dateInput").valueAsDate = new Date();
 document.getElementById("followUpInput").valueAsDate = new Date( Date.now() + (6.048e+8 * 2));
 
 
-// APPLICATION FORM ODE ENDS HERE
+// APPLICATION FORM CODE ENDS HERE
+
+function loginPageObscureAll() {
+    document.getElementById('adminItem').style.display = "none";
+    document.getElementById('logoutItem').style.display = "none";
+    document.getElementById('dashboardItem').style.display = "none";
+    document.getElementById('usernameTarget').style.display = "none";
+}
 

@@ -25,7 +25,7 @@ session_start();
 
 
 
-<body onload="onloadGroup('navDashboard')">
+<body onload="onloadGroup('loginPage')">
 <!--<nav id="navbarTarget" class="navbar navbar-expand-lg bg-body-tertiary"></nav>-->
 <nav id="navbarTarget"></nav>
 <!--NAVBAR ENDS HERE, NO ELEMENTS ABOVE THIS LINE-->
