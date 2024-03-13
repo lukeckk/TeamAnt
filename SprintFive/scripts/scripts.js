@@ -85,6 +85,12 @@ function populateNavBar() {
         "    </div>\n" +
         "</nav>";
 
+    let fullName = localStorage.getItem("fullName");
+    if(fullName !== ''){
+        console.log('fullName found to be not null.')
+        document.getElementById('usernameTarget').innerHTML = fullName;
+    }
+
 }
 
 function populateFooter() {
