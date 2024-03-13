@@ -46,14 +46,14 @@ session_start()
         $foundUser = ($result->num_rows == 1);
 
         if ($foundUser) {
-            echo "<br>Success!";
+            echo "<br><h3 class='text-center'>Success</h3>!";
             $_SESSION['username'] = $user;
 
-            echo "<br> Logged in as: ".$_SESSION['username'];
+            echo "<br> <h3 class='text-center'>Logged in as: ".$_SESSION['username']."</h3>";
 
         } else {
             echo mysqli_error($cnxn);
-            echo "<br>Invalid Login.";
+            echo "<h3 class='text-center'>Invalid Login.</h3>";
         }
 
 
