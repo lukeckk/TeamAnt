@@ -39,7 +39,7 @@
                 $email = $_POST["email"];
                 $message = $_POST["message"];
 
-                mail("adh1056@comcast.net", "PHP Contact Form", "Name: ".$name."\n Email: ".$email."\n Message: ".$message);
+                mail("adh1056@comcast.net", "PHP Contact Form", "Name: $name \n Email: $email \n Message: $message");
             }
             else
             {

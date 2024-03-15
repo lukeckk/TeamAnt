@@ -1,3 +1,9 @@
+<?php
+
+$isAdminVar = $_SESSION['isAdmin'];
+
+?>
+
 <!doctype html>
 <html data-bs-theme="dark" id="htmlTag" lang="en">
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,7 +14,13 @@
 	<link href="../styles/styles.css" rel="stylesheet" type="text/css" />
 	<link href="https://fonts.cdnfonts.com/css/bignoodletitling" rel="stylesheet" />
 </head>
-<body onload="onloadGroup('navSignup')">
+<?php
+if ($isAdminVar == 1) {
+    echo " <body onload = \"AfterLoginonloadGroup('SignupPage', 1)\">";
+} else {
+    echo " <body onload = \"AfterLoginonloadGroup('SignupPage', 0)\"> ";
+}
+?>
 <nav id="navbarTarget"></nav>
 <!--NAVBAR ENDS HERE, NO ELEMENTS ABOVE THIS LINE-->
 
@@ -65,7 +77,7 @@
 				<section class="mb-4"><label class="form-label" for="textmsgsignup">Type of roles</label><br />
 					<textarea class="rounded-3 form-control" id="textmsgsignup" name="textmsgsignup" required="" rows="3"></textarea>
 				</section>
-			</form>
+
 		</div>
 	</div>
 </div>

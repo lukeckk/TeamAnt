@@ -62,7 +62,7 @@ function populateNavBar() {
         "                    <a href=\"dashboard.php\" class=\"nav-link\">Dashboard <span class=\"sr-only\">(current)</span></a>\n" +
         "                </li>\n" +
         "                <li class=\"nav-item\">\n" +
-        "                    <a href=\"signup.html\" class=\"nav-link\">Sign Up</a>\n" +
+        "                    <a href=\"signup.php\" class=\"nav-link\">Sign Up</a>\n" +
         "                </li>\n" +
         "                <li class=\"nav-item\">\n" +
         "                    <a href=\"contact.html\" class=\"nav-link\">Contact</a>\n" +

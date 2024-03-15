@@ -1,5 +1,7 @@
 <?php
 require 'isLogged.php';
+$isAdminVar = $_SESSION['isAdmin'];
+
 ?>
 
 <!doctype html>
@@ -24,8 +26,13 @@ require 'isLogged.php';
 </head>
 
 
-
-<body onload="onloadGroup('navDashboard')">
+<?php
+if ($isAdminVar == 1) {
+    echo " <body onload = \"AfterLoginonloadGroup('navDashboard', 1)\">";
+} else {
+    echo " <body onload = \"AfterLoginonloadGroup('navDashboard', 0)\"> ";
+}
+?>
 <!--<nav id="navbarTarget" class="navbar navbar-expand-lg bg-body-tertiary"></nav>-->
 <nav id="navbarTarget"></nav>
 <!--NAVBAR ENDS HERE, NO ELEMENTS ABOVE THIS LINE-->
@@ -59,7 +66,7 @@ require 'isLogged.php';
                 </script>
 
                 <?php
-
+                session_start();
                 require 'db.php';
                 $sql = "select * from Application";
 
@@ -72,9 +79,11 @@ require 'isLogged.php';
                     $status = $row['status'];
                     $index = $row['idNum'];
                     $isVisible = $row['visibility'];
+                    $uName = $row['username'];
 
 
-                    if($isVisible == 1) {
+
+                    if($isVisible == 1 && $uName == $_SESSION['username']) {
                         echo '
                 <form action="editApplication.php" method="POST">
                   <tr>
@@ -99,7 +108,7 @@ require 'isLogged.php';
 
 
             <div class=" linkbutton col-12 text-center">
-                <a href="application.html"><button class="dashButtonLinks" role="button">Add new application</button></a>
+                <a href="application.php"><button class="dashButtonLinks" role="button">Add new application</button></a>
             </div>
         </div>
 
@@ -217,5 +226,7 @@ require 'isLogged.php';
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
+
+
 
 
