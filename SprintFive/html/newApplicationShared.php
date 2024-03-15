@@ -50,9 +50,9 @@ text/x-generic recept.php ( HTML document, ASCII text )
             echo '<h3 class="bg-white">'.$_POST["followUp"]."</h3>";
 
             
-            $to = $_POST["email"];
-            $subject = "Admin Announcement Form";
-            $information = $_POST["information"];
+            $to = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
+            $subject = filter_var("Admin Announcement Form", FILTER_SANITIZE_STRING);
+            $information = filter_var($_POST["information"], FILTER_SANITIZE_STRING);
 
 
             mail($to, $subject, "Title: ".$_POST["title"]."\n Email: ".$_POST["email"]."\n Information: ".$information);

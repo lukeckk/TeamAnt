@@ -50,11 +50,11 @@
                         echo '<h1 class="font-weight-bold">Message:</h1>';
                         echo '<h3 class="bg-white">'.$_POST["textmsgsignup"]."</h3>";
 
-                        $username = $_POST['uName'];
+                        $username = filter_var($_POST['uName'],FILTER_SANITIZE_STRING);
                         $password = hash('sha256', $_POST['pWord']);
-                        $name = $_POST['name'];
-                        $email = $_POST['email'];
-                        $cohort = $_POST['cohortnumber'];
+                        $name = filter_var($_POST['name'],FILTER_SANITIZE_STRING);
+                        $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+                        $cohort = filter_var($_POST['cohortnumber'],FILTER_SANITIZE_NUMBER_INT);
 
                         if($_POST['status'] == "Seeking Internship") {
                             $status = "Seeking Internship";
