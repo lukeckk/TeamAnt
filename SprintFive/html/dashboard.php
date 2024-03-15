@@ -173,18 +173,22 @@ require 'isLogged.php';
                 {
                     $date = $row['date'];
                     $title = $row['title'];
+                    $employer = $row['employer'];
                     $status = $row['status'];
                     $index = $row['id'];
+                    $currentDate = date('y-m-d');
 
-                  echo '
-                  <form action="viewAnnouncementReceipt.php" method="POST">
+
+                    if($date >= (date('Y-m-d', strtotime($currentDate . ' - 5 days')))) {
+                        echo '
+                  <form class="tablecounter" action="viewAnnouncementReceipt.php" method="POST">
                   <tr>
                     
                     <td scope="col">Job position of <button onclick="setId('.$index,')" value="'.$index,'" name="viewBtn">'.$title.'</button> at '.$employer.' was announced on '.$date. '! </td>
                  
                   </tr>
                     </form>';
-
+                    }
                 }
                 ?>
 
