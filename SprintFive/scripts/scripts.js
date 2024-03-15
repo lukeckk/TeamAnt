@@ -10,6 +10,19 @@ function onloadGroup(active) {
     }
     //decorateActive(active); no longer in use.
 }
+
+// Below is the navbar for userDashboard
+function onloadUserGroup(active) {
+    startLighting();
+    populateUserNavBar();
+    populateFooter();
+    if(active === 'loginPage') {
+        loginPageObscureAll();
+        console.log('active param was loginPage');
+    }
+    //decorateActive(active); no longer in use.
+}
+
 function startLighting(){
     console.log("startLighting");
     if(prefColor == null) {
@@ -66,13 +79,56 @@ function populateNavBar() {
         "                    <a href=\"dashboard.php\" id=\"dashboardItem\" class=\"nav-link\">Dashboard <span class=\"sr-only\">(current)</span></a>\n" +
         "                </li>\n" +
         "                <li class=\"nav-item\">\n" +
-        "                    <a href=\"signup.html\" id=\"signupItem\" class=\"nav-link\">Sign Up</a>\n" +
-        "                </li>\n" +
-        "                <li class=\"nav-item\">\n" +
         "                    <a href=\"contact.html\" id=\"contactItem\" class=\"nav-link\">Contact</a>\n" +
         "                </li>\n" +
         "                <li class=\"nav-item\">\n" +
         "                    <a href=\"adminDashboard.php\" id=\"adminItem\" class=\"nav-link\">Admin</a>\n" +
+        "                </li>\n" +
+        "                <li class=\"nav-item\">\n" +
+        "                    <a href=\"logout.php\" id=\"logoutItem\" class=\"nav-link\">Log Out</a>\n" +
+        "                </li>\n" +
+        "                <li class=\"nav-item\">\n" +
+        "                    <a id=\"usernameTarget\" class=\"nav-link\">Guest</a>\n" +
+        "                </li>\n" +
+        "            </ul>\n" +
+        "<div class=\"position-absolute end-0 mx-3 d-none d-lg-block\">\n" +
+                "        <i class=\"fa-solid fa-circle-half-stroke\" id=\"lights\" onclick=\"lightingButton()\"></i>\n" +
+                "      </div>\n" +
+        "        </div>\n" +
+        "    </div>\n" +
+        "    </div>\n" +
+        "</nav>";
+
+    let fullName = localStorage.getItem("fullName");
+    if(fullName !== ''){
+        console.log('fullName found to be not null.')
+        document.getElementById('usernameTarget').innerHTML = fullName;
+    }
+
+}
+
+//below is the navbar for userDashboard
+function populateUserNavBar() {
+
+    document.getElementById("navbarTarget").innerHTML = "<nav class=\"navbar navbar-expand-lg shadow-sm py-0\">\n" +
+        "    <div class=\" main_container container-fluid p-0\">\n" +
+        "        <a href=\"../../index.html\" class=\"navbar-brand\">\n" +
+        "            <!-- Logo Image -->\n" +
+        "            <img src=\"../../Images/team-ant-logo-white.png\" alt=\"team ant logo\" class=\"d-inline-block align-middle mr-2\">\n" +
+        "        </a>\n" +
+        "\n" +
+        "        <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n" +
+        "            <span class=\"navbar-toggler-icon\" ></span>\n" +
+        "        </button>\n" +
+        "\n" +
+        "\n" +
+        "        <div id=\"navbarSupportedContent\" class=\"collapse navbar-collapse\">\n" +
+        "            <ul class=\"navbar-nav ml-auto\">\n" +
+        "                <li class=\"nav-item active\">\n" +
+        "                    <a href=\"dashboard.php\" id=\"dashboardItem\" class=\"nav-link\">Dashboard <span class=\"sr-only\">(current)</span></a>\n" +
+        "                </li>\n" +
+        "                <li class=\"nav-item\">\n" +
+        "                    <a href=\"contact.html\" id=\"contactItem\" class=\"nav-link\">Contact</a>\n" +
         "                </li>\n" +
         "                <li class=\"nav-item\">\n" +
         "                    <a href=\"logout.php\" id=\"logoutItem\" class=\"nav-link\">Log Out</a>\n" +
