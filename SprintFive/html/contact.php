@@ -39,7 +39,7 @@
                 $email = filter_var($_POST["email"],FILTER_SANITIZE_EMAIL);
                 $message = filter_var($_POST["message"], FILTER_SANITIZE_STRING);
 
-                mail("adh1056@comcast.net", "PHP Contact Form", "Name: ".$name."\n Email: ".$email."\n Message: ".$message);
+                mail("adh1056@comcast.net", "PHP Contact Form", "Name: $name \n Email: $email \n Message: $message");
             }
             else
             {

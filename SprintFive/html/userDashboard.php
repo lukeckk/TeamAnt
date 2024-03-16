@@ -99,7 +99,7 @@ require 'isLogged.php';
 
 
             <div class=" linkbutton col-12 text-center">
-                <a href="application.html"><button class="dashButtonLinks" role="button">Add new application</button></a>
+                <a href="application.php"><button class="dashButtonLinks" role="button">Add new application</button></a>
             </div>
         </div>
 

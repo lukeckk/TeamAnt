@@ -42,10 +42,17 @@ session_start()
 
         $sql = "SELECT * FROM `User` WHERE `username` = '".$user."' AND `password` = '".$pass."'";
 
+
+
+
+
         $result = @mysqli_query($cnxn, $sql);
         $foundUser = ($result->num_rows == 1);
 
+
+
         if ($foundUser) {
+
             echo "<br><h3 class='text-center'>Success</h3>!";
             $_SESSION['username'] = $user;
 
