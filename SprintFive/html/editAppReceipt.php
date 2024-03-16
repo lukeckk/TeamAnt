@@ -1,3 +1,8 @@
+<?php
+require 'isLogged.php';
+$isAdminVar = $_SESSION['isAdmin'];
+
+?>
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark" id="htmlTag">
 <head>
@@ -11,7 +16,14 @@
     <link href="https://fonts.cdnfonts.com/css/bignoodletitling" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body onload="onloadGroup('navAdmin')">
+
+<?php
+if ($isAdminVar == 1) {
+    echo " <body onload = \"AfterLoginonloadGroup('receipt', 1)\">";
+} else {
+    echo " <body onload = \"AfterLoginonloadGroup('receipt', 0)\"> ";
+}
+?>
 <!--<nav id="navbarTarget" class="navbar navbar-expand-lg bg-body-tertiary"></nav>-->
 <nav id="navbarTarget"></nav>
 

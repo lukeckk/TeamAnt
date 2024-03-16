@@ -1,3 +1,8 @@
+<?php
+require 'isLogged.php';
+$isAdminVar = $_SESSION['isAdmin'];
+
+?>
 <!doctype html>
 <html lang="en" data-bs-theme="dark" id="htmlTag">
 <head>
@@ -13,7 +18,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body onload="onloadGroup()">
+<?php
+if ($isAdminVar == 1) {
+    echo " <body onload = \"AfterLoginonloadGroup('applicationPage', 1)\">";
+} else {
+    echo " <body onload = \"AfterLoginonloadGroup('applicationPage', 0)\"> ";
+}
+?>
 <!--<nav id="navbarTarget" class="navbar navbar-expand-lg bg-body-tertiary"></nav>-->
 <nav id="navbarTarget"></nav>
 <!--NAVBAR ENDS HERE, NO ELEMENTS ABOVE THIS LINE-->

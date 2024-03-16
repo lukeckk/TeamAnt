@@ -308,8 +308,16 @@
 
 #dashtable {
 
-    height: 400px;
-    overflow-y: scroll;
+    height: 600px;
+    /* overflow-y: scroll; */
+    display: block;
+
+}
+
+#remindertable {
+
+    height: 600px;
+    /* overflow-y: scroll; */
     display: block;
 
 }
