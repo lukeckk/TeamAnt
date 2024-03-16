@@ -1,3 +1,8 @@
+<?php
+require 'isLogged.php';
+$isAdminVar = $_SESSION['isAdmin'];
+
+?>
 <!doctype html>
 <html lang="en" data-bs-theme="dark" id="htmlTag">
 <head>
@@ -15,7 +20,13 @@
 
 
 
-<body onload="onloadGroup('navSignup')">
+<?php
+if ($isAdminVar == 1) {
+    echo " <body onload = \"AfterLoginonloadGroup('receipt', 1)\">";
+} else {
+    echo " <body onload = \"AfterLoginonloadGroup('receipt', 0)\"> ";
+}
+?>
 <nav id="navbarTarget"></nav>
 <!--NAVBAR ENDS HERE, NO ELEMENTS ABOVE THIS LINE-->
 
@@ -50,8 +61,8 @@
                         echo '<h1 class="font-weight-bold">Message:</h1>';
                         echo '<h3 class="bg-white">'.$_POST["textmsgsignup"]."</h3>";
 
-                        $username = filter_var($_POST['uName'],FILTER_SANITIZE_STRING);
-                        $password = hash('sha256', $_POST['pWord']);
+                        $uName = filter_var($_POST['uName'],FILTER_SANITIZE_STRING);
+                        $pWord = hash('sha256', $_POST['pWord']);
                         $name = filter_var($_POST['name'],FILTER_SANITIZE_STRING);
                         $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
                         $cohort = filter_var($_POST['cohortnumber'],FILTER_SANITIZE_NUMBER_INT);
@@ -70,7 +81,7 @@
 
                         require 'db.php';
 
-                        $sql = "insert into User (name, email, cohort, status, roles) values ('$name', '$email', '$cohort', '$status', '$roles')";
+                        $sql = "insert into User (name, email, cohort, status, roles, username, password) values ('$name', '$email', '$cohort', '$status', '$roles','$uName', '$pWord')";
 
                         $result = @mysqli_query($cnxn, $sql);
 

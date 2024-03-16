@@ -18,30 +18,59 @@ function AfterLoginonloadGroup(active, IsAdmin) {
     populateNavBar();
     populateFooter();
 
-    console.log(IsAdmin + "This is the isadmin code!");
+    console.log(IsAdmin + " This is the isadmin code!");
+    
 // If Statement for Dashboard page
-     if(active === 'navDashboard' && isAdmin == 1) {
-            AdminPageObscureAll();
-            console.log(isAdmin + "inside if ");
-            console.log('active param was admin dash');
-        } else if (active === 'navDashboard') {
+    if (active === 'navDashboard' && IsAdmin === 0) 
+    {
         UserPageObscureAll();
-        console.log('active param was loginPage');
+        console.log('active param was user dash');
     }
-    // If Statement for application page
-     if(active === 'applicationPage' && isAdmin == 1) {
-        AdminPageObscureAll();
-        console.log(isAdmin + "inside if ");
-        console.log('active param was admin application');
-    } else if (active === 'applicationPage') {
+    else if (active === 'navDashboard' && IsAdmin === 1) 
+    {
+        adminPageObscureAll();
+        console.log('active param was admin dash');
+    }
+    
+    
+    
+// If Statement for application page
+  if (active === 'applicationPage' && IsAdmin === 0) {
         UserPageObscureAll();
         console.log('active param was user application');
     }
-    // if statement for signup page
+    else if (active === 'applicationPage' && IsAdmin === 1) {
+        adminPageObscureAll();
+        console.log('active param was admin application');
+    }
+    
+// if statement for signup page
      if (active === 'SignupPage') {
          SignupPageObscureAll();
         console.log('active param was loginPage');
     }
+    
+// if statement for all receipt pages
+     if (active === 'receipt' && IsAdmin === 0) {
+        UserPageObscureAll();
+        console.log('active param was user receipt page');
+    }
+    else if (active === 'receipt' && IsAdmin === 1) {
+        adminPageObscureAll();
+        console.log('active param was admin receipt page');
+    }
+    
+// if statement for contact form
+ if (active === 'contact' && IsAdmin === 0) {
+        UserPageObscureAll();
+        console.log('active param was user contact page');
+    }
+    else if (active === 'contact' && IsAdmin === 1) {
+        adminPageObscureAll();
+        console.log('active param was admin contact page');
+    }
+    
+    
 
 
     //decorateActive(active); no longer in use.
@@ -108,7 +137,7 @@ function populateNavBar() {
         "                    <a href=\"signup.php\" id=\"signupbuttonnav\" class=\"nav-link\">Sign Up</a>\n" +
         "                </li>\n" +
         "                <li class=\"nav-item\">\n" +
-        "                    <a href=\"contact.html\" id=\"contactItem\" class=\"nav-link\">Contact</a>\n" +
+        "                    <a href=\"contact.php\" id=\"contactItem\" class=\"nav-link\">Contact</a>\n" +
         "                </li>\n" +
         "                <li class=\"nav-item\">\n" +
         "                    <a href=\"adminDashboard.php\" id=\"adminItem\" class=\"nav-link\">Admin</a>\n" +
@@ -194,10 +223,7 @@ function UserPageObscureAll() {
     document.getElementById('adminItem').style.display = "none";
     document.getElementById('signupbuttonnav').style.display = "none";
 }
-function AdminPageObscureAll() {
 
-    document.getElementById('signupbuttonnav').style.display = "none";
-}
 function SignupPageObscureAll() {
 
     document.getElementById('adminItem').style.display = "none";
@@ -205,5 +231,9 @@ function SignupPageObscureAll() {
     document.getElementById('dashboardItem').style.display = "none";
     document.getElementById('usernameTarget').style.display = "none";
 
+}
+
+function adminPageObscureAll() {
+    document.getElementById('signupbuttonnav').style.display = "none";
 }
 

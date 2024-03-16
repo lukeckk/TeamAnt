@@ -68,7 +68,7 @@ if ($isAdminVar == 1) {
                 <?php
                 session_start();
                 require 'db.php';
-                $sql = "select * from Application";
+                $sql = "select * from Application order by idNum desc";
 
                 $result = @mysqli_query($cnxn, $sql);
 
@@ -81,19 +81,34 @@ if ($isAdminVar == 1) {
                     $isVisible = $row['visibility'];
                     $uName = $row['username'];
 
-
-
-                    if($isVisible == 1 && $uName == $_SESSION['username']) {
+                    if ($isAdminVar == 1) {
                         echo '
-                <form action="editApplication.php" method="POST">
-                  <tr>
-                    <td class="date" scope="row">' . $date . '</td>
-                    <td>' . $title . '</td>
-                    <td>' . $status . '</td>
-                    <td scope="col"><button onclick="setId(' . $index, ')" value="' . $index, '" name="updateBtn" class="ApplicationButtonUP">Update</button></th>
-                    <td scope="col"><button name="deleteBtn" value="' . $index . '"class="ApplicationButtonDE">Delete</button></td>
-                  </tr>
-                </form>';
+                        <form action="editApplication.php" method="POST">
+                          <tr>
+                            <td class="date" scope="row">' . $date . '</td>
+                            <td>' . $title . '</td>
+                            <td>' . $status . '</td>
+                            <td scope="col"><button onclick="setId(' . $index, ')" value="' . $index, '" name="updateBtn" class="ApplicationButtonUP">Update</button></th>
+                            <td scope="col"><button name="deleteBtn" value="' . $index . '"class="ApplicationButtonDE">Delete</button></td>
+                          </tr>
+                        </form>';
+                        
+                    }
+                    else
+                    {
+    
+                        if($isVisible == 1 && $uName == $_SESSION['username']) {
+                            echo '
+                            <form action="editApplication.php" method="POST">
+                              <tr>
+                                <td class="date" scope="row">' . $date . '</td>
+                                <td>' . $title . '</td>
+                                <td>' . $status . '</td>
+                                <td scope="col"><button onclick="setId(' . $index, ')" value="' . $index, '" name="updateBtn" class="ApplicationButtonUP">Update</button></th>
+                                <td scope="col"><button name="deleteBtn" value="' . $index . '"class="ApplicationButtonDE">Delete</button></td>
+                              </tr>
+                            </form>';
+                        }
                     }
                 }
                 ?>
@@ -116,11 +131,61 @@ if ($isAdminVar == 1) {
             <h3 class="mb-0">Reminders</h3>
 
 
-            <table id="remindertable" class="table table-striped mb-0">
+             <table id="remindertable" class="table table-striped mb-0">
                 <thead>
                 <tr>
 
-                    <th>Total Reminders:  </th>
+<!-- Reminder Counter-->
+<?php
+session_start();
+require 'db.php';
+
+$sql = "select * from Application order by idNum desc";
+
+$result = @mysqli_query($cnxn, $sql);
+$counter=0;
+
+while ($row = mysqli_fetch_assoc($result))
+{
+    $date = $row['date'];
+    $title = $row['title'];
+    $followUpDate = $row['followUpDate'];
+    $index = $row['idNum'];
+    $currentDate = date('y-m-d');
+    $addonDate = ' + 1 days';
+    $employer = $row['employer'];
+    $visibility = $row['visibility'];
+    $uName = $row['username'];
+
+if($followUpDate <= (date('Y-m-d', strtotime($currentDate . ' + 5 days'))) && $followUpDate >= (date('Y-m-d', strtotime($currentDate . ' - 5 days'))) && $visibility == 1 && $uName == $_SESSION['username']) {
+
+    $counter++;
+}
+}
+$sql2 = "select * from Announcement";
+
+$result2 = @mysqli_query($cnxn, $sql2);
+$counter2=0;
+
+while ($row = mysqli_fetch_assoc($result2))
+{
+$date = $row['date'];
+$title = $row['title'];
+$status = $row['status'];
+$index = $row['id'];
+$currentDate = date('y-m-d');
+
+
+
+if($date >= (date('Y-m-d', strtotime($currentDate . ' - 5 days')))) {
+    $counter2++;
+}
+}
+ $TotalCount = $counter + $counter2;
+
+
+    echo '<th>Total Reminders: '.$TotalCount.'  </th>';
+     ?>
                 </tr>
                 </thead>
                 <tbody>
@@ -135,11 +200,11 @@ if ($isAdminVar == 1) {
 
                 <?php
 
-
+                session_start();
 
                 require 'db.php';
 
-                $sql = "select * from Application";
+                $sql = "select * from Application order by idNum desc";
 
                 $result = @mysqli_query($cnxn, $sql);
 
@@ -152,29 +217,27 @@ if ($isAdminVar == 1) {
                     $currentDate = date('y-m-d');
                     $addonDate = ' + 1 days';
                     $employer = $row['employer'];
+                    $visibility = $row['visibility'];
                     $counter++;
+                    $uName = $row['username'];
 
 
 
 
-                    if($followUpDate <= (date('Y-m-d', strtotime($currentDate . ' + 5 days'))) && $followUpDate >= (date('Y-m-d', strtotime($currentDate . ' - 5 days')))) {
-                    echo '<form action="editApplication.php" method="POST">
+
+                    if($followUpDate <= (date('Y-m-d', strtotime($currentDate . ' + 5 days'))) && $followUpDate >= (date('Y-m-d', strtotime($currentDate . ' - 5 days'))) && $visibility == 1 && $uName == $_SESSION['username']) {
+                        echo '<form class="tablecounter" action="editApplication.php" method="POST">
                   <tr>
+                   
+                    <td>Your Application for <button onclick="setId(' . $index, ')" value="' . $index, '" name="updateBtn" ">'.$title.'</button> role at '.$employer.' is due! </td>
                     
-                        
-                
-                    
-                    <td>Your Application for ' . $title . ' role at '.$employer.' is due! </td>
-                    
-                  
-                  
-                  
+               
                   </tr>
                 </form>';
                     }
                 }
 
-                $sql2 = "select * from Announcement";
+                $sql2 = "select * from Announcement ORDER BY ID DESC";
 
                 $result2 = @mysqli_query($cnxn, $sql2);
 

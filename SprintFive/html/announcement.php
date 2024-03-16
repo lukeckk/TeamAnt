@@ -1,3 +1,9 @@
+<?php
+require 'isLogged.php';
+$isAdminVar = $_SESSION['isAdmin'];
+
+?>
+
 <!doctype html>
 <html lang="en" data-bs-theme="dark" id="htmlTag">
 <head>
@@ -14,7 +20,13 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body onload="onloadGroup('navAdmin')">
+<?php
+if ($isAdminVar == 1) {
+    echo " <body onload = \"AfterLoginonloadGroup('applicationPage', 1)\">";
+} else {
+    echo " <body onload = \"AfterLoginonloadGroup('applicationPage', 0)\"> ";
+}
+?>
 <!--<nav id="navbarTarget" class="navbar navbar-expand-lg bg-body-tertiary"></nav>-->
 <nav id="navbarTarget"></nav>
 <!--NAVBAR ENDS HERE, NO ELEMENTS ABOVE THIS LINE-->
@@ -26,14 +38,14 @@
   <form action="receipt.php" method="POST">
     <div id="announcementShared" class="rounded-4 ">
      
-        <label for="titleInput" class="form-label text-start required">Title</label>
+        <label for="title" class="form-label text-start required">Title</label>
         <input type="text" id="titleInput" name="title" class="form-control" >
      
 
       <section class="mt-3 row">
-        <label for="statusInput" class="form-label text-start required">Job Type</label>
+        <label for="status" class="form-label text-start required">Job Type</label>
         <label class="col-4">
-          <input id="statusInput" type="radio" name="jobType" value="Full-Time"> Full-Time Job
+          <input type="radio" name="jobType" value="Full-Time"> Full-Time Job
         </label>
 
         <label class="col-4">
@@ -41,17 +53,17 @@
         </label>
       </section>
 
-        <label for="locationInput" class="form-label text-start mt-3 required">Location</label>
+        <label for="location" class="form-label text-start mt-3 required">Location</label>
         <input type="text" id="locationInput" name="location" class="form-control">
      
 
-        <label for="employerInput" class="form-label text-start mt-3 required"> Employer</label>
+        <label for="employer" class="form-label text-start mt-3 required"> Employer</label>
         <input type="text" id="employerInput" name="employer" class="form-control">
 
-        <label for="informationInput" class="form-label text-start mt-3 required">More Information</label>
+        <label for="information" class="form-label text-start mt-3 required">More Information</label>
         <textarea id="informationInput" name="information" rows="4" cols="50" class="form-control"></textarea>
 
-        <label for="urlInput" class="form-label text-start mt-3 required">URL</label>
+        <label for="url" class="form-label text-start mt-3 required">URL</label>
         <input type="text" id="urlInput" name="url" class="form-control">
 
     </div> 

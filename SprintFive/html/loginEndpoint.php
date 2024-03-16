@@ -1,6 +1,10 @@
 <?php
-session_start()
+session_start();
+// Not currently adjusted for admin and user because the page goes blank after including require 'isLogged.php';
+// require 'isLogged.php';
+$isAdminVar = $_SESSION['isAdmin'];
 ?>
+
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark" id="htmlTag">
 <head>
@@ -14,7 +18,15 @@ session_start()
     <link href="https://fonts.cdnfonts.com/css/bignoodletitling" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body onload="onloadGroup('navAdmin')">
+
+<?php
+
+    if ($isAdminVar == 1) {
+        echo " <body onload = \"AfterLoginonloadGroup('receipt', 1)\">";
+    } else {
+        echo " <body onload = \"AfterLoginonloadGroup('receipt', 0)\"> ";
+    }
+?>
 <!--<nav id="navbarTarget" class="navbar navbar-expand-lg bg-body-tertiary"></nav>-->
 <nav id="navbarTarget"></nav>
 
@@ -30,7 +42,7 @@ session_start()
 
         require 'db.php';
 
-        $user = filter_var($_POST["username"],FILTER_SANITIZE_STRING);
+        $user = $_POST["username"];
         $pass = hash('sha256',$_POST["password"]);
 
         //echo "DEBUG INFO: " . $pass. '<br>';
@@ -49,11 +61,14 @@ session_start()
         $result = @mysqli_query($cnxn, $sql);
         $foundUser = ($result->num_rows == 1);
 
+        while ($row = mysqli_fetch_assoc($result)){
+            $_SESSION['isAdmin'] = $row['isAdmin'];
+        }
 
 
         if ($foundUser) {
 
-            echo "<br><h3 class='text-center'>Success</h3>!";
+            echo "<br><h3 class='text-center'>Success !</h3>";
             $_SESSION['username'] = $user;
 
             echo "<br> <h3 class='text-center'>Logged in as: ".$_SESSION['username']."</h3>";

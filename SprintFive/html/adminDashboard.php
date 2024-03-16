@@ -1,3 +1,8 @@
+<?php
+require 'isLogged.php';
+$isAdminVar = $_SESSION['isAdmin'];
+
+?>
 <!doctype html>
 <html lang="en" data-bs-theme="dark" id="htmlTag">
 <head>
@@ -14,8 +19,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body onload="onloadGroup('navAdmin')">
-<!--<nav id="navbarTarget" class="navbar navbar-expand-lg bg-body-tertiary"></nav>-->
+
+<?php
+if ($isAdminVar == 1) {
+    echo " <body onload = \"AfterLoginonloadGroup('applicationPage', 1)\">";
+} else {
+    echo " <body onload = \"AfterLoginonloadGroup('applicationPage', 0)\"> ";
+}
+?>
+<!--TESTING; DOES THE SESSION APPEAR?-->
+<?php
+session_start();
+if(!isset($_SESSION['username']) || $_SESSION['username'] == '') {
+    header('Location: https://teamant.greenriverdev.com/SprintFive/html/login.html');
+    echo "<script>console.log('No session found.');</script>";
+} else {
+    echo "<script>console.log('Session Found!');</script>";
+}
+?>
+<!--<nav id="HEY!!!!!!!!!!!" class="navbar navbar-expand-lg bg-body-tertiary"></nav>-->
 <nav id="navbarTarget"></nav>
 <!--NAVBAR ENDS HERE, NO ELEMENTS ABOVE THIS LINE-->
 <div class="container-fluid">
@@ -38,7 +60,7 @@
                     <tbody>
                     <?php
                     require 'db.php';
-                    $sql = "select * from User";
+                    $sql = "select * from User order by IDNUM desc";
 
                     $result = @mysqli_query($cnxn, $sql);
 
@@ -53,13 +75,13 @@
                         if($isVisible == 1) {
                             echo'
                     <form action="editUser.php" method="post">
-                     <tr>
+                    <tr>
                        <td>'.$name.'</td>
                        <td>'.$email.'</td>
-                        <th ><button class="ApplicationButtonUP">View User</button></th>
+                        <th ><button onclick="setId('.$id,')" value="'.$id,'" name="viewBtn" class="ApplicationButtonUP">Edit User</button></th>
                         <th ><button name="deleteBtn" value="'.$id.'" class="ApplicationButtonDE">Delete User</button></th>
-                     </tr>
-                     </form>';
+                    </tr>
+                    </form>';
 
                         }
 
@@ -93,7 +115,7 @@
                         
                     <?php
                     require 'db.php';
-                    $sql = "select * from Announcement";
+                    $sql = "select * from Announcement order by id desc";
 
                     $result = @mysqli_query($cnxn, $sql);
 
@@ -127,7 +149,7 @@
 </div>
 
     <div class="linkbutton col-12 text-center">
-        <a href="announcement.html"><button class="dashButtonLinks" role="button">New Announcement</button></a>
+        <a href="announcement.php"><button class="dashButtonLinks" role="button">New Announcement</button></a>
 
     </div>
 
@@ -152,7 +174,7 @@
 
                     <?php
                     require 'db.php';
-                    $sql = "select * from Application";
+                    $sql = "select * from Application order by idNum desc";
 
                     $result = @mysqli_query($cnxn, $sql);
 
