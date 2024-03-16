@@ -49,12 +49,12 @@
             
 
             $date = date('d-m-y');
-            $title = $_POST['title'];
-            $jobType = $_POST['jobType'];
-            $location = $_POST['location'];
-            $employer = $_POST['employer'];
-            $information = $_POST['information'];
-            $url = $_POST['url'];
+            $title = filter_var($_POST['title'],FILTER_SANITIZE_STRING);
+            $jobType = filter_var($_POST['jobType'],FILTER_SANITIZE_STRING);
+            $location = filter_var($_POST['location'], FILTER_SANITIZE_STRING);
+            $employer = filter_var($_POST['employer'],FILTER_SANITIZE_STRING);
+            $information = filter_var($_POST['information'],FILTER_SANITIZE_STRING);
+            $url = filter_var($_POST['url'],FILTER_SANITIZE_URL);
 
           $message = 'Title: '.$title.' Job Type: '.$jobType.'  Location: '.$location.' Employer: '.$employer.' Information: '.$information.' URL: '.$url.' ';
 

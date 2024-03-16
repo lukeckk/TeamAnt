@@ -30,7 +30,7 @@ session_start()
 
         require 'db.php';
 
-        $user = $_POST["username"];
+        $user = filter_var($_POST["username"],FILTER_SANITIZE_STRING);
         $pass = hash('sha256',$_POST["password"]);
 
         //echo "DEBUG INFO: " . $pass. '<br>';
