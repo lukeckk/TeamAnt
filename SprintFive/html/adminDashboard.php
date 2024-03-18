@@ -110,8 +110,6 @@ if(!isset($_SESSION['username']) || $_SESSION['username'] == '') {
                         <th scope="col">JOB TYPE</th>
                         <th scope="col">EMPLOYER</th>
                         <th></th>
-                        <th></th>
-                        <th></th>
                         
                     </tr>
                     </thead>
@@ -218,6 +216,8 @@ if(!isset($_SESSION['username']) || $_SESSION['username'] == '') {
     </div>
 </div>
 </div>
+
+
 
 
 

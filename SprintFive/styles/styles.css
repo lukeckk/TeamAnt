@@ -309,7 +309,7 @@
 #dashtable {
 
     height: 600px;
-    /* overflow-y: scroll; */
+    overflow-y: scroll;
     display: block;
 
 }
@@ -317,10 +317,13 @@
 #remindertable {
 
     height: 600px;
-    /* overflow-y: scroll; */
+    /*overflow-y: scroll;*/
     display: block;
 
 }
+
+
+
 
 
 /*Form Styles End*/
@@ -421,9 +424,12 @@ poweredcontainer {
     width: fit-content;
 }
 
+
+
+
 #Dashcontainer {
     margin-bottom: 200px; !important;
-    width: 100%; !important
+    width: 100%; !important;
 
 }
 

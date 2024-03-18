@@ -22,9 +22,9 @@ $isAdminVar = $_SESSION['isAdmin'];
 
 <?php
 if ($isAdminVar == 1) {
-    echo " <body onload = \"AfterLoginonloadGroup('receipt', 1)\">";
+    echo " <body onload = \"AfterLoginonloadGroup('SignupPage', 1)\">";
 } else {
-    echo " <body onload = \"AfterLoginonloadGroup('receipt', 0)\"> ";
+    echo " <body onload = \"AfterLoginonloadGroup('SignupPage', 0)\"> ";
 }
 ?>
 <nav id="navbarTarget"></nav>
