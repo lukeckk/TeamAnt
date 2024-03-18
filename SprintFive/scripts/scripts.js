@@ -70,8 +70,6 @@ function AfterLoginonloadGroup(active, IsAdmin) {
         console.log('active param was admin contact page');
     }
     
-    
-
 
     //decorateActive(active); no longer in use.
 }
@@ -146,6 +144,9 @@ function populateNavBar() {
         "                    <a href=\"logout.php\" id=\"logoutItem\" class=\"nav-link\">Log Out</a>\n" +
         "                </li>\n" +
         "                <li class=\"nav-item\">\n" +
+        "                    <a href=\"loginPage.php\" id=\"loginItem\" class=\"nav-link\">Log In</a>\n" +
+        "                </li>\n" +
+        "                <li class=\"nav-item\">\n" +
         "                    <a id=\"usernameTarget\" class=\"nav-link\">Guest</a>\n" +
         "                </li>\n" +
         "            </ul>\n" +
@@ -216,12 +217,15 @@ document.getElementById("followUpInput").valueAsDate = new Date( Date.now() + (6
 function loginPageObscureAll() {
     document.getElementById('adminItem').style.display = "none";
     document.getElementById('logoutItem').style.display = "none";
+    document.getElementById('loginItem').style.display = "none";
     document.getElementById('dashboardItem').style.display = "none";
     document.getElementById('usernameTarget').style.display = "none";
 }
 function UserPageObscureAll() {
     document.getElementById('adminItem').style.display = "none";
     document.getElementById('signupbuttonnav').style.display = "none";
+    document.getElementById('loginItem').style.display = "none";
+
 }
 
 function SignupPageObscureAll() {
@@ -230,10 +234,17 @@ function SignupPageObscureAll() {
     document.getElementById('logoutItem').style.display = "none";
     document.getElementById('dashboardItem').style.display = "none";
     document.getElementById('usernameTarget').style.display = "none";
+    document.getElementById('signupbuttonnav').style.display = "none";
 
 }
 
 function adminPageObscureAll() {
     document.getElementById('signupbuttonnav').style.display = "none";
+    document.getElementById('loginItem').style.display = "none";
+
 }
+
+
+
+// singupReceipt only shows login & contact which is same is signup.php
 

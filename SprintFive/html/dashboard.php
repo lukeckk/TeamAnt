@@ -134,58 +134,58 @@ if ($isAdminVar == 1) {
              <table id="remindertable" class="table table-striped mb-0">
                 <thead>
                 <tr>
-
-<!-- Reminder Counter-->
-<?php
-session_start();
-require 'db.php';
-
-$sql = "select * from Application order by idNum desc";
-
-$result = @mysqli_query($cnxn, $sql);
-$counter=0;
-
-while ($row = mysqli_fetch_assoc($result))
-{
-    $date = $row['date'];
-    $title = $row['title'];
-    $followUpDate = $row['followUpDate'];
-    $index = $row['idNum'];
-    $currentDate = date('y-m-d');
-    $addonDate = ' + 1 days';
-    $employer = $row['employer'];
-    $visibility = $row['visibility'];
-    $uName = $row['username'];
-
-if($followUpDate <= (date('Y-m-d', strtotime($currentDate . ' + 5 days'))) && $followUpDate >= (date('Y-m-d', strtotime($currentDate . ' - 5 days'))) && $visibility == 1 && $uName == $_SESSION['username']) {
-
-    $counter++;
-}
-}
-$sql2 = "select * from Announcement";
-
-$result2 = @mysqli_query($cnxn, $sql2);
-$counter2=0;
-
-while ($row = mysqli_fetch_assoc($result2))
-{
-$date = $row['date'];
-$title = $row['title'];
-$status = $row['status'];
-$index = $row['id'];
-$currentDate = date('y-m-d');
-
-
-
-if($date >= (date('Y-m-d', strtotime($currentDate . ' - 5 days')))) {
-    $counter2++;
-}
-}
- $TotalCount = $counter + $counter2;
-
-
-    echo '<th>Total Reminders: '.$TotalCount.'  </th>';
-     ?>
+                    
+                    <!-- Reminder Counter-->
+                    <?php
+                    session_start();
+                    require 'db.php';
+                    
+                    $sql = "select * from Application order by idNum desc";
+                    
+                    $result = @mysqli_query($cnxn, $sql);
+                    $counter=0;
+                    
+                    while ($row = mysqli_fetch_assoc($result))
+                    {
+                        $date = $row['date'];
+                        $title = $row['title'];
+                        $followUpDate = $row['followUpDate'];
+                        $index = $row['idNum'];
+                        $currentDate = date('y-m-d');
+                        $addonDate = ' + 1 days';
+                        $employer = $row['employer'];
+                        $visibility = $row['visibility'];
+                        $uName = $row['username'];
+                    
+                    if($followUpDate <= (date('Y-m-d', strtotime($currentDate . ' + 5 days'))) && $followUpDate >= (date('Y-m-d', strtotime($currentDate . ' - 5 days'))) && $visibility == 1 && $uName == $_SESSION['username']) {
+                    
+                        $counter++;
+                    }
+                    }
+                    $sql2 = "select * from Announcement";
+                    
+                    $result2 = @mysqli_query($cnxn, $sql2);
+                    $counter2=0;
+                    
+                    while ($row = mysqli_fetch_assoc($result2))
+                    {
+                    $date = $row['date'];
+                    $title = $row['title'];
+                    $status = $row['status'];
+                    $index = $row['id'];
+                    $currentDate = date('y-m-d');
+                    
+                    
+                    
+                    if($date >= (date('Y-m-d', strtotime($currentDate . ' - 5 days')))) {
+                        $counter2++;
+                    }
+                    }
+                     $TotalCount = $counter + $counter2;
+                    
+                    
+                        echo '<th>Total Reminders: '.$TotalCount.'  </th>';
+                         ?>
                 </tr>
                 </thead>
                 <tbody>
