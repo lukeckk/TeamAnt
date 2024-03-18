@@ -30,32 +30,55 @@ if ($isAdminVar == 1) {
 <!--<nav id="navbarTarget" class="navbar navbar-expand-lg bg-body-tertiary"></nav>-->
 <nav id="navbarTarget"></nav>
 <!--NAVBAR ENDS HERE, NO ELEMENTS ABOVE THIS LINE-->
-<div  class="container-fluid col-sm-8 col-xs-8 applicationContainer">
-<div class="container-fluid">
-    <h3 class="text-center">EDIT USER</h3>
+
 
     <?php
-    require 'db.php';
+
+    $indexAdmin = $_POST['makeAdmin'];
+
+    echo $indexAdmin."This is index admin <br>";
+    if(isset($indexAdmin)){
+        require 'db.php';
 
 
-    $index = $_POST['viewBtn'];
-    $softDeleteIndex = $_POST['deleteBtn'];
 
-    if($index) {
-        $sql = "select * from User where IDNUM = $index";
+        //changing visibility
+    $sql = "UPDATE User SET isAdmin = '1' WHERE IDNUM = '$indexAdmin'" ;
 
-        $result = @mysqli_query($cnxn, $sql);
-
-        while ($row = mysqli_fetch_assoc($result)) {
-
-            $name = $row['name'];
-            $email = $row['email'];
-            $cnumber = $row['cohort'];
-            $roles = $row['roles'];
-            $id = $index;
+    $result = @mysqli_query($cnxn, $sql);
 
 
-            echo '<div class="container-fluid col-8 overall border rounded-4 border-3 border-dark ">
+
+
+        echo"Your Change has been Approved! ";
+
+    }
+
+
+
+    else {
+        echo "<div class=\"container-fluid col-sm-8 col-xs-8 applicationContainer\">
+<div class=\"container-fluid\">
+    <h3 class=\"text-center\">EDIT USER</h3>";
+
+        $index = $_POST['viewBtn'];
+        $softDeleteIndex = $_POST['deleteBtn'];
+
+        if ($index) {
+            $sql = "select * from User where IDNUM = $index";
+
+            $result = @mysqli_query($cnxn, $sql);
+
+            while ($row = mysqli_fetch_assoc($result)) {
+
+                $name = $row['name'];
+                $email = $row['email'];
+                $cnumber = $row['cohort'];
+                $roles = $row['roles'];
+                $id = $index;
+
+
+                echo '<div class="container-fluid col-8 overall border rounded-4 border-3 border-dark ">
 	<div class="row">
 		<div class="container-fluid" id="signupShared">
 			<div class="requiredwarning ">
@@ -65,19 +88,19 @@ if ($isAdminVar == 1) {
 			</div>
                 <form action="signupupdateReciept.php" id="form" method="post" name="signup">
 
-                <input type="hidden" id="IDNUM" name="IDNUM" class="form-control" value="' . $id. '">
+                <input type="hidden" id="IDNUM" name="IDNUM" class="form-control" value="' . $id . '">
 				<section class="mb-4"><label class="required" for="name" id="namesignup">Name</label><br />
-					<input class="form-control input-default " id="name" name="name" placeholder="" type="text" value="'.$name.'"/>
+					<input class="form-control input-default " id="name" name="name" placeholder="" type="text" value="' . $name . '"/>
 					<div class="error"></div>
 				</section>
 
 				<section class="input-control mb-4" id="orderEmail"><label class="userinfo required" for="email">Email</label><br />
-					<input class="form-control" id="email" name="email" placeholder="example@greenriver.edu" type="email" value="'.$email.'"/>
+					<input class="form-control" id="email" name="email" placeholder="example@greenriver.edu" type="email" value="' . $email . '"/>
 					<div class="error"></div>
 				</section>
 
 				<section class="mb-4"><label class="required" for="cohortnumber" id="cnumbersignup">Cohort Number</label><br />
-					<input class="form-control input-default" id="cohortnumber" name="cohortnumber" placeholder="0-100" type="number" value="'.$cnumber.'"/>
+					<input class="form-control input-default" id="cohortnumber" name="cohortnumber" placeholder="0-100" type="number" value="' . $cnumber . '"/>
 					<div class="error"></div>
 				</section>
 				<label class="required">Current Status</label>
@@ -91,7 +114,7 @@ if ($isAdminVar == 1) {
 				</section>
 
 				<section class="mb-4"><label class="form-label" for="textmsgsignup">Type of roles</label><br />
-					<textarea class="rounded-3 form-control" id="textmsgsignup" name="textmsgsignup" rows="3" >'.$roles.'</textarea></section>
+					<textarea class="rounded-3 form-control" id="textmsgsignup" name="textmsgsignup" rows="3" >' . $roles . '</textarea></section>
 
                 		</div>
                 	</div>
@@ -101,26 +124,24 @@ if ($isAdminVar == 1) {
                 
                 </form>
 
-                <form action="makeAdminReceipt.php" id="form" method="post" name="makeAdmin">
-                    <section class="text-center"><button class="mt-3 dashButtonLinks" type="submit" >Make Admin</button></section>
-                </form>';
+                ';
+            }
         }
+        if ($softDeleteIndex) {
+            $id = $softDeleteIndex;
+
+            $sql = "UPDATE User SET `visibility` = '0' WHERE idNum=$id";
+            $result = @mysqli_query($cnxn, $sql);
+
+            $result = @mysqli_query($cnxn, $sql);
+
+            echo '<p>User Deleted!</p>';
+        }
+
+
     }
-    if($softDeleteIndex) {
-        $id = $softDeleteIndex;
-
-        $sql = "UPDATE User SET `visibility` = '0' WHERE idNum=$id";
-        $result = @mysqli_query($cnxn, $sql);
-
-        $result = @mysqli_query($cnxn, $sql);
-
-        echo'<p>User Deleted!</p>';
-    }
-    
-  
-
-
     ?>
+
 
 
 </div>

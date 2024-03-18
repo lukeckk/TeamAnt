@@ -40,20 +40,13 @@ if ($isAdminVar == 1) {
                     <?php
                     session_start();
                     
-                        // require 'isLogged.php';
-                        // $isAdminVar = $_SESSION['isAdmin'];
-                                            
-                            
-                        
-                            // if ($isAdminVar == 1) {
-                                
-                            $sql = "UPDATE User SET `isAdmin` = '1' WHERE username = $_SESSION['username']";
+                       require 'db.php';
+
+                            $username = $_SESSION['username'];
+
+                            $sql = "UPDATE User SET isAdmin = '1' WHERE username = $username";
                             $result = @mysqli_query($cnxn, $sql);
-                            // }
-                            // else
-                            // {
-                            // echo'<p>Admin Permission Required</p>';
-                            // }
+
                             
                         
                         

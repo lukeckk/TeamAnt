@@ -1,5 +1,5 @@
 <?php
-require 'isLogged.php';
+
 $isAdminVar = $_SESSION['isAdmin'];
 ?>
 <!doctype html>

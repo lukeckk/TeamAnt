@@ -1,5 +1,5 @@
 <?php
-require 'isLogged.php';
+
 $isAdminVar = $_SESSION['isAdmin'];
 
 ?>
@@ -61,11 +61,11 @@ if ($isAdminVar == 1) {
                         echo '<h1 class="font-weight-bold">Message:</h1>';
                         echo '<h3 class="bg-white">'.$_POST["textmsgsignup"]."</h3>";
 
-                        $uName = filter_var($_POST['uName'],FILTER_SANITIZE_STRING);
+                        $uName = $_POST['uName'];
                         $pWord = hash('sha256', $_POST['pWord']);
-                        $name = filter_var($_POST['name'],FILTER_SANITIZE_STRING);
-                        $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-                        $cohort = filter_var($_POST['cohortnumber'],FILTER_SANITIZE_NUMBER_INT);
+                        $name = $_POST['name'];
+                        $email = $_POST['email'];
+                        $cohort = $_POST['cohortnumber'];
 
                         if($_POST['status'] == "Seeking Internship") {
                             $status = "Seeking Internship";
@@ -95,7 +95,12 @@ if ($isAdminVar == 1) {
                         echo "Success!";
                         echo "<br><p>We have received your request. Thank you! </p>";
                     } else {
-                        echo mysqli_error($cnxn);
+
+                        $var = mysqli_error($cnxn);
+                        if(strpos($var, 'Duplicate') !== false) {
+                            echo " <h3 class='text-center text-danger'>USERNAME is Already Taken! Please Try Again</h3>";
+                        }
+
                     }
                     ?>
                 </div>

@@ -54,6 +54,7 @@ if(!isset($_SESSION['username']) || $_SESSION['username'] == '') {
                         <th scope="col">EMAIL</th>
                         <th></th>
                         <th></th>
+                        <th></th>
 
                     </tr>
                     </thead>
@@ -78,6 +79,7 @@ if(!isset($_SESSION['username']) || $_SESSION['username'] == '') {
                     <tr>
                        <td>'.$name.'</td>
                        <td>'.$email.'</td>
+                       <th ><button onclick="setId('.$id,')" value="'.$id,'" name="makeAdmin" class="ApplicationButtonUP">Make Admin</button></th>
                         <th ><button onclick="setId('.$id,')" value="'.$id,'" name="viewBtn" class="ApplicationButtonUP">Edit User</button></th>
                         <th ><button name="deleteBtn" value="'.$id.'" class="ApplicationButtonDE">Delete User</button></th>
                     </tr>
@@ -107,6 +109,8 @@ if(!isset($_SESSION['username']) || $_SESSION['username'] == '') {
                         <th scope="col">TITLE</th>
                         <th scope="col">JOB TYPE</th>
                         <th scope="col">EMPLOYER</th>
+                        <th></th>
+                        <th></th>
                         <th></th>
                         
                     </tr>
