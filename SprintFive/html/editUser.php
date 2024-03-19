@@ -36,7 +36,7 @@ if ($isAdminVar == 1) {
 
     $indexAdmin = $_POST['makeAdmin'];
 
-    echo $indexAdmin."This is index admin <br>";
+    //echo $indexAdmin."This is index admin <br>";
     if(isset($indexAdmin)){
         require 'db.php';
 
