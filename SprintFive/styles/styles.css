@@ -389,6 +389,12 @@ poweredcontainer {
     text-align: right;
 }
 
+@media (max-width: 1410px) {
+    #footerid {
+        position: fixed; !important;
+    }
+}
+
 #footerid {
     background-color: rgb(51, 51, 51);
     border-top: 5px solid dimgrey;
