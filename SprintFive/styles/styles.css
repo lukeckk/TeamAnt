@@ -4,7 +4,6 @@
 /*}*/
 
 #footerTarget {
-    background-color: #2C882B !important;
     font-weight: bold;
     position: relative;
 
@@ -390,7 +389,7 @@ poweredcontainer {
 }
 
 @media (max-width: 1410px) {
-    #footerid {
+    #footerid, #footerTarget {
         position: fixed; !important;
     }
 }
