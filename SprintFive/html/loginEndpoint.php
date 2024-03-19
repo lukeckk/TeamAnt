@@ -91,3 +91,8 @@ if ($isAdminVar == 1) {
 <footer id="footerTarget" class="container-fluid text-center"></footer>
 </body>
 </html>
+<?php
+echo '<script>setTimeout(function() {
+        document.getElementById("usernameTarget").innerHTML = "";
+    },100);</script>';
+?>

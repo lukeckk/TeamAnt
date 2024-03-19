@@ -166,7 +166,11 @@ function populateNavBar() {
     let fullName = localStorage.getItem("fullName");
     if(fullName !== ''){
         console.log('fullName found to be not null.')
-        document.getElementById('usernameTarget').innerHTML = fullName;
+        setTimeout(function() {
+            let fullName = localStorage.getItem("fullName");
+            document.getElementById('usernameTarget').innerHTML = fullName;
+        },10);
+
     }
 
 }
@@ -224,6 +228,7 @@ function loginPageObscureAll() {
     document.getElementById('logoutItem').style.display = "none";
     document.getElementById('dashboardItem').style.display = "none";
     document.getElementById('usernameTarget').style.display = "none";
+    document.getElementById('contactItem').style.display = "none";
 }
 function UserPageObscureAll() {
     document.getElementById('adminItem').style.display = "none";
