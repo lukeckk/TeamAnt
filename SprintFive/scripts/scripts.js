@@ -19,23 +19,23 @@ function AfterLoginonloadGroup(active, IsAdmin) {
     populateFooter();
 
     console.log(IsAdmin + " This is the isadmin code!");
-    
+
 // If Statement for Dashboard page
-    if (active === 'navDashboard' && IsAdmin === 0) 
+    if (active === 'navDashboard' && IsAdmin === 0)
     {
         UserPageObscureAll();
         console.log('active param was user dash');
     }
-    else if (active === 'navDashboard' && IsAdmin === 1) 
+    else if (active === 'navDashboard' && IsAdmin === 1)
     {
         adminPageObscureAll();
         console.log('active param was admin dash');
     }
-    
-    
-    
+
+
+
 // If Statement for application page
-  if (active === 'applicationPage' && IsAdmin === 0) {
+    if (active === 'applicationPage' && IsAdmin === 0) {
         UserPageObscureAll();
         console.log('active param was user application');
     }
@@ -43,15 +43,15 @@ function AfterLoginonloadGroup(active, IsAdmin) {
         adminPageObscureAll();
         console.log('active param was admin application');
     }
-    
+
 // if statement for signup page
-     if (active === 'SignupPage') {
-         SignupPageObscureAll();
+    if (active === 'SignupPage') {
+        SignupPageObscureAll();
         console.log('active param was loginPage');
     }
-    
+
 // if statement for all receipt pages
-     if (active === 'receipt' && IsAdmin === 0) {
+    if (active === 'receipt' && IsAdmin === 0) {
         UserPageObscureAll();
         console.log('active param was user receipt page');
     }
@@ -59,9 +59,9 @@ function AfterLoginonloadGroup(active, IsAdmin) {
         adminPageObscureAll();
         console.log('active param was admin receipt page');
     }
-    
+
 // if statement for contact form
- if (active === 'contact2' && IsAdmin === 0) {
+    if (active === 'contact2' && IsAdmin === 0) {
         UserPageObscureAll();
         console.log('active param was user contact page');
     }
@@ -70,12 +70,14 @@ function AfterLoginonloadGroup(active, IsAdmin) {
         console.log('active param was admin contact page');
     }
 
- else if (active === 'nologcontact' && IsAdmin === 0) {
-     loginPageObscureAll();
-     console.log('active param was admin contact page');
- }
+    else if (active === 'nologcontact' && IsAdmin === 0) {
+        loginPageObscureAll();
+        console.log('active param was admin contact page');
+    }
 
-    
+
+
+
 
     //decorateActive(active); no longer in use.
 }
@@ -150,15 +152,12 @@ function populateNavBar() {
         "                    <a href=\"logout.php\" id=\"logoutItem\" class=\"nav-link\">Log Out</a>\n" +
         "                </li>\n" +
         "                <li class=\"nav-item\">\n" +
-        "                    <a href=\"loginPage.php\" id=\"loginItem\" class=\"nav-link\">Log In</a>\n" +
-        "                </li>\n" +
-        "                <li class=\"nav-item\">\n" +
         "                    <a id=\"usernameTarget\" class=\"nav-link\">Guest</a>\n" +
         "                </li>\n" +
         "            </ul>\n" +
         "<div class=\"position-absolute end-0 mx-3 d-none d-lg-block\">\n" +
-                "        <i class=\"fa-solid fa-circle-half-stroke\" id=\"lights\" onclick=\"lightingButton()\"></i>\n" +
-                "      </div>\n" +
+        "        <i class=\"fa-solid fa-circle-half-stroke\" id=\"lights\" onclick=\"lightingButton()\"></i>\n" +
+        "      </div>\n" +
         "        </div>\n" +
         "    </div>\n" +
         "    </div>\n" +
@@ -223,15 +222,12 @@ document.getElementById("followUpInput").valueAsDate = new Date( Date.now() + (6
 function loginPageObscureAll() {
     document.getElementById('adminItem').style.display = "none";
     document.getElementById('logoutItem').style.display = "none";
-    document.getElementById('loginItem').style.display = "none";
     document.getElementById('dashboardItem').style.display = "none";
     document.getElementById('usernameTarget').style.display = "none";
 }
 function UserPageObscureAll() {
     document.getElementById('adminItem').style.display = "none";
     document.getElementById('signupbuttonnav').style.display = "none";
-    document.getElementById('loginItem').style.display = "none";
-
 }
 
 function SignupPageObscureAll() {
@@ -240,17 +236,10 @@ function SignupPageObscureAll() {
     document.getElementById('logoutItem').style.display = "none";
     document.getElementById('dashboardItem').style.display = "none";
     document.getElementById('usernameTarget').style.display = "none";
-    document.getElementById('signupbuttonnav').style.display = "none";
 
 }
 
 function adminPageObscureAll() {
     document.getElementById('signupbuttonnav').style.display = "none";
-    document.getElementById('loginItem').style.display = "none";
-
 }
-
-
-
-// singupReceipt only shows login & contact which is same is signup.php
 

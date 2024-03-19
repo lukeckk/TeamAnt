@@ -5,33 +5,35 @@ $isAdminVar = $_SESSION['isAdmin'];
 ?>
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark" id="htmlTag">
-    <head>
-        <title>Form Submission</title>
-        <!--CDN-->
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-        <script src="../scripts/scripts.js"></script>
-        <link href="../styles/styles.css" rel="stylesheet" type="text/css">
-        <script src="https://kit.fontawesome.com/dacf05fad1.js" crossorigin="anonymous"></script>
-        <link href="https://fonts.cdnfonts.com/css/bignoodletitling" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    </head>
-    
-    <?php
-    if ($isAdminVar == 1) {
-        echo " <body onload = \"AfterLoginonloadGroup('receipt', 1)\">";
-    } else {
-        echo " <body onload = \"AfterLoginonloadGroup('receipt', 0)\"> ";
-    }
-    ?>
-<!--    <nav id="navbarTarget" class="navbar navbar-expand-lg bg-body-tertiary"></nav>-->
-    <nav id="navbarTarget"></nav>
+<head>
+    <title>Form Submission</title>
+    <!--CDN-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="../scripts/scripts.js"></script>
+    <link href="../styles/styles.css" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/dacf05fad1.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.cdnfonts.com/css/bignoodletitling" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
 
-      <div class="container-fluid col-sm-8 col-xs-8 receptContainer mt-3">
-        <div id="receptShared" class="rounded-4 ">
-         
+<?php
+if ($isAdminVar == 1) {
+    echo " <body onload = \"AfterLoginonloadGroup('receipt', 1)\">";
+} else {
+    echo " <body onload = \"AfterLoginonloadGroup('receipt', 0)\"> ";
+}
+?>
+<!--    <nav id="navbarTarget" class="navbar navbar-expand-lg bg-body-tertiary"></nav>-->
+<nav id="navbarTarget"></nav>
+
+<div class="container-fluid col-sm-8 col-xs-8 receptContainer mt-3">
+    <div id="receptShared" class="rounded-4 ">
+
         <?php
-      if(isset($_POST["title"]) && isset($_POST["employer"]) && $_POST['title'] != "" && $_POST['jobType'] != "")
+        date_default_timezone_set('America/Los_Angeles');
+
+        if(isset($_POST["title"]) && isset($_POST["employer"]) && $_POST['title'] != "" && $_POST['jobType'] != "")
         {
 
             echo '<h1 class="font-weight-bold">Title</h1>';
@@ -54,21 +56,21 @@ $isAdminVar = $_SESSION['isAdmin'];
 
 
 
-            
+
 
             $subject = "Admin Announcement Form";
             $information = $_POST["information"];
-            
 
-            $date = date('d-m-y');
-            $title = filter_var($_POST['title'],FILTER_SANITIZE_STRING);
-            $jobType = filter_var($_POST['jobType'],FILTER_SANITIZE_STRING);
-            $location = filter_var($_POST['location'], FILTER_SANITIZE_STRING);
-            $employer = filter_var($_POST['employer'],FILTER_SANITIZE_STRING);
-            $information = filter_var($_POST['information'],FILTER_SANITIZE_STRING);
-            $url = filter_var($_POST['url'],FILTER_SANITIZE_URL);
 
-          $message = 'Title: '.$title.' Job Type: '.$jobType.'  Location: '.$location.' Employer: '.$employer.' Information: '.$information.' URL: '.$url.' ';
+            $date = date('y-m-d');
+            $title = $_POST['title'];
+            $jobType = $_POST['jobType'];
+            $location = $_POST['location'];
+            $employer = $_POST['employer'];
+            $information = $_POST['information'];
+            $url = $_POST['url'];
+
+            $message = 'Title: '.$title.' Job Type: '.$jobType.'  Location: '.$location.' Employer: '.$employer.' Information: '.$information.' URL: '.$url.' ';
 
 
 
@@ -101,7 +103,7 @@ $isAdminVar = $_SESSION['isAdmin'];
 
         }
 
-       
+
 
         if ($result2) {
             echo "Success!";
@@ -111,9 +113,9 @@ $isAdminVar = $_SESSION['isAdmin'];
         }
 
         ?>
-        
-        </div>
+
     </div>
-    <footer id="footerTarget" class="container-fluid text-center"></footer>
-    </body>
+</div>
+<footer id="footerTarget" class="container-fluid text-center"></footer>
+</body>
 </html>
