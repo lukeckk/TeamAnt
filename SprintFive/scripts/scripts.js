@@ -19,6 +19,16 @@ function AfterLoginonloadGroup(active, IsAdmin) {
     populateFooter();
 
     console.log(IsAdmin + " This is the isadmin code!");
+    
+    //if statement for login endpoint
+    if (active === 'endpoint' && IsAdmin === 0) {
+        userEndpointObscureAll();
+        console.log('active param was user login endpoint page');
+    }
+    else if (active === 'endpoint' && IsAdmin === 1) {
+        adminEndpointObscureAll();
+        console.log('active param was admin login endpoint page');
+    }
 
 // If Statement for Dashboard page
     if (active === 'navDashboard' && IsAdmin === 0)
@@ -74,6 +84,7 @@ function AfterLoginonloadGroup(active, IsAdmin) {
         loginPageObscureAll();
         console.log('active param was admin contact page');
     }
+
 
 
 
@@ -152,6 +163,9 @@ function populateNavBar() {
         "                    <a href=\"logout.php\" id=\"logoutItem\" class=\"nav-link\">Log Out</a>\n" +
         "                </li>\n" +
         "                <li class=\"nav-item\">\n" +
+        "                    <a href=\"loginPage.php\" id=\"loginItem\" class=\"nav-link\">Log in</a>\n" +
+        "                </li>\n" +
+        "                <li class=\"nav-item\">\n" +
         "                    <a id=\"usernameTarget\" class=\"nav-link\">Guest</a>\n" +
         "                </li>\n" +
         "            </ul>\n" +
@@ -165,7 +179,9 @@ function populateNavBar() {
 
     let fullName = localStorage.getItem("fullName");
     if(fullName !== ''){
-        console.log('fullName found to be not null.')
+        console.log('fullName found to be not null.');
+        // document.getElementById('usernameTarget').innerHTML = fullName;
+        
         setTimeout(function() {
             let fullName = localStorage.getItem("fullName");
             document.getElementById('usernameTarget').innerHTML = fullName;
@@ -229,10 +245,14 @@ function loginPageObscureAll() {
     document.getElementById('dashboardItem').style.display = "none";
     document.getElementById('usernameTarget').style.display = "none";
     document.getElementById('contactItem').style.display = "none";
+    document.getElementById('loginItem').style.display = "none";
+
 }
 function UserPageObscureAll() {
     document.getElementById('adminItem').style.display = "none";
     document.getElementById('signupbuttonnav').style.display = "none";
+    document.getElementById('loginItem').style.display = "none";
+
 }
 
 function SignupPageObscureAll() {
@@ -241,10 +261,31 @@ function SignupPageObscureAll() {
     document.getElementById('logoutItem').style.display = "none";
     document.getElementById('dashboardItem').style.display = "none";
     document.getElementById('usernameTarget').style.display = "none";
-
+    document.getElementById('contactItem').style.display = "none";
+    document.getElementById('signupbuttonnav').style.display = "none";
+    
 }
 
 function adminPageObscureAll() {
     document.getElementById('signupbuttonnav').style.display = "none";
+    document.getElementById('loginItem').style.display = "none";
+
 }
+
+function userEndpointObscureAll(){
+    document.getElementById('signupbuttonnav').style.display = "none";
+    document.getElementById('loginItem').style.display = "none";
+    document.getElementById('usernameTarget').style.display = "none";
+    document.getElementById('adminItem').style.display = "none";
+
+}
+
+function adminEndpointObscureAll(){
+    document.getElementById('signupbuttonnav').style.display = "none";
+    document.getElementById('loginItem').style.display = "none";
+    document.getElementById('usernameTarget').style.display = "none";
+
+}
+
+
 
