@@ -23,9 +23,9 @@ $_SESSION['uName'] = $_POST['username'];
 <?php
 
 if ($isAdminVar == 1) {
-    echo " <body onload = \"AfterLoginonloadGroup('receipt', 1)\">";
+    echo " <body onload = \"AfterLoginonloadGroup('endpoint', 1)\">";
 } else {
-    echo " <body onload = \"AfterLoginonloadGroup('receipt', 0)\"> ";
+    echo " <body onload = \"AfterLoginonloadGroup('endpoint', 0)\"> ";
 }
 ?>
 <!--<nav id="navbarTarget" class="navbar navbar-expand-lg bg-body-tertiary"></nav>-->
@@ -91,8 +91,8 @@ if ($isAdminVar == 1) {
 <footer id="footerTarget" class="container-fluid text-center"></footer>
 </body>
 </html>
-<?php
-echo '<script>setTimeout(function() {
-        document.getElementById("usernameTarget").innerHTML = "";
-    },100);</script>';
-?>
+ <?php
+// echo '<script>setTimeout(function() {
+//         document.getElementById("usernameTarget").innerHTML = "";
+//     },100);</script>';
+// ?>

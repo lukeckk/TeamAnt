@@ -37,7 +37,9 @@ if ($isAdminVar == 1) {
     
         <?php
         
-        $index = $_POST['viewBtn'];
+        // $index = $_POST['viewBtn'];
+        
+        $index = $_GET['index'];
     
         require 'db.php';
         $sql = "select * from Announcement where id=$index";
@@ -46,38 +48,48 @@ if ($isAdminVar == 1) {
     
         while ($row = mysqli_fetch_assoc($result))
         {
+            // $id = $index;
+            $id = $row['id'];
+            
+            if($index == $id)
+            {
+            
+                $date = $row['date'];
+                $title = $row['title'];
+                $jobType = $row['jobType'];
+                $employer = $row['employer'];
+                $index = $row['id'];
+                $location = $row['location'];
+                $info = $row['info'];
+                $url = $row['url'];
+                
+        
+                echo '<h1 class="font-weight-bold">Date</h1>';
+                echo '<h3 class="bg-white">'.$date."</h3>";
     
-            $id = $index;
-    
-            $date = $row['date'];
-            $title = $row['title'];
-            $jobType = $row['jobType'];
-            $employer = $row['employer'];
-            $index = $row['id'];
-            $location = $row['location'];
-            $info = $row['info'];
-            $url = $row['url'];
-    
-            echo '<h1 class="font-weight-bold">Date</h1>';
-            echo '<h3 class="bg-white">'.$date."</h3>";
-    
-            echo '<h1 class="font-weight-bold">Title</h1>';
-            echo '<h3 class="bg-white">'.$title."</h3>";
-    
-            echo '<h1 class="font-weight-bold">Job Type</h1>';
-            echo '<h3 class="bg-white">'.$jobType."</h3>";
-    
-            echo '<h1 class="font-weight-bold">Employer</h1>';
-            echo '<h3 class="bg-white">'.$employer."</h3>";
-    
-            echo '<h1 class="font-weight-bold">Location</h1>';
-            echo '<h3 class="bg-white">'.$location."</h3>";
-    
-            echo '<h1 class="font-weight-bold">Information</h1>';
-            echo '<h3 class="bg-white">'.$info."</h3>";
-    
-            echo '<h1 class="font-weight-bold">URL</h1>';
-            echo '<h3 class="bg-white">'.$url."</h3>";
+        
+                echo '<h1 class="font-weight-bold">Title</h1>';
+                echo '<h3 class="bg-white">'.$title."</h3>";
+        
+                echo '<h1 class="font-weight-bold">Job Type</h1>';
+                echo '<h3 class="bg-white">'.$jobType."</h3>";
+        
+                echo '<h1 class="font-weight-bold">Employer</h1>';
+                echo '<h3 class="bg-white">'.$employer."</h3>";
+        
+                echo '<h1 class="font-weight-bold">Location</h1>';
+                echo '<h3 class="bg-white">'.$location."</h3>";
+        
+                echo '<h1 class="font-weight-bold">Information</h1>';
+                echo '<h3 class="bg-white">'.$info."</h3>";
+        
+                echo '<h1 class="font-weight-bold">URL</h1>';
+                echo '<h3 class="bg-white">'.$url."</h3>";
+            }
+            else
+            {
+                echo "No match found";
+            }
         }
         ?>
     </div>

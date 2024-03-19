@@ -1,7 +1,7 @@
 <?php
-
+require 'isLogged.php';
 $isAdminVar = $_SESSION['isAdmin'];
-$isLoggedin = $_SESSION['uName'];
+// $isLoggedin = $_SESSION['uName'];
 ?>
 <!doctype html>
 <html lang="en" data-bs-theme="dark" id="htmlTag">
@@ -21,14 +21,11 @@ $isLoggedin = $_SESSION['uName'];
 
 
 <?php
-session_start();
+// session_start();
 if ($isAdminVar == 1) {
-    echo " <body onload = \"adminPageObscureAll('contact', 1)\">";
-} else if ($isAdminVar == 0 && isset($isLoggedin) ) {
-    echo " <body onload = \"AfterLoginonloadGroup('contact2', 0)\"> ";
-}
-else {
-    echo" <body onload = \"AfterLoginonloadGroup('nologcontact', 0)\"> ";
+    echo " <body onload = \"AfterLoginonloadGroup('applicationPage', 1)\">";
+} else {
+    echo " <body onload = \"AfterLoginonloadGroup('applicationPage', 0)\"> ";
 }
 ?>
 <!--<nav id="navbarTarget" class="navbar navbar-expand-lg bg-body-tertiary"></nav>-->
