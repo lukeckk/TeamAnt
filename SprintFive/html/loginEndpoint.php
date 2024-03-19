@@ -3,6 +3,7 @@ session_start();
 // Not currently adjusted for admin and user because the page goes blank after including require 'isLogged.php';
 // require 'isLogged.php';
 $isAdminVar = $_SESSION['isAdmin'];
+$_SESSION['uName'] = $_POST['username'];
 ?>
 
 <!DOCTYPE html>
@@ -21,11 +22,11 @@ $isAdminVar = $_SESSION['isAdmin'];
 
 <?php
 
-    if ($isAdminVar == 1) {
-        echo " <body onload = \"AfterLoginonloadGroup('receipt', 1)\">";
-    } else {
-        echo " <body onload = \"AfterLoginonloadGroup('receipt', 0)\"> ";
-    }
+if ($isAdminVar == 1) {
+    echo " <body onload = \"AfterLoginonloadGroup('receipt', 1)\">";
+} else {
+    echo " <body onload = \"AfterLoginonloadGroup('receipt', 0)\"> ";
+}
 ?>
 <!--<nav id="navbarTarget" class="navbar navbar-expand-lg bg-body-tertiary"></nav>-->
 <nav id="navbarTarget"></nav>
@@ -34,6 +35,7 @@ $isAdminVar = $_SESSION['isAdmin'];
     <div id="receptShared" class="rounded-4 ">
 
         <?php
+        session_start();
         if(!isset($_POST["username"]) || !isset($_POST["password"])) {
             echo '<h1>Please complete the form!</h1>';
             die();
@@ -43,6 +45,7 @@ $isAdminVar = $_SESSION['isAdmin'];
         require 'db.php';
 
         $user = $_POST["username"];
+
         $pass = hash('sha256',$_POST["password"]);
 
         //echo "DEBUG INFO: " . $pass. '<br>';

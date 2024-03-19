@@ -61,7 +61,7 @@ function AfterLoginonloadGroup(active, IsAdmin) {
     }
     
 // if statement for contact form
- if (active === 'contact' && IsAdmin === 0) {
+ if (active === 'contact2' && IsAdmin === 0) {
         UserPageObscureAll();
         console.log('active param was user contact page');
     }
@@ -69,6 +69,12 @@ function AfterLoginonloadGroup(active, IsAdmin) {
         adminPageObscureAll();
         console.log('active param was admin contact page');
     }
+
+ else if (active === 'nologcontact' && IsAdmin === 0) {
+     loginPageObscureAll();
+     console.log('active param was admin contact page');
+ }
+
     
 
     //decorateActive(active); no longer in use.
